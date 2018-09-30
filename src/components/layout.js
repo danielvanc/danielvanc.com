@@ -2,9 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+// import Header from './header'
+import './layout.css'
+import styled from 'styled-components'
 
-import Header from './header'
-import './layout.scss'
+const PageContainer = styled.div `
+  color: #fff;
+  margin: 0 auto;
+  width: 80%;
+
+  @media screen and (min-width: 600px) {
+    margin: 0 0 0 12%;
+    width: 525px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 0 0 30%;
+    width: 525px;
+  }
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,8 +43,9 @@ const Layout = ({ children }) => (
       >
       <html lang="en" />
       </Helmet>
-      <Header siteTitle="data.site.siteMetadata.title" />
-      { children }
+      <PageContainer>
+        { children }
+      </PageContainer>
       </>
     )}
   />

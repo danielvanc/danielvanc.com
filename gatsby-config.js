@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'My Personal Website'
+    title: 'Home of Daniel Van Cuylenburg - Guitarist | Web Designer | Front-end Developer'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -17,6 +17,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-sass'
+    'gatsby-plugin-styled-components'
   ],
 }
