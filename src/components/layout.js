@@ -41,6 +41,18 @@ const Layout = ({ children }) => (
           { name: `keywords`, content: `web designer, designer, developer, gatsbyjs, reactjs, javascript, personal site`},
         ]}
       >
+
+      {/* Global site tag (gtag.js) - Google Analytics  */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126709092-1"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'id=UA-126709092-1');
+        `}
+      </script>
+
       <html lang="en" />
       </Helmet>
       <PageContainer>
