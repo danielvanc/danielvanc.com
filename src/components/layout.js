@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'id=UA-126709092-1');
+          gtag('config', 'UA-126709092-1');
         `}
       </script>
 
