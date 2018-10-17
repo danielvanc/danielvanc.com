@@ -38,7 +38,7 @@ const IndexPage = () => (
       I’m currently re-developing my site, <br class="br" />but in the mean time, find me on <br class="br" /><a href="https://twitter.com/danielvanc" title="My Twitter account">Twitter</a>, <a href="https://github.com/danielvanc" title="My GitHub repository">Github</a> and <a href="https://codepen.io/danielvanc/" title="My profile on CodePen">CodePen</a>.
     </Paragraph>
     <ParagraphItalic>
-      Last updated: 1/10/2018
+      Last updated: 17/10/2018
     </ParagraphItalic>
   </Layout>
 )
