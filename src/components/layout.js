@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 // import Header from './header'
 import './layout.css'
 import styled from 'styled-components'
+import FavIcon from '../../favicon.png'
 
 const PageContainer = styled.div `
   color: #fff;
@@ -39,6 +40,10 @@ const Layout = ({ children }) => (
         meta={[
           { name: `description`, content: `Personal Website of Daniel Van Cuylenburg who is a Website Designer and Front-end Developer on the Isle of Wight, UK`},
           { name: `keywords`, content: `web designer, designer, developer, gatsbyjs, reactjs, javascript, personal site`},
+        ]}
+        link={[
+          { rel: 'shortcut icon', type: 'image/png', href: `${FavIcon}` },
+          { rel: 'icon', type: 'image/png', href: `${FavIcon}` }
         ]}
       >
 
