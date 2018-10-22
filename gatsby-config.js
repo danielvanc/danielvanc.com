@@ -5,6 +5,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'danielvanc-v1-manifest',
@@ -16,6 +23,7 @@ module.exports = {
         //icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-plugin-offline',
     'gatsby-plugin-styled-components'
   ],
