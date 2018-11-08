@@ -1,46 +1,128 @@
 import React from "react"
-import styled from 'styled-components'
-import Layout from '../components/layout'
+import { Link, graphql } from 'gatsby'
+import styled from "styled-components"
+import BlogThumb from "gatsby-image"
+import HeadScripts from "../components/headScripts"
+import Layout from "../components/layout"
 
-const Title = styled.h1 `
-  font-size: 38px;
-  margin: 0 0 8px 0;
-  @media screen and (min-width: 480px) {
-    font-size: 64px;
-    margin: 0 0 20px 0
+const MastIntro = styled.div`
+  grid-area: intro;
+`
+const MastText = styled.div`
+  grid-area: intro-text;
+`
+const MastStandFirst = styled.div`
+  grid-area: standfirst;
+`
+const MastTextFinish = styled.div`
+  grid-area: intro-text-finish;
+`
+const MastImage = styled.div`
+  grid-area: graphics;
+`
+const BlogIntro = styled.div`
+  grid-area: blog-intro;
+`
+const BlogDescription = styled.div`
+  grid-area: blog-text;
+`
+const BlogImage = styled.div`
+  grid-area: blog-img;
+`
+
+export default ({ data }) => {
+  const { edges: posts } = data.intro
+  let pageMeta = {};
+
+  posts.forEach(function ({ node: post }) {
+    Object.assign(pageMeta, { "metaTitle": post.frontmatter.metaTitle });
+    Object.assign(pageMeta, { "metaKeywords": post.frontmatter.metaKeywords });
+    Object.assign(pageMeta, { "metaDescription": post.frontmatter.metaDescription });
+    Object.assign(pageMeta, { "pageTitle": post.frontmatter.title });
+    Object.assign(pageMeta, { "pageSubTitle": post.frontmatter.subtitle });
+    Object.assign(pageMeta, { "pageDescription": post.html });
+  });
+
+  const { edges: notes } = data.latestPost
+
+  return (
+    <>
+      <HeadScripts {...pageMeta} />
+      <Layout>
+        <MastIntro>
+          {pageMeta.pageTitle}
+        </MastIntro>
+        <MastText dangerouslySetInnerHTML={{ __html: pageMeta.pageDescription }} />
+        <MastImage>Mast image</MastImage>
+        <MastStandFirst>{pageMeta.pageSubTitle}</MastStandFirst>
+        <MastTextFinish>Mast text finish goes here</MastTextFinish>
+        <BlogIntro>Latest on the blog</BlogIntro>
+        {notes.map(({ node: note }) => (
+          <React.Fragment key={note.id}>
+            <BlogDescription>
+              <h2> <Link to={note.fields.slug}>{note.frontmatter.title}</Link></h2>
+              <p>{note.frontmatter.description}</p>
+            </BlogDescription>
+            <BlogImage><BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} /> </BlogImage>
+            {/* </div> */}
+          </React.Fragment>
+        ))}
+      </Layout>
+    </>
+  )
+}
+
+export const query = graphql`
+  query {
+    intro:allMarkdownRemark(
+      filter: {
+        frontmatter: { title: { eq: "Homepage" } }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            templateKey
+            subtitle
+            metaTitle
+            metaDescription
+            metaKeywords
+          }
+        }
+      }
+    }
+
+    latestPost:allMarkdownRemark(
+      limit: 1
+      filter: {
+        frontmatter: { page_type: { eq: "notes" } }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          html
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            image {
+              childImageSharp{
+                  sizes(maxWidth: 630) {
+                      ...GatsbyImageSharpSizes
+                  }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
-const Paragraph = styled.p `
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0 0 15px 0;
-  @media screen and (min-width: 480px) {
-    font-size: 19px;
-    line-height: 1.7;
-  }
-`
-const ParagraphItalic = styled.p `
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.4;
-`
-
-const IndexPage = () => (
-  <Layout>
-    <Title className="heading">Hello world!</Title>
-    <Paragraph>
-      I’m Daniel Van Cuylenburg - a consumer focused, business minded, digital creative,  with 2 decades of experience designing and building digital experiences for in-house large U.K corporations, agencies and freelancers. <br class="br" />During such time, I’ve had the pleasure to work with world wide recognised brands such as: <a href="https://www.virgin.com/" title="Virgin">Virgin</a>, <a href="https://www.google.co.uk/" title="Google">Google</a>, <a href="https://www.bt.com" title="BT">BT</a>, <a href="https://www.landrover.co.uk">Land Rover</a>, <a href="https://www.unicef.org.uk/" title="Unicef">Unicef</a> and <a href="https://www.eonenergy.com/">E-ON</a>.  
-    </Paragraph>
-    <Paragraph>
-      I currently work in the digital team of the <br class="br" /><a href="https://www.ellenmacarthurfoundation.org">Ellen MacArthur Foundation</a> as a Web Designer and <br class="br" /> Front-end Developer.
-    </Paragraph>
-    <Paragraph>
-      I’m currently re-developing my site, <br class="br" />but in the mean time, find me on <br class="br" /><a href="https://twitter.com/danielvanc" title="My Twitter account">Twitter</a>, <a href="https://github.com/danielvanc" title="My GitHub repository">Github</a> and <a href="https://codepen.io/danielvanc/" title="My profile on CodePen">CodePen</a>.
-    </Paragraph>
-    <ParagraphItalic>
-      Last updated: 17/10/2018
-    </ParagraphItalic>
-  </Layout>
-)
-
-export default IndexPage;

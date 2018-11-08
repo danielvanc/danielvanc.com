@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions}) => {
         allMarkdownRemark {
           edges {
             node {
+              id
               fields {
                 slug
               }
@@ -36,11 +37,13 @@ exports.createPages = ({ graphql, actions}) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
+        const nodeId = node.id
         createPage({
           path: node.fields.slug,
           component:path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
           context: {
             slug: node.fields.slug,
+            id: nodeId
           }
         })
       })

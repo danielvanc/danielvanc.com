@@ -5,3 +5,12 @@ publish_mode: editorial_workflow
 
 media_folder: static/img
 public_folder: /img
+
+collections:
+  - name: "about"
+    label: "About"
+    file: "src/pages/about/index.md"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+      - {label: "title" name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}

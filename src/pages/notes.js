@@ -5,9 +5,9 @@ import Layout from "../components/layout"
 export default ({ data }) => {
   return (
     <Layout>
-      <h2>{ data.allMarkdownRemark.totalCount }</h2>
+      {/* <h2>{ data.allMarkdownRemark.totalCount }</h2> */}
       {data.allMarkdownRemark.edges.map(({node}) => (
-        <h2 key={node.id}><Link to={node.fields.slug}>{node.frontmatter.title}</Link> - {node.frontmatter.date}</h2>
+        <h2><Link to={node.fields.slug}>{node.frontmatter.title}</Link> - {node.frontmatter.date}</h2>
       ))}
     </Layout>
   )
@@ -15,9 +15,9 @@ export default ({ data }) => {
 
 export const query = graphql `
   query {
-    allMarkdownRemark(
-      sort: { fields:[frontmatter___date], order: DESC },
-      filter: { frontmatter: { templateKey: { eq: "log-page" } }})
+    allMarkdownRemark(sort: { 
+      fields:[frontmatter___date], order: DESC },
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } }})
     {
       totalCount
       edges{
