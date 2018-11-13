@@ -1,12 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:900,900i|Rubik:300,300i,400,400i');
 :root {
-  --link-colour: #91c9b3;
-  --link-hover-colour: #EA638C;
+  --color-white: #ffffff;
+  --color-mint: #91c9b3;
+  --color-pink: #EA638C;
+  --color-text-default: var(--color-white);
+  --font-family: 'Rubik', sans-serif;
+  --font-family-headings: 'Muli', sans-serif;
+  --font-weight: 400;
+  /* --font-size-xxx-display: 8vmin;
+  --font-size-xx-display: 4.11rem;
+  --font-size-x-display: 3.653rem;
+  --font-size-display: 3.247rem; */
+  /* --font-size-xxxx-large: 2.027rem;
+  --font-size-xxx-large: 1.802rem;*/
+  --font-size-xx-large: 5.063rem; 
+  --font-size-x-large: 3.375rem;
+  --font-size-large: 2.25rem;
+  --font-size-medium: 1.5rem;
+  --font-size: 1rem;
+   --font-size-small: .667rem;
+  /*--font-size-x-small: .79rem;
+  --font-size-xx-small: .79rem; */
+  --lineheight-text: 1.45;
+  --lineheight-heading: 1.2;
+  --spacing: 0.2rem;
+
+  --mq-large-mobile:37.5em;
+  --mq-tablet:48em;
+  --mq-desktop:64em;
+  --mq-large-desktop:93.750em;
 }
 * {
   margin: 0;
   padding: 0;
 }
+
+
 
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -20,7 +49,8 @@
  */
 
  html {
-  line-height: 1.15; /* 1 */
+  box-sizing: border-box;
+  line-height: var(--lineheight-text); /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -34,23 +64,21 @@
 
 body {
   background: #373737 url('../images/bodybg.png') top right no-repeat;
-  font-family: 'Rubik', sans-serif;
-  margin: 0;
+  color: var(--color-text-default);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: var(--lineheight-text);
 }
 
 a {
-  border-bottom: 1px solid var(--link-colour);
-  color: var(--link-colour);
+  border-bottom: 1px solid var(--colour-mint);
+  color: var(--colour-mint);
   text-decoration: none;
 }
 a:hover {
-  border:0;
-  color: var(--link-hover-colour);
-  transition: all 1s;
-}
-
-.heading {
-  font-family: 'Muli', sans-serif;
+  border-bottom:1px solid transparent;
+  color: var(--color-pink);
+  transition: border 1s,  color 1s;
 }
 
 /**
@@ -58,9 +86,19 @@ a:hover {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   font-family: var(--font-family-headings);
+   line-height: var(--lineheight-heading);
+   margin: 1.414em 0 0.5em;
+ }
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: var(--font-size-xx-large);
+  /* margin: 0.67em 0; */
 }
 
 /* Grouping content

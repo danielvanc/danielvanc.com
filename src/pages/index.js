@@ -50,12 +50,12 @@ export default ({ data }) => {
       <HeadScripts {...pageMeta} />
       <Layout>
         <MastIntro>
-          {pageMeta.pageTitle}
+          <h1>{pageMeta.pageTitle}</h1>
         </MastIntro>
         <MastText dangerouslySetInnerHTML={{ __html: pageMeta.pageDescription }} />
         <MastImage>Mast image</MastImage>
         <MastStandFirst>{pageMeta.pageSubTitle}</MastStandFirst>
-        <MastTextFinish>Mast text finish goes here</MastTextFinish>
+        <MastTextFinish>Welcome to my website! I’m a consumer focused, business minded, digital creative,  with 2 decades of experience (15 years professionally) </MastTextFinish>
         <BlogIntro>Latest on the blog</BlogIntro>
         {notes.map(({ node: note }) => (
           <React.Fragment key={note.id}>
@@ -76,7 +76,7 @@ export const query = graphql`
   query {
     intro:allMarkdownRemark(
       filter: {
-        frontmatter: { title: { eq: "Homepage" } }
+        frontmatter: { templateKey: { eq: "index" } }
       }
     ) {
       totalCount

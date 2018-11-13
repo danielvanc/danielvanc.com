@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import Header from './header'
 import Footer from './footer'
 import './layout.css'
-import styled from 'styled-components'
 
 const PageContainer = styled.div`
     display: grid;
@@ -24,9 +24,9 @@ const PageContainer = styled.div`
       "copyright"
       "updated";
   
-
-  @media screen and (min-width: 768px) and (max-width:1023px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  @media screen and (min-width: 48em) { grid-template-columns: repeat(6, 1fr); }
+  
+  @media screen and (min-width: 48em) and (max-width:63.938em) {
     grid-template-areas:
       "header header header header header header"
       "graphics graphics intro intro intro intro"
@@ -40,8 +40,7 @@ const PageContainer = styled.div`
       "copyright copyright copyright updated updated updated";
   }
 
-  @media screen and (max-height: 768px) and (min-width:600px) and (max-width: 1023px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  @media screen and (max-height: 48em) and (min-width:37.5em) and (max-width: 63.938em) {
     grid-template-areas:
       "header header header header header header"
       "intro intro intro intro standfirst standfirst"
@@ -54,10 +53,9 @@ const PageContainer = styled.div`
       "copyright copyright copyright updated updated updated";
   }
   
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  @media screen and (min-width: 64em) {
     grid-template-areas:
-      "header header header header header header"
+      ". header header header header header"
       "graphics graphics intro intro intro intro"
       "graphics graphics intro-text intro-text standfirst standfirst"
       "graphics graphics intro-text intro-text intro-text-finish intro-text-finish"
@@ -72,7 +70,7 @@ const PageContainer = styled.div`
   > div, 
   > main, 
   > header {
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 `
 const Layout = ({ children }) => {
