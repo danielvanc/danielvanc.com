@@ -97,13 +97,24 @@ const SiteNav = styled.ul`
       font-size: var(--font-size-nav-large);
     }
   }
-  a {
-    border-bottom: 0;
+  a:link,
+  a:visited {
+    border-bottom: 0!important;
     color: var(--color-white);
+  }
+  a {
+    border-bottom: 0!important;
+    color: var(--color-white);
+    &:hover {
+      color: var(--color-mint);
+    }
     &.active {
       background: white;
-      color: #333;
+      color: #333!important;
       padding: 0.313em 0.5em;
+      &:hover {
+        color: #333;
+      }
     }
   }
   a:hover { color: var(--color-mint)}

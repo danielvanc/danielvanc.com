@@ -98,8 +98,7 @@ export default ( { data }) => {
           </Thumbnail>
 
           <ArticleDescription>
-            <p>{post.frontmatter.description}</p>
-            <p>{post.frontmatter.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: post.frontmatter.description }} />
           </ArticleDescription>
           <ArticleMainPost dangerouslySetInnerHTML={{__html: post.html}}/>
         </ArticleEntry>

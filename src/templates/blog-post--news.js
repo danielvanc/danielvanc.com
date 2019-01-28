@@ -120,8 +120,9 @@ const BlogPostNews = ( {data} ) => {
             <NotesThumbnail sizes={post.frontmatter.image.childImageSharp.sizes} />
             <ThumbnailCaption>{post.frontmatter.imageCaption}</ThumbnailCaption>
             <ArticlePost>
-              <ArticleDescription>{post.frontmatter.description}</ArticleDescription>
-              <ArticleDescription>{post.frontmatter.description}</ArticleDescription>
+              <ArticleDescription>
+                <p dangerouslySetInnerHTML={{ __html: post.frontmatter.description }} />
+              </ArticleDescription>
               <HTMLContent content={ post.html } />
             </ArticlePost>
           </ArticleEntry>
