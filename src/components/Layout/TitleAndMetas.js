@@ -1,10 +1,12 @@
 import React from "react"
 import Helmet from "react-helmet"
-import FavIcon from '../../favicon.png'
+import FavIcon from '../../../favicon.png'
+require('typeface-muli')
 
 const HeadScripts = (props) => {
   const { metaTitle, metaDescription, metaKeywords } = props;
   return (
+    <>
     <Helmet
       title={metaTitle}
       meta={[
@@ -16,6 +18,7 @@ const HeadScripts = (props) => {
         { rel: 'icon', type: 'image/png', href: `${FavIcon}` }
       ]}
     >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"></link>
       {/* Global site tag (gtag.js) - Google Analytics  */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126709092-1"></script>
       <script>
@@ -27,9 +30,9 @@ const HeadScripts = (props) => {
           `}
       </script>
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
       <html lang="en" />
     </Helmet>
+    </>
   )
 }
 

@@ -1,40 +1,54 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:900,900i|Rubik:300,300i,400,400i');
 :root {
+  --color-black: #111111;
   --color-white: #ffffff;
-  --color-mint: #91c9b3;
+  --color-mint: #91c9b2;
+  --color-mint: #a8e063;
   --color-pink: #EA638C;
+  --color-grey: #2a2b2b;
+  --color-page-background: #111111;
+  --color-dark-grey: #1D1E1F;
+  --color-light-grey: #787878;
   --color-text-default: var(--color-white);
-  --font-family: 'Rubik', sans-serif;
-  --font-family-headings: 'Muli', sans-serif;
-  --font-weight: 400;
-  /* --font-size-xxx-display: 8vmin;
-  --font-size-xx-display: 4.11rem;
-  --font-size-x-display: 3.653rem;
-  --font-size-display: 3.247rem; */
-  /* --font-size-xxxx-large: 2.027rem;
-  --font-size-xxx-large: 1.802rem;*/
-  --font-size-xx-large: 5.063rem; 
+  --color-borders: #494949;
+  /* --font-family-headings: 'Martel', Georgia, serif;
+  --font-family-subheadings: 'Muli', sans-serif;
+  --font-family-text: 'Merriweather', Georgia, serif; */
+
+  --font-family-headings: 'Muli', Georgia, serif;
+  --font-family-subheadings: 'Muli', sans-serif;
+  --font-family-text: 'Muli', Georgia, serif;
+
+  --font-weight: 300;
+  --font-weight-headings: 900;
+  /* --font-size-xx-large: 5.063rem;  */
+  --font-size-xx-large: 3.813em; 
   --font-size-x-large: 3.375rem;
   --font-size-large: 2.25rem;
   --font-size-medium: 1.5rem;
   --font-size: 1rem;
-   --font-size-small: .667rem;
-  /*--font-size-x-small: .79rem;
-  --font-size-xx-small: .79rem; */
-  --lineheight-text: 1.45;
+  --font-size-small: .667rem;
+  --lineheight-text: 1.5;
+  /* --lineheight-text: 1.7; */
   --lineheight-heading: 1.2;
   --spacing: 0.2rem;
-
-  --mq-large-mobile:37.5em;
+  --font-size-nav: 1rem;
+  --font-size-nav-large: 1.125rem;
+  --link-hover: #9e9e9e;
+ 
+  /* --mq-large-mobile:37.5em;
   --mq-tablet:48em;
   --mq-desktop:64em;
-  --mq-large-desktop:93.750em;
+  --mq-large-desktop:93.750em; */
+
+  --grid-gap: 2vw;
+  --row-gap: 2vw;
+  --spacing-small: .5rem;
+
 }
 * {
   margin: 0;
   padding: 0;
 }
-
 
 
 
@@ -63,24 +77,31 @@
  */
 
 body {
-  background: #373737 url('../images/bodybg.png') top right no-repeat;
+  background: var(--color-page-background);
   color: var(--color-text-default);
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
+  font-weight: 300;
   font-size: 1rem;
   line-height: var(--lineheight-text);
 }
 
-a {
-  border-bottom: 1px solid var(--colour-mint);
-  color: var(--colour-mint);
+
+a:link,
+a:active,
+a:visited {
+  border-bottom: 1px solid var(--color-borders);
+  color: var(--color-mint);
   text-decoration: none;
 }
-a:hover {
-  border-bottom:1px solid transparent;
+/* a:visited {
+  border-bottom: 1px solid var(--color-borders);
   color: var(--color-pink);
+} */
+a:hover {
+  color: var(--link-hover);
+  border-bottom:1px solid transparent;
   transition: border 1s,  color 1s;
 }
-
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -92,14 +113,49 @@ a:hover {
  h4,
  h5,
  h6 {
+   /* font-family: var(--font-family-headings); */
    font-family: var(--font-family-headings);
+   font-weight: var(--font-weight-headings);
    line-height: var(--lineheight-heading);
-   margin: 1.414em 0 0.5em;
- }
-h1 {
-  font-size: var(--font-size-xx-large);
-  /* margin: 0.67em 0; */
+   margin: 0;
+  }
+  
+  h1 a {line-height: 2.8;}
+  h1 {
+    font-size: var(--font-size-medium);
+  }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.2rem; }
+  @media screen and (min-width: 48em) {
+    h1 {
+      max-width: 15em;
+    }
+  }
+  
+  @media screen and (min-width: 64em) {
+    h1 { font-size: var(--font-size-large); }
+  }
+  @media screen and (min-width: 75em) {
+    h1 { font-size: var(--font-size-x-large); }
+    h2 { font-size: var(--font-size-large); }
+    h3 { font-size: var(--font-size-medium); }
+    h4 { font-size: var(--font-size); }
+  }
+  @media screen and (min-width: 90em) { /* 1450px*/
+    h1 { font-size: var(--font-size-xx-large); }
+  }
+h2,
+h3 {
+  line-height: calc(var(--lineheight-heading) * 1.2);
 }
+  h3 {
+  font-size: var(--font-size-medium);
+}
+
+/* p, 
+li { letter-spacing: 0.025em; } */
+
 
 /* Grouping content
    ========================================================================== */
@@ -108,7 +164,7 @@ h1 {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
+/* img { border-radius: 10px; } */
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */

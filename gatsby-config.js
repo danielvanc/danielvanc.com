@@ -6,19 +6,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
+        ignore: [`**/\.*`],
       },
     },
     {
@@ -37,6 +31,7 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
+    'react-media',
     'gatsby-plugin-sharp', {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -45,6 +40,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590,
+              quality: 80
             }
           }
         ]

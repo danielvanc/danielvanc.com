@@ -1,76 +1,58 @@
-import React from "react"
-import { Link, graphql } from 'gatsby'
-import styled from "styled-components"
-import BlogThumb from "gatsby-image"
-import HeadScripts from "../components/headScripts"
-import Layout from "../components/layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import Mast from '../components/Specifics/Homepage/Mast'
+import TitleAndMetas from '../components/Layout/TitleAndMetas'
+import LatestPost from '../components/Specifics/Homepage/LatestPost'
 
-const MastIntro = styled.div`
-  grid-area: intro;
-`
-const MastText = styled.div`
-  grid-area: intro-text;
-`
-const MastStandFirst = styled.div`
-  grid-area: standfirst;
-`
-const MastTextFinish = styled.div`
-  grid-area: intro-text-finish;
-`
-const MastImage = styled.div`
-  grid-area: graphics;
-`
-const BlogIntro = styled.div`
-  grid-area: blog-intro;
-`
-const BlogDescription = styled.div`
-  grid-area: blog-text;
-`
-const BlogImage = styled.div`
-  grid-area: blog-img;
-`
-
-export default ({ data }) => {
+const IndexPage = ( { data }) => {
   const { edges: posts } = data.intro
-  let pageMeta = {};
-
+  const page = 'home';
+  let pageData = {};
+  
   posts.forEach(function ({ node: post }) {
-    Object.assign(pageMeta, { "metaTitle": post.frontmatter.metaTitle });
-    Object.assign(pageMeta, { "metaKeywords": post.frontmatter.metaKeywords });
-    Object.assign(pageMeta, { "metaDescription": post.frontmatter.metaDescription });
-    Object.assign(pageMeta, { "pageTitle": post.frontmatter.title });
-    Object.assign(pageMeta, { "pageSubTitle": post.frontmatter.subtitle });
-    Object.assign(pageMeta, { "pageDescription": post.html });
+    Object.assign(pageData, { 'metaTitle': post.frontmatter.metaTitle });
+    Object.assign(pageData, { 'metaKeywords': post.frontmatter.metaKeywords });
+    Object.assign(pageData, { 'metaDescription': post.frontmatter.metaDescription });
+    Object.assign(pageData, { 'pageTitle': post.frontmatter.title });
+    Object.assign(pageData, { 'pageSubTitle': post.frontmatter.subtitle });
+    Object.assign(pageData, { 'pageFollowUp': post.frontmatter.followup });
+    Object.assign(pageData, { 'pageDescription': post.html });
   });
 
   const { edges: notes } = data.latestPost
 
   return (
     <>
-      <HeadScripts {...pageMeta} />
-      <Layout>
-        <MastIntro>
-          <h1>{pageMeta.pageTitle}</h1>
-        </MastIntro>
-        <MastText dangerouslySetInnerHTML={{ __html: pageMeta.pageDescription }} />
-        <MastImage>Mast image</MastImage>
-        <MastStandFirst>{pageMeta.pageSubTitle}</MastStandFirst>
-        <MastTextFinish>Welcome to my website! I’m a consumer focused, business minded, digital creative,  with 2 decades of experience (15 years professionally) </MastTextFinish>
-        <BlogIntro>Latest on the blog</BlogIntro>
-        {notes.map(({ node: note }) => (
-          <React.Fragment key={note.id}>
-            <BlogDescription>
-              <h2> <Link to={note.fields.slug}>{note.frontmatter.title}</Link></h2>
-              <p>{note.frontmatter.description}</p>
-            </BlogDescription>
-            <BlogImage><BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} /> </BlogImage>
-            {/* </div> */}
-          </React.Fragment>
-        ))}
-      </Layout>
-    </>
-  )
+      <TitleAndMetas 
+        metaTitle={pageData.metaTitle}
+        metaDescription={pageData.metaDescription}
+        metaKeywords={pageData.metaKeywords}
+      />
+      <Layout pageLayout={page}>        
+        <Mast 
+          pageTitle={pageData.pageTitle} 
+          pageSubTitle={pageData.pageSubTitle} 
+          pageDescription={pageData.pageDescription}  
+          pageFollowUp={pageData.pageFollowUp}
+        />
+        <LatestPost notes={notes}  />
+      </Layout>     
+    </>     
+  )  
 }
+
+IndexPage.propTypes = {
+  page: PropTypes.string,
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+}
+
+export default IndexPage
 
 export const query = graphql`
   query {
@@ -88,6 +70,7 @@ export const query = graphql`
             title
             templateKey
             subtitle
+            followup
             metaTitle
             metaDescription
             metaKeywords
@@ -98,8 +81,9 @@ export const query = graphql`
 
     latestPost:allMarkdownRemark(
       limit: 1
+      sort: {fields:[frontmatter___date], order: DESC },
       filter: {
-        frontmatter: { page_type: { eq: "notes" } }
+        frontmatter: { contentType: { eq: "notes" } }
       }
     ) {
       totalCount
