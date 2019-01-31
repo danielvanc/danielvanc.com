@@ -227,7 +227,7 @@ const Footer = () => (
           <li>
             <a href="https://dvanc.co/cp">
             <span className="fab fa-codepen"></span>
-            <span className="text">Fork my CodePens</span>
+            <span className="text">Fave my Pens</span>
             </a>
           </li>
           <li>

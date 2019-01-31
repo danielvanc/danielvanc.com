@@ -66,8 +66,8 @@ const LogPage = ({data}, props) => {
       />
       <Layout pageLayout={page}>
         <SubMast
-          title="Log"
-          description="Documenting New features and amends over time."
+          title="What's new?"
+          description="Documenting new features, enhancements and bug fixes."
         />
 
         <PageContainer>

@@ -7,32 +7,43 @@ image: "../../images/now2.jpg"
 ---
 
 ## Where am I?
- - I'm on the Isle of Wight and will be remaining so for the whole of January, unless plans change, which If so, I'll update here.
+ - Unless plans change, I should be remaining on the Isle of Wight for the whole of February.
 
-## Current focus
-- Publish a 'Uses' page which will detail the tools I use for all my design and development work 
-- Publishing a 'Colophon' page to give a good description of the tech that's gone into the site and any worthy crediting
-- Improving accessibility across the site (on going)
-- Planning for our trip to Australia and Thailand at end of March, 2019
+## Work
+- Creating a 'Uses' page.
+- Creating a 'Colophon' page,
+- Adding enhancements across the site (for the next few months)
+- Working on branding for social media
+- Working on branding for Band website
+- Bugfixes (on going)
 - New blog post (on going)
-- Adding animations across the site (for the next few months)
-- Studying Advanced React, GraphQL and Apollo using <a href="https://advancedreact.com/">Wes Bos’s new course</a>
+- Improving accessibility across the site (on going)
+
+## Studying
+- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will also be spending some time going through the <a href="https://frontendmasters.com/learn/node-js/">NodeJS Core Course Work</a> and getting to grips with one of <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> latest courses: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a>.
+- I have a daily regime of studying Music theory for around 20-30mins a day.  Doesn't always happen but so far am sticking to it fairly well AND it's sinking in.
+
+
+## Life
+- Planning for our trip to Australia and Thailand at end of March, 2019
 - Trying to improve on my running time and distance
 - Get in better shape for the holiday.
 
-## Music I’m loving
+
+## Music I’m enjoying
 - <a href="https://open.spotify.com/album/5eMwZy5R5qZB3v3lBumnFZ?si=ymXECYNURimMEnsiC6hUqQ">Wombats - Glitterbug</a>
 - <a href="https://open.spotify.com/album/7avB9h2BU0gQGBr8bIR9EO?si=Ys59Zuc0RM-mlLLIKDmgzA">Tatono - Wanderlust</a>
-- <a href="https://open.spotify.com/album/1znCfApDa8RWLIRIjtbHk9?si=si7tAhPWSwi2VtiQ0nxAVg">Nightwish - Showtime, Storytime</a>
+- <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX3Ogo9pFvBkY?si=OIRST8ZGRJmWFsmEyJUfyg">Ambient Relaxation</a> features many great focusing sounds for working too.
 
-## TV Show’s I’m loving
+## TV Show’s I’m enjoying
 - Sons of Anarchy (Netflix)
 - Black Mirror (Netflix)
 - Ozark (Netflix)
 - Game of Thrones
 
-## Films I’ve recently loved
-- Christmas Chronicles 
+## Films recently liked
+- Christmas Chronicles
+- Bandersnatch (Netflix)
 
 ## Reading
 - Currently: Harry Potter and the Philosophers stone

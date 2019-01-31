@@ -51,11 +51,11 @@ const NotesIndexPage = ( {data}) => {
     <>
       <TitleAndMetas 
           metaTitle="Daniel Van Cuylenburg's Notes"
-          metaDescription="Notes about Site news, Life, Web and Tech from Web Designer and Front-end Developer, Daniel Van Cuylenburg"
+          metaDescription="Site, Life, Web and Tech updates from Web Designer and Front-end Developer, Daniel Van Cuylenburg"
           metaKeywords="Notes, Blog, Blogging, Tech, Web, Life, Writing, News, Posts"
       />
       <Layout pageLayout={page}>
-        <SubMast title="Notes" description="Updates include: site news,  my life, the Web and Tech" />
+        <SubMast title="Notes" description="The Web, Technology, Life and Site related updates." />
         <LatestBlock note={notesLatest} />
         <PreviousPosts>
           <AllCategories tags={getTags} />

@@ -13,12 +13,14 @@ const HeadScripts = (props) => {
         { name: `description`, content: metaDescription },
         { name: `keywords`, content: metaKeywords },
       ]}
-      link={[
+    >
+      {/* link={[
         { rel: 'shortcut icon', type: 'image/png', href: `${FavIcon}` },
         { rel: 'icon', type: 'image/png', href: `${FavIcon}` }
-      ]}
-    >
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"></link>
+      ]} */}
+    <link async defer rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"></link>
+      <link rel="icon" href={FavIcon} type="image/png" />
+      <link rel="shortcut icon" href={FavIcon} type="image/png" />
       {/* Global site tag (gtag.js) - Google Analytics  */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126709092-1"></script>
       <script>
@@ -29,8 +31,6 @@ const HeadScripts = (props) => {
             gtag('config', 'UA-126709092-1');
           `}
       </script>
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      <html lang="en" />
     </Helmet>
     </>
   )

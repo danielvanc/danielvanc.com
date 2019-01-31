@@ -22,7 +22,6 @@
     "gatsby-transformer-remark": "^2.1.17",
     "gatsby-transformer-sharp": "^2.1.9",
     "github-buttons": "git+https://github.com/ntkme/github-buttons.git",
-    "netlify-cms": "^2.3.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
