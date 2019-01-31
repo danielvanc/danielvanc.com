@@ -1,46 +1,112 @@
-import React from "react"
-import styled from 'styled-components'
-import Layout from '../components/layout'
+import React from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import Mast from '../components/Specifics/Homepage/Mast'
+import TitleAndMetas from '../components/Layout/TitleAndMetas'
+import LatestPost from '../components/Specifics/Homepage/LatestPost'
 
-const Title = styled.h1 `
-  font-size: 38px;
-  margin: 0 0 8px 0;
-  @media screen and (min-width: 480px) {
-    font-size: 64px;
-    margin: 0 0 20px 0
+const IndexPage = ( { data }) => {
+  const { edges: posts } = data.intro
+  const page = 'home';
+  let pageData = {};
+  
+  posts.forEach(function ({ node: post }) {
+    Object.assign(pageData, { 'metaTitle': post.frontmatter.metaTitle });
+    Object.assign(pageData, { 'metaKeywords': post.frontmatter.metaKeywords });
+    Object.assign(pageData, { 'metaDescription': post.frontmatter.metaDescription });
+    Object.assign(pageData, { 'pageTitle': post.frontmatter.title });
+    Object.assign(pageData, { 'pageSubTitle': post.frontmatter.subtitle });
+    Object.assign(pageData, { 'pageFollowUp': post.frontmatter.followup });
+    Object.assign(pageData, { 'pageDescription': post.html });
+  });
+
+  const { edges: notes } = data.latestPost
+
+  return (
+    <>
+      <TitleAndMetas 
+        metaTitle={pageData.metaTitle}
+        metaDescription={pageData.metaDescription}
+        metaKeywords={pageData.metaKeywords}
+      />
+      <Layout pageLayout={page}>        
+        <Mast 
+          pageTitle={pageData.pageTitle} 
+          pageSubTitle={pageData.pageSubTitle} 
+          pageDescription={pageData.pageDescription}  
+          pageFollowUp={pageData.pageFollowUp}
+        />
+        <LatestPost notes={notes}  />
+      </Layout>     
+    </>     
+  )  
+}
+
+IndexPage.propTypes = {
+  page: PropTypes.string,
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+}
+
+export default IndexPage
+
+export const query = graphql`
+  query {
+    intro:allMarkdownRemark(
+      filter: {
+        frontmatter: { templateKey: { eq: "index" } }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            templateKey
+            subtitle
+            followup
+            metaTitle
+            metaDescription
+            metaKeywords
+          }
+        }
+      }
+    }
+
+    latestPost:allMarkdownRemark(
+      limit: 1
+      sort: {fields:[frontmatter___date], order: DESC },
+      filter: {
+        frontmatter: { contentType: { eq: "notes" } }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          html
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            image {
+              childImageSharp{
+                  sizes(maxWidth: 630) {
+                      ...GatsbyImageSharpSizes
+                  }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
-const Paragraph = styled.p `
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0 0 15px 0;
-  @media screen and (min-width: 480px) {
-    font-size: 19px;
-    line-height: 1.7;
-  }
-`
-const ParagraphItalic = styled.p `
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.4;
-`
-
-const IndexPage = () => (
-  <Layout>
-    <Title className="heading">Hello world!</Title>
-    <Paragraph>
-      I’m Daniel Van Cuylenburg - a consumer focused, business minded, digital creative,  with 2 decades of experience designing and building digital experiences for in-house large U.K corporations, agencies and freelancers. <br class="br" />During such time, I’ve had the pleasure to work with world wide recognised brands such as: <a href="https://www.virgin.com/" title="Virgin">Virgin</a>, <a href="https://www.google.co.uk/" title="Google">Google</a>, <a href="https://www.bt.com" title="BT">BT</a>, <a href="https://www.landrover.co.uk">Land Rover</a>, <a href="https://www.unicef.org.uk/" title="Unicef">Unicef</a> and <a href="https://www.eonenergy.com/">E-ON</a>.  
-    </Paragraph>
-    <Paragraph>
-      I currently work in the digital team of the <br class="br" /><a href="https://www.ellenmacarthurfoundation.org">Ellen MacArthur Foundation</a> as a Web Designer and <br class="br" /> Front-end Developer.
-    </Paragraph>
-    <Paragraph>
-      I’m currently re-developing my site, <br class="br" />but in the mean time, find me on <br class="br" /><a href="https://twitter.com/danielvanc" title="My Twitter account">Twitter</a>, <a href="https://github.com/danielvanc" title="My GitHub repository">Github</a> and <a href="https://codepen.io/danielvanc/" title="My profile on CodePen">CodePen</a>.
-    </Paragraph>
-    <ParagraphItalic>
-      Last updated: 17/10/2018
-    </ParagraphItalic>
-  </Layout>
-)
-
-export default IndexPage;

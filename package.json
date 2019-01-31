@@ -3,20 +3,32 @@
   "description": "Gatsby hello world starter",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.7.1",
-    "gatsby": "^2.0.0",
-    "gatsby-plugin-manifest": "^2.0.2",
-    "gatsby-plugin-offline": "^2.0.5",
-    "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-styled-components": "^3.0.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.0.72",
+    "gatsby-image": "^2.0.25",
+    "gatsby-plugin-manifest": "^2.0.12",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-netlify-cms": "^3.0.12",
+    "gatsby-plugin-offline": "^2.0.20",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-sharp": "^2.0.15",
+    "gatsby-plugin-styled-components": "^3.0.4",
+    "gatsby-remark-images": "^3.0.1",
+    "gatsby-source-filesystem": "^2.0.12",
+    "gatsby-transformer-remark": "^2.1.17",
+    "gatsby-transformer-sharp": "^2.1.9",
+    "github-buttons": "git+https://github.com/ntkme/github-buttons.git",
+    "netlify-cms": "^2.3.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.4.9"
+    "react-media": "^1.9.2",
+    "styled-components": "^4.1.3",
+    "typeface-muli": "0.0.71"
   }
 }
