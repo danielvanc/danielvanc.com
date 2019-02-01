@@ -1,52 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import TitleAndMetas from '../components/Layout/TitleAndMetas'
 import Layout from '../components/Layout'
 import SubMast from '../components/Shared/SubMast'
 import LatestBlock from '../components/Specifics/Notes/LatestBlock'
-import ListPosts from '../components/Shared/ListPostsSquareOffset'
-import AllCategories from '../components/Shared/ListCategories'
-
-const PreviousPosts = styled.section`
-  grid-column: 3 / 15;
-  grid-row: 4 / 5;
-
-  @media screen and (min-width: 48em) {
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    padding:6.250em 0;
-  }
-  @media screen and (min-width: 75em) {
-    padding:9.375em 0 6.250em 0;
-  }
-
-  .heading {
-    font-size: var(--font-size);
-    font-weight: 200;;
-    text-transform: uppercase;
-    position: relative;
-    padding-left: 1.5em;
-    &:after {
-      border: 0;
-      @media screen and (min-width: 48em) {
-        border-bottom:1px solid var(--color-borders);
-      }
-    }
-    @media screen and (min-width: 48em) {
-      font-weight: 800;
-      padding-left:0;
-    }
-  }
-`
+// import ListPosts from '../components/Shared/ListPostsSquareOffset'
+// import AllCategories from '../components/Shared/ListCategories'
+import PreviousPosts from '../components/Shared/PreviousPosts'
 
 const NotesIndexPage = ( {data}) => {
   const page = 'sub';
   const {edges: notesLatest } = data.latest
-  const {edges: notesPrevious } = data.previous || 0
+  const notesPrevious = data.allNotes
   const {group: getTags } = data.allTags
-  const { totalCount } = data.previous || 0
   return (
     <>
       <TitleAndMetas 
@@ -57,10 +25,10 @@ const NotesIndexPage = ( {data}) => {
       <Layout pageLayout={page}>
         <SubMast title="Notes" description="The Web, Technology, Life and Site related updates." />
         <LatestBlock note={notesLatest} />
-        <PreviousPosts>
-          <AllCategories tags={getTags} />
+        <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={false} />
+          {/* <AllCategories tags={getTags} />
           <ListPosts notes={notesPrevious} total={totalCount} />
-        </PreviousPosts>
+        </PreviousPosts> */}
       </Layout>
     </>
   )
@@ -107,8 +75,7 @@ export const query = graphql `
       }
     },
 
-    previous: allMarkdownRemark(
-      skip: 1,
+    allNotes: allMarkdownRemark(
       sort: { fields:[frontmatter___date], order: DESC },
       filter: { frontmatter: { contentType: { eq: "notes" } }})
     {

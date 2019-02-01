@@ -109,26 +109,29 @@ const NoPosts = styled.p`
 
 const ListPostsSquare = (props) => {
 
-  const foundPosts = () => (
-    <>
-      {props.notes.map( ({node: note }) => (
-        <Note key={note.id}>
-          <NoteImage>
-            <Media query="(min-width: 768px)">
-              <Link to={note.fields.slug} className="img-link">
-                <BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} />
-              </Link>
-            </Media>
-            <header>
-              <NoteHeading><Link to={note.fields.slug}>{note.frontmatter.title}</Link></NoteHeading>
-            </header>
-            <p>{note.frontmatter.date}</p>
-          </NoteImage>
-        </Note>
-      ))}
-    </>
-  )
-  
+  const foundPosts = () => {
+    let filteredArray = [...props.notes].splice(1, 1);
+    return (
+      <>
+        {filteredArray.map(({ node: note }) => (
+          <Note key={note.id}>
+            <NoteImage>
+              <Media query="(min-width: 768px)">
+                <Link to={note.fields.slug} className="img-link">
+                  <BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} />
+                </Link>
+              </Media>
+              <header>
+                <NoteHeading><Link to={note.fields.slug}>{note.frontmatter.title}</Link></NoteHeading>
+              </header>
+              <p>{note.frontmatter.date}</p>
+            </NoteImage>
+          </Note>
+        ))}
+      </>
+    )
+  }
+
   const noPosts = () => <NoPosts>No other posts have been made, yet.</NoPosts>
 
   return (
@@ -136,7 +139,7 @@ const ListPostsSquare = (props) => {
       <NotesLatest>
         <h3 className="heading">Previously</h3>
         <NotesLatestContainer>
-          {props.total > 2 ? foundPosts() : noPosts()}
+          {props.total >= 2 ? foundPosts() : noPosts()}
         </NotesLatestContainer>
       </NotesLatest>
     </>
