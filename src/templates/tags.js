@@ -1,71 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 import TitleAndMetas from '../components/Layout/TitleAndMetas'
 import Layout from "../components/Layout"
 import SubMast from "../components/Shared/SubMast"
 import LatestBlock from "../components/Specifics/Notes/LatestBlock"
-import AllCategories from "../components/Shared/ListCategories"
-import ListPosts from "../components/Shared/ListPostsSquareOffset"
+import PreviousPosts from '../components/Shared/PreviousPosts'
 
-const PreviousPosts = styled.section`
-  grid-column: 3 / 15;
-  grid-row: 4 / 5;
-
-  @media screen and (min-width: 48em) {
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    padding:6.250em 0;
-  }
-  @media screen and (min-width: 75em) {
-    padding:9.375em 0 6.250em 0;
-  }
-
-  .heading {
-    font-size: var(--font-size);
-    font-weight: 200;;
-    text-transform: uppercase;
-    position: relative;
-    padding-left: 1.5em;
-    &:after {
-      border: 0;
-      @media screen and (min-width: 48em) {
-        border-bottom:1px solid var(--color-borders);
-      }
-    }
-    @media screen and (min-width: 48em) {
-      font-weight: 800;
-      padding-left:0;
-    }
-  }
-`
 
 const Tags = ({ pageContext, data }) => {
   const page = "sub"
   const { tag } = pageContext
   const {group: getTags } = data.allTags
-  const { totalCount } = data.allPosts || 0
   const {edges: notesLatest } = data.latest || 0
-  const {edges: allPosts } = data.previous || 0
+  const notesPrevious = data.previous
 
   const pageTitle = tag
   let pageDescription = ""
 
   switch(tag) {
     case 'Life':
-      pageDescription =`${totalCount} update${ totalCount === 1 ? "" : "s"} about what's going on in my life. `
+      pageDescription =`What's going on in my world. `
       break
     case 'tech':
-      pageDescription =`${totalCount} update${ totalCount === 1 ? "" : "s"} about all things related to the world of Technology. `
+      pageDescription =`All notes related to the world of Technology. `
       break
       case 'web':
-      pageDescription =`${totalCount} update${ totalCount === 1 ? "" : "s"} about all things related to the world wide web. `
+      pageDescription =`All notes related to the world wide web. `
       break
       case 'News':
-      pageDescription =`${totalCount} news update${ totalCount === 1 ? "" : "s"}, usually about the site or myself personally `
+      pageDescription =`Updates about the site`
       break
       default:
-      pageDescription =`Found ${totalCount} update${ totalCount === 1 ? "" : "s"} for this tag`
+      pageDescription =`Posts found under this tag`
   }
 
   const pageMetaTitle = `All notes tagged under: ${tag}`
@@ -85,13 +51,7 @@ const Tags = ({ pageContext, data }) => {
           description={pageDescription}
         />
         <LatestBlock note={notesLatest} />
-        <PreviousPosts>
-          <AllCategories tags={getTags} />
-          <ListPosts 
-            notes={allPosts} 
-            total={totalCount >= 2 ? totalCount : 0 } 
-          />
-        </PreviousPosts>
+        <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={true} />
       </Layout>
     </>
   )
@@ -171,7 +131,6 @@ export const pageQuery = graphql`
     }
 
     previous: allMarkdownRemark(
-      skip:1
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { 
