@@ -5,7 +5,7 @@ module.exports = {
     title: 'Home of Daniel Van Cuylenburg - Guitarist | Web Designer | Front-end Developer'
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    // 'gatsby-plugin-netlify-cms',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-meta-redirect',
