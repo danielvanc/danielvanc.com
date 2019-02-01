@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   siteMetadata: {
     title: 'Home of Daniel Van Cuylenburg - Guitarist | Web Designer | Front-end Developer'
