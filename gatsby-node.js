@@ -2,6 +2,22 @@ const _ = require("lodash")
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-images/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
    if (node.internal.type === `MarkdownRemark`) {
      const fileNode = getNode(node.parent)
