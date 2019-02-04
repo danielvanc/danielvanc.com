@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 // import GitHubButton from 'react-github-button';s
-// import GitHubButton from '../../Shared/GitHubButtons';
+import GitHubButton from '../../Shared/GitHubButtons';
 
 
 const SiteFooter = styled.footer`
@@ -239,7 +239,7 @@ const Footer = () => (
         </ul>
       </Socials>
       <OpenSource>
-        {/* <ul>
+        <ul>
           <li>
             <GitHubButton title="Fork this repo" href="https://github.com/danielvanc/danielvanc.com" data-icon="octicon-star" data-size="large" data-text="Star" aria-label="Star danielvanc/danielvanc.com on GitHub">Star</GitHubButton>
           </li>
@@ -249,7 +249,7 @@ const Footer = () => (
           <li>
             <GitHubButton title="Report an Issue" href="https://github.com/danielvanc/danielvanc.com/issues" data-icon="octicon-issue-opened" data-size="large" data-text="Issue" aria-label="Issue danielvanc/danielvanc.com on GitHub">Issue</GitHubButton>
           </li>
-        </ul> */}
+        </ul>
       </OpenSource>
       <Updated>
         <p>Site last updated on: 1 / 02 / 2019</p>

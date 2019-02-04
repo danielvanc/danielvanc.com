@@ -3,12 +3,12 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html') {
+  if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
           {
-            test: /react-images/,
+            test: /github-buttons/,
             use: loaders.null(),
           },
         ],
