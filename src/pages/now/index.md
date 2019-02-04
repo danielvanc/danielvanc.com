@@ -7,27 +7,27 @@ image: "../../images/now2.jpg"
 ---
 
 ## Where am I?
- - Other than a possible weekend trip to London, I should be remaining on the Isle of Wight for the whole of February.
+ - Other than a possible weekend trip to London, I should be remaining on the Isle of Wight for the whole of February
 
 ## Work
-- Add a serverless CMS (Either Netlify, Wordpress or Contentful)
-- Create a 'Uses' page.
-- Create a 'Colophon' page,
-- Adding enhancements across the site (for the next few months)
+- Add a serverless CMS (Either Netlify CMS, Wordpress or Contentful)
+- Create a 'Uses' page
+- Create a 'Colophon' page
 - Working on branding for social media
 - Working on branding for Band website
+- Adding enhancements across the site (ongoing)
 - Bugfixes (on going)
 - New blog post (on going)
 - Improving accessibility across the site (on going)
 
 ## Studying
-- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will be getting to grips with one of <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> latest courses: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a>.
+- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will be getting to grips with <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> course: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a> over on FrontEndMasters.
 
 
 ## Life
-- Planning for our trip to Australia and Thailand at end of March, 2019
-- Trying to improve on my running time and distance
-- Get in better shape for the holiday.
+- Finalize planning for our trip to Australia and Thailand at end of March, 2019
+- Improve my running form
+- Get back into Red Dead Redemption 2
 
 
 ## Music I’m enjoying
@@ -44,6 +44,7 @@ image: "../../images/now2.jpg"
 ## Films recently liked
 - Christmas Chronicles
 - Bandersnatch (Netflix)
+- Inbetweeners 2
 
 ## Reading
 - Currently: Harry Potter and the Philosophers stone
@@ -57,4 +58,4 @@ image: "../../images/now2.jpg"
 
 
 —— 
-*Last updated  on 31st Jan, 2019*
+*Last updated  on 4th Feb, 2019*
