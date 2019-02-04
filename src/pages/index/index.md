@@ -1,7 +1,7 @@
 ---
 templateKey: index
 title: Personal website of U.K based Web Designer, Front-end Developer and Guitarist, Daniel Van Cuylenburg.
-subtitle: Rare hybrid visionaire with valuable experience in creating appealing and impactful, performant user experiences
+subtitle: A rare creative hybrid with valuable experience in providing appealing, impactful, performant user experiences
 followup: Hosted on GitHub and public, the site is completely <a href="https://dvanc.co/gh">open source</a> so feel free to <a href="https://github.com/danielvanc/danielvanc.com/fork">fork it, submit issues / suggestions</a>. A 'work in progress' personal project , I welcome all constructive feedback. <br />You can find me <a href="https://dvanc.co/tw">Tweeting</a> about Technology and the Web, Life &amp; website related updates, <a href="https://dvanc.co/inst">sharing the odd Photo</a> or two and experimenting with new things on <a href="https://dvanc.co/cp" title="my CodePens">CodePen</a>.
 date: 2019-01-31T19:00:10.000Z
 metaTitle: Personal website of Daniel Van Cuylenburg - Guitarist | Web Designer | Front-end Developer
