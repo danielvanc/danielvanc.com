@@ -81,10 +81,15 @@ const SiteNav = styled.ul`
   li {
     font-family: var(--font-family-subheadings);
     float: right;
+    margin-top: 7px;
     padding-left: 2em;
+    @media screen and (min-width: 37.500em) {
+      margin-top: 0;
+    }
     &:first-of-type {
       float: left;
       padding-left: 0;
+      margin-top: 0;
       @media screen and (min-width: 37.500em) {
         float:none;
       }

@@ -11,13 +11,13 @@ tags:
   - News
 ---
 
-It's time to put an end to all that and focus on putting more effort into the site and my overall personal branding. I couldn't be so keen and more excited to work towards my own projects, and so this re-design couldn't never have come at a better time. So with that in mind, keep track on [what i'm focusing on](/now "what i'm currently focusing on") for the current month. Which includes an overview of which new and existing features are being worked on. All new releases are documented on the [Log](/log "Log") page.
+It's time to put an end to all that and focus on putting more effort into the site and my overall personal branding. I couldn't be more keen and excited. So this re-design couldn't have come at a better time. With that in mind, keep track on [what i'm focusing on](/now "what i'm currently focusing on") for the current month. Which includes an overview of new and existing features due to be worked on. All new releases are documented on the [Log](/log "Log") page.
 
 ### In other related news:
 
 In mid 2018, I spent a considerable amount of time reviewing my current tech stack, for front-end development.  After careful consideration and thorough research, I made the conscious decision to head down the [JAMStack](https://jamstack.org/ "JAMStack") route. My tooling of choice includes: [ReactJS](https://reactjs.org/ "ReactJS"), [GatsbyJS](https://gatsbyjs.org/ "GatsbyJS"), [GraphQL](https://graphql.org/ "GraphQL") and more. Expect a write up on this later. 
 
-Additionally, I’m happy to announce that danielvanc.com is now completely **static**! Thanks to [GatsbyJS](https://gatsbyjs.org/ "GatsbyJS") and automatic deployment and hosting by [Netlify](https://netlify.com/ "Netlify") via the sites [GitHub repo](https://github.com/danielvanc/danielvanc.com "GitHub repo")!
+Additionally, I’m happy to announce that danielvanc.com is now completely **static**! Thanks to [GatsbyJS](https://gatsbyjs.org/ "GatsbyJS") and automatic deployment and hosting by [Netlify](https://netlify.com/ "Netlify")!
 
 I'm really looking forward to seeing where things go! 
 
