@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const MastFollowUp = styled.div`
-  padding: 0 0.5em 1em 0.5em;
+  padding: 0 1em 1em 1.5em;
   @media screen and (min-width: 48em) {
     grid-column: 2 / 4;
     column-count: 2;
