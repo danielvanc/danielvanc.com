@@ -10,6 +10,6 @@ metaKeywords: web designer, designer, front-end developer, react developer, gats
 ---
 Hey there and welcome! I’m a consumer focused, business minded, digital creative, with 2 decades of experience (15+ years professionally) designing and building online solutions for in-house U.K companies, agencies and freelancers. During such time, I’ve also had the pleasure to work along side brands such as: Virgin, Google, BT, Land Rover, Unicef and E-ON.
 
-I currently only take on front-end web development. This includes: HTML, CSS/LESS/SASS, JavaScript, GatsbyJS, ReactJS and more. Further details of all my professional abilities will be available soon.
+I now only specialise in front-end web development. This includes: HTML, CSS/LESS/SASS, JavaScript, GatsbyJS, ReactJS and more. Further details of all my professional abilities will be available soon.
 
 I currently work for the <a href="http://www.ellenmacarthurfoundation.org" title="The Ellen MacArthur Foundation">Ellen MacArthur Foundation</a> as a Web Designer and Front-end Developer.
