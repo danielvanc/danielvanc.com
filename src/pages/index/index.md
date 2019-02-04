@@ -8,7 +8,7 @@ metaTitle: Personal website of Daniel Van Cuylenburg - Guitarist | Web Designer 
 metaDescription: Personal Website of Daniel Van Cuylenburg who is a Website Designer and Front-end Developer on the Isle of Wight, UK
 metaKeywords: web designer, designer, front-end developer, react developer, gatsbyjs, reactjs, javascript, personal site
 ---
-Hey there and welcome! I’m a consumer focused, business minded, digital creative, with 2 decades of experience (15+ years professionally) designing and building online solutions for in-house U.K companies, agencies and freelancers. During such time, I’ve also had the pleasure to work along side brands such as: Virgin, Google, BT, Land Rover, Unicef and E-ON.
+Test Hey there and welcome! I’m a consumer focused, business minded, digital creative, with 2 decades of experience (15+ years professionally) designing and building online solutions for in-house U.K companies, agencies and freelancers. During such time, I’ve also had the pleasure to work along side brands such as: Virgin, Google, BT, Land Rover, Unicef and E-ON.
 
 I now only specialise in front-end web development. This includes: HTML, CSS / LESS / SASS, JavaScript, GatsbyJS, ReactJS and more. Further details of all my professional abilities will be available soon.
 
