@@ -10,8 +10,9 @@ image: "../../images/now2.jpg"
  - Other than a possible weekend trip to London, I should be remaining on the Isle of Wight for the whole of February.
 
 ## Work
-- Creating a 'Uses' page.
-- Creating a 'Colophon' page,
+- Add a serverless CMS (Either Netlify, Wordpress or Contentful)
+- Create a 'Uses' page.
+- Create a 'Colophon' page,
 - Adding enhancements across the site (for the next few months)
 - Working on branding for social media
 - Working on branding for Band website
