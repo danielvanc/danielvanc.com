@@ -4,15 +4,14 @@ contentType: notes
 title: New year, new site and I'm ec'static'.
 date: 2019-01-31T19:00:10.000Z
 published: true
-description: Over the last 10 years or so, danielvanc.com has seen a re-design or 2. Infact, 7 or 8 is probably a more accurate figure. Something I'm ashamed of, because a common theme in which I've failed on with every re-launch, is committing myself to maintaining it. Though the previous iterations have done pretty well (if feedback is anything to go by), the effort and time I've initially put in to each one, has simply gone to waste. So I admit, I've struggled with my own site.
+description: Over the last 10 years or so, danielvanc.com has seen a re-design or 2. Infact, 7 or 8 is probably a more accurate figure. Something I'm ashamed of, and also because a common theme in which I've failed on with every re-launch, is committing myself to maintaining it. Though the previous iterations have done pretty well (if feedback is anything to go by), the effort and time I've initially put in to each one, has simply gone to waste. 
 image: "../../images/notes/1_1.jpg"
 imageCaption: ""
 tags:
   - News
 ---
 
-It's time to put an end to all that and focus on putting more effort into this and my overall personal branding. There has never come a better time to be so keen and excited to work towards my own projects.  
-So with that in mind, keep track on [what i'm focusing on](/now "what i'm currently focusing on") for the current month. Which includes an overview of which new and existing features are being worked on. All new releases are documented on the [Log](/log "Log") page.
+It's time to put an end to all that and focus on putting more effort into the site and my overall personal branding. I couldn't be so keen and more excited to work towards my own projects, and so this re-design couldn't never have come at a better time. So with that in mind, keep track on [what i'm focusing on](/now "what i'm currently focusing on") for the current month. Which includes an overview of which new and existing features are being worked on. All new releases are documented on the [Log](/log "Log") page.
 
 ### In other related news:
 

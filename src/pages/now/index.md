@@ -7,7 +7,7 @@ image: "../../images/now2.jpg"
 ---
 
 ## Where am I?
- - Unless plans change, I should be remaining on the Isle of Wight for the whole of February.
+ - Other than a possible weekend trip to London, I should be remaining on the Isle of Wight for the whole of February.
 
 ## Work
 - Creating a 'Uses' page.
@@ -20,8 +20,7 @@ image: "../../images/now2.jpg"
 - Improving accessibility across the site (on going)
 
 ## Studying
-- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will also be spending some time going through the <a href="https://frontendmasters.com/learn/node-js/">NodeJS Core Course Work</a> and getting to grips with one of <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> latest courses: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a>.
-- I have a daily regime of studying Music theory for around 20-30mins a day.  Doesn't always happen but so far am sticking to it fairly well AND it's sinking in.
+- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will be getting to grips with one of <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> latest courses: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a>.
 
 
 ## Life
