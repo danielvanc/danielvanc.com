@@ -9,10 +9,11 @@ import HTMLContent from '../components/Shared/Content'
 
 const PageMain = styled.main`
   font-size: 0.938em;
-  padding: 6em 0;
+  padding: 3em 0 6em 0;
   @media screen and (min-width: 48em) {
     font-size: 1em;
     grid-column: 2 / 16;
+    padding: 6em 0;
   }
   
   @media screen and (min-width: 90em) {
@@ -52,7 +53,7 @@ const ArticleFooter = styled.footer`
 const ArticleDescription = styled.div`
   grid-column: 2 / 8;
   p {
-    padding-right: 1.250em;
+    /* padding-right: 1.250em; */
     margin-bottom: 0.625em;
     @media screen and (min-width: 64em) {
       font-size: 1.267em;

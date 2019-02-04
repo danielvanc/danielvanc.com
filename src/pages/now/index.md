@@ -21,7 +21,7 @@ image: "../../images/now2.jpg"
 - Improving accessibility across the site (on going)
 
 ## Studying
-- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doublt, that'll keep me on my toes for the best part of the month. On top of that, will be getting to grips with <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> course: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a> over on FrontEndMasters.
+- I recently purchased <a href="https://advancedreact.com/">Wes Bos’s latest course</a> on Advanced React, GraphQL and Apollo, so no doubt, that'll keep me on my toes for the best part of the month. On top of that, will be getting to grips with <a href="https://twitter.com/kentcdodds">Kent C Dodd's</a> course: <a href="https://frontendmasters.com/courses/testing-javascript/">Testing JavaScript Applications</a> over on FrontEndMasters.
 
 
 ## Life
