@@ -116,19 +116,19 @@ const LatestBlock = (props) => {
           <React.Fragment key={n.id}>
             <NotesLatestHeading>
               <LatestIcon>Latest</LatestIcon>
-              <Link to={n.fields.slug}>{n.frontmatter.title}</Link>
+              <Link to={`/notes/${n.slug.current}`}>{n.title}</Link>
             </NotesLatestHeading>
             <NotesLatestContent>
-              <p dangerouslySetInnerHTML={{ __html: n.frontmatter.description }} />
+              <p>{ n.description }</p>
               <PostButton
-                link={n.fields.slug}
+                link={`/notes/${n.slug.current}`}
                 title="Read"
                 blog
               />
             </NotesLatestContent>
             <Media query="(min-width: 768px)">
               <BlogImage>
-                <BlogThumb sizes={n.frontmatter.image.childImageSharp.sizes} />
+                <BlogThumb fluid={n.mainImage.asset.fluid} />
               </BlogImage>
             </Media>
           </React.Fragment>

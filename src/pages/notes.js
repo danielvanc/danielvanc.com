@@ -14,7 +14,7 @@ const NotesIndexPage = ( {data}) => {
   const page = 'sub';
   const {edges: notesLatest } = data.latest
   const notesPrevious = data.allNotes
-  const {group: getTags } = data.allTags
+  // const {group: getTags } = data.allTags
   return (
     <>
       <TitleAndMetas 
@@ -23,9 +23,10 @@ const NotesIndexPage = ( {data}) => {
           metaKeywords="Notes, Blog, Blogging, Tech, Web, Life, Writing, News, Posts"
       />
       <Layout pageLayout={page}>
-        <SubMast title="Notes" description="The Web, Technology, Life and Site related updates." />
+        <SubMast title="Notes" textContent="The Web, Technology, Life and Site related updates." />
         <LatestBlock note={notesLatest} />
-        <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={false} />
+        {/* <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={false} /> */}
+        <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} isTags={false} />
           {/* <AllCategories tags={getTags} />
           <ListPosts notes={notesPrevious} total={totalCount} />
         </PreviousPosts> */}
@@ -44,73 +45,60 @@ NotesIndexPage.propTypes = {
 }
 export default NotesIndexPage
 
-export const query = graphql `
+export const query = graphql`
   query {
-    latest: allMarkdownRemark(
+    latest:allSanityNote(
       limit: 1
-      sort: {fields:[frontmatter___date], order: DESC },
-      filter: { frontmatter: { contentType: { eq: "notes" } }})
-    {
-      totalCount
-      edges{
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            description
-            image {
-              childImageSharp{
-                  sizes(maxWidth: 850) {
-                      ...GatsbyImageSharpSizes
-                  }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    },
-
-    allNotes: allMarkdownRemark(
-      sort: { fields:[frontmatter___date], order: DESC },
-      filter: { frontmatter: { contentType: { eq: "notes" } }})
-    {
-      totalCount
-      edges{
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "Do MMMM, YYYY")
-            description
-            image {
-              childImageSharp{
-                  sizes(maxWidth: 460) {
-                      ...GatsbyImageSharpSizes
-                  }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    }
-
-    allTags: allMarkdownRemark(
-      limit: 2000
-      filter: { frontmatter: { published: { ne: false } } }
+      sort: { fields: [publishedAt], order: DESC}
+      filter: { slug: { current: { ne: null } } }
     ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+      totalCount
+      edges {
+        node {
+          id
+          title
+          _createdAt(formatString: "DD.MM.YYYY")
+          description
+          slug {
+            _type
+            current
+          }
+          mainImage {
+          asset {
+            fluid( maxHeight: 450) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
     }
   }
-`
+
+  allNotes: allSanityNote(
+      sort: { fields: [publishedAt], order: DESC}
+      filter: { slug: { current: { ne: null } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          title
+          publishedAt(formatString: "Do MMMM, YYYY")
+          description
+          slug {
+            _type
+            current
+          }
+          mainImage {
+            asset {
+              fluid( maxHeight: 450) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
+
+}
+`;

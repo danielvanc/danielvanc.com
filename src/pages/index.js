@@ -7,19 +7,20 @@ import TitleAndMetas from '../components/Layout/TitleAndMetas'
 import LatestPost from '../components/Specifics/Homepage/LatestPost'
 
 const IndexPage = ( { data }) => {
-  const { edges: posts } = data.intro
+  // const { edges: posts } = data.intro
+  const post = data.intro
   const page = 'home';
   let pageData = {};
   
-  posts.forEach(function ({ node: post }) {
-    Object.assign(pageData, { 'metaTitle': post.frontmatter.metaTitle });
-    Object.assign(pageData, { 'metaKeywords': post.frontmatter.metaKeywords });
-    Object.assign(pageData, { 'metaDescription': post.frontmatter.metaDescription });
-    Object.assign(pageData, { 'pageTitle': post.frontmatter.title });
-    Object.assign(pageData, { 'pageSubTitle': post.frontmatter.subtitle });
-    Object.assign(pageData, { 'pageFollowUp': post.frontmatter.followup });
-    Object.assign(pageData, { 'pageDescription': post.html });
-  });
+  // posts.forEach(function ({ node: post }) {
+    Object.assign(pageData, { 'metaTitle': post.metaTitle });
+    Object.assign(pageData, { 'metaKeywords': post.metaKeywords });
+    Object.assign(pageData, { 'metaDescription': post.metaDescription });
+    Object.assign(pageData, { 'pageTitle': post.title });
+    Object.assign(pageData, { 'pageSubTitle': post._rawSubTitle });
+    Object.assign(pageData, { 'pageFollowUp': post._rawFollowUp });
+    Object.assign(pageData, { 'pageDescription': post._rawBody });
+  // });
 
   const { edges: notes } = data.latestPost
 
@@ -56,57 +57,42 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    intro:allMarkdownRemark(
-      filter: {
-        frontmatter: { templateKey: { eq: "index" } }
-      }
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            title
-            templateKey
-            subtitle
-            followup
-            metaTitle
-            metaDescription
-            metaKeywords
-          }
-        }
-      }
+    intro:sanityHome {
+      id
+      title
+      _rawSubTitle 
+      _rawBody 
+      _rawFollowUp 
+      metaTitle
+    	metaDescription
+      metaTags
     }
 
-    latestPost:allMarkdownRemark(
+    latestPost:allSanityNote(
       limit: 1
-      sort: {fields:[frontmatter___date], order: DESC },
-      filter: {
-        frontmatter: { contentType: { eq: "notes" } }
-      }
+      sort: { fields: [publishedAt], order: DESC}
+      filter: { slug: { current: { ne: null } } }
     ) {
       totalCount
       edges {
         node {
           id
-          html
-          fields {
-            slug
+          title
+          _createdAt(formatString: "DD.MM.YYYY")
+          description
+          slug {
+            _type
+            current
           }
-          frontmatter {
-            title
-            description
-            image {
-              childImageSharp{
-                  sizes(maxWidth: 630) {
-                      ...GatsbyImageSharpSizes
-                  }
-              }
+          mainImage {
+          asset {
+            fluid( maxWidth: 630) {
+              ...GatsbySanityImageFluid
             }
           }
         }
       }
+    }
     }
   }
 `

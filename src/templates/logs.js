@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-// import { Location } from '@reach/router'
 import Layout from "../components/Layout"
 import ListDates from "../components/Shared/ListLogMonths"
 import TitleAndMetas from '../components/Layout/TitleAndMetas'
@@ -58,31 +57,31 @@ const ContentTitle = styled.h2`
 
 export default ( { data }, props) => {
   const page = "sub"
-  const post = data.markdownRemark;
+  const post = data.sanityLog;
+  const { edges: allData } = data.allLogs
+
   return (
     <>
       <TitleAndMetas
-          metaTitle="Update Log for danielvanc.com"
-          metaDescription="All the latest updates and additions to danielvanc.com ordered by latest date"
-          metaKeywords="log, changelog, updates, additions, releases"
+        metaTitle={post.metaTitle}
+        metaDescription={post.metaDescription}
+        metaKeywords={post.metaKeywords}
       />
       <Layout pageLayout={page}>
         <SubMast
           title="Log"
-          description="New features, additions and ammends on the site."
+          textContent="New features, additions and ammends on the site."
         />
         <PageContainer>
             <ListLogDates>
-              <ListDates />
-              {/* <Location>
-                {({ location }) => (
-                  <ListDates location={location.pathname} />
-                )}
-              </Location> */}
+            {/* <Location> */}
+              {/* <ListDates data={allData} location={props => props.location} /> */}
+              <ListDates data={allData} location={props => props.location} />
+            {/* </Location> */}
             </ListLogDates>
             <PageMain>
-              <ContentTitle>{post.frontmatter.title}</ContentTitle>
-              <HTMLContent content={ post.html } />
+              <ContentTitle>{post.title}</ContentTitle>
+              <HTMLContent content={ post._rawBody } />
             </PageMain>
         </PageContainer>
       </Layout>
@@ -90,15 +89,31 @@ export default ( { data }, props) => {
   )
 }
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug }  }) {
-      html
-      fields {
-        slug
+  query($id: String!) {
+    sanityLog(id: { eq: $id } ) {
+      _rawBody
+      url {
+        current
       }
-      frontmatter {
-        title
+      title
+    },
+
+      allLogs:allSanityLog (
+        sort: { fields:[publishedAt], order:DESC }
+      ) {
+        edges {
+          node{
+            id
+            title
+            url {
+              current
+            }
+            template_key {
+              id
+            }
+            publishedAt(formatString: "MMM YYYY")
+          }
+        }
       }
-    }
   }
 `

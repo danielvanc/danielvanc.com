@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ListPosts from './ListPostsSquareOffset'
-import AllCategories from './ListCategories'
+// import AllCategories from './ListCategories'
 
 const Posts = styled.section`
   grid-column: 3 / 15;
@@ -37,7 +37,7 @@ const Posts = styled.section`
 
 const PreviousNotes = (props) => (
   <Posts>
-    <AllCategories tags={props.tags} />
+    {/* <AllCategories tags={props.tags} /> */}
     <ListPosts notes={props.notes} total={props.tot} isTags={props.isTags} />
   </Posts>
 )

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import BaseBlockContent from '@sanity/block-content-to-react'
+import { Content } from '../Shared/Content'
 
 const SubHeading = styled.div`
   grid-column: 3 / 15;
@@ -23,15 +25,47 @@ const SubHeading = styled.div`
   }
 `
 
+const serializers = {
+  types: {
+    block(props) {
+      switch (props.node.style) {
+        case 'h1':
+          return <h1>{props.children}</h1>
+
+        case 'h2':
+          return <h2>{props.children}</h2>
+
+        case 'h3':
+          return <h3>{props.children}</h3>
+
+        case 'h4':
+          return <h4>{props.children}</h4>
+
+        case 'text':
+          return <p>{props.children}</p>
+        case 'span':
+          return <p>{props.children}</p>
+
+        default:
+          return <p>{props.children}</p>
+      }
+    }
+  }
+}
+
 const SubMast = (props) => {
-  const { title, description } = props;
+  const { title, description, textContent } = props;
   return (
-    <>
-      <SubHeading>
-        <h1>{title}</h1>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
-      </SubHeading>
-    </>
+    <SubHeading>
+      <h1>{title}</h1>
+      {
+        
+        props.description ? (
+          <BaseBlockContent blocks={description} serializers={serializers} />
+        ) :
+        <Content content={textContent} />
+      }
+    </SubHeading>
   )
 }
 

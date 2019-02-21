@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import BaseBlockContent from '@sanity/block-content-to-react'
 
 const MastMainBody = styled.div`
   padding: 0 1em 1em 1.5em;
@@ -29,8 +30,24 @@ const MastMainBody = styled.div`
   }
 `
 
+const serializers = {
+  types: {
+    block(props) {
+      switch (props.node.style) {
+        case 'text':
+          return <p>{props.children}</p>
+
+        default:
+          return <p>{props.children}</p>
+      }
+    }
+  }
+}
+
 const MastBody = (props) => (
-    <MastMainBody dangerouslySetInnerHTML={{ __html: props.pageDescription }} />
+    <MastMainBody>
+      <BaseBlockContent blocks={props.pageDescription} serializers={serializers} />
+    </MastMainBody>
 )
 
 export default MastBody;

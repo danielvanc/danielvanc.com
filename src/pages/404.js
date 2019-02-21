@@ -30,12 +30,12 @@ const ErrorPage = () => {
   return (
     <>
       <TitleAndMetas
-        metaTitle="Daniel Van Cuylenburg's Notes"
-        metaDescription="Notes about Site news, Life, Web and Tech from Web Designer and Front-end Developer, Daniel Van Cuylenburg"
-        metaKeywords="Notes, Blog, Blogging, Tech, Web, Life, Writing, News, Posts"
+        metaTitle="404 | That page doesn't exist"
+        metaDescription="Looks like you've tried going somewhere that doesn't exist."
+        metaKeywords="404, Lost, Navigation"
       />
       <Layout pageLayout={page}>
-        <SubMast title="404" description="Not the page you were looking for?" />
+        <SubMast title="404" textContent="Not the page you were looking for?" />
 
         <PageContainer>
           <PageMain>

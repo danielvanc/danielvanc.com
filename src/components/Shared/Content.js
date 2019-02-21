@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import BaseBlockContent from '@sanity/block-content-to-react'
 
 const PostBody = styled.div`
   ul,
@@ -24,13 +25,47 @@ const PostBody = styled.div`
   h4,
   h5 { font-weight: 800 }
 `
+// const BlockContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
+
+
+const serializers = {
+  types: {
+    block(props) {
+      switch (props.node.style) {
+        case 'h1':
+          return <h1>{props.children}</h1>
+
+        case 'h2':
+          return <h2>{props.children}</h2>
+
+        case 'h3':
+          return <h3>{props.children}</h3>
+
+        case 'h4':
+          return <h4>{props.children}</h4>
+
+        case 'text':
+          return <p>{props.children}</p>
+
+        default:
+          return <p>{props.children}</p>
+      }
+    }
+  }
+}
+
+export const Content = ({ content, className }) => (
+  <p>{content}</p>
+)
 
 const HTMLContent = ({ content, className }) => (
-  <PostBody className={className} dangerouslySetInnerHTML={{ __html: content }} />
+  <PostBody className={className}>
+    <BaseBlockContent blocks={content} serializers={serializers } />
+  </PostBody>
 )
 
 HTMLContent.propTypes = {
-  content: PropTypes.node,
+  // content: PropTypes.node,
   className: PropTypes.string,
 }
 
