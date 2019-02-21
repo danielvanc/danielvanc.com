@@ -255,8 +255,8 @@ const Footer = () => (
         <p>Site last updated on: 21 / 02 / 2019</p>
       </Updated>
       <FootNotes>
-        <p>Designed and built using <a href="https://dvanc.co/skh">Sketch</a> and <a href="https://dvanc.co/gby">Gatsby</a>.</p>
-        <p><a href="https://dvanc.co/dvc">Open sourced</a>, hosted and deployed with <a href="https://dvanc.co/net">Netlify</a>.</p>
+        <p>Designed and built using <a href="https://dvanc.co/skh" title="Sketch">Sketch</a>, <a href="https://dvanc.co/gby" title="Gatsby">Gatsby</a> and <a href="http://dvanc.co/san" title="Sanity">Sanity</a>.</p>
+        <p>Open sourced on <a href="https://dvanc.co/dvc">GitHub</a>. Hosting with automatic<br /> deployment on <a href="https://dvanc.co/net">Netlify</a>.</p>
       </FootNotes>
       <Copyright>
         <p>&copy; 2009 - 2050 Daniel V.C.<br /> All rights reserved.</p>
