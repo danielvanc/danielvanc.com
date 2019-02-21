@@ -84,15 +84,21 @@ const ThumbnailCaption = styled.p`
 const NotesThumbnail = styled(BlogThumb)`
   grid-column: 1 / -1;
 `
-const BlogPostStandard = ( {data} )  =>{
+const BlogPostStandard = ({ data }) => {
   const page = 'notes'
-  const post = data.markdownRemark;
+  const post = data && data.post
+  
   return (
     <>
       <TitleAndMetas 
-        metaTitle={`${post.frontmatter.title} | Notes`}
-        metaDescription={post.frontmatter.description}
-        metaKeywords="Notes, Blog, Blogging, Tech, Web, Life, Writing, News, Posts"
+        metaTitle={`${post.metaTitle} | Notes`}
+        metaDescription={post.metaDescription}
+        metaKeywords={post.metaTags}
+      />
+      <TitleAndMetas
+        metaTitle={post.metaTitle}
+        metaDescription={post.metaDescription}
+        metaKeywords={post.metaTags}
       />
       <Layout pageLayout={page}>
 
@@ -100,23 +106,29 @@ const BlogPostStandard = ( {data} )  =>{
           <ArticleEntry>
 
             <header>
-              <ArticleHeading>{ post.frontmatter.title }</ArticleHeading>
+              <ArticleHeading>{post.title}</ArticleHeading>
             </header>
 
             <ArticleFooter>
-              {post.frontmatter.date}
+              {post.publishedAt}
             </ArticleFooter>
 
             <ArticleDescription>
-              <p dangerouslySetInnerHTML={{ __html: post.frontmatter.description }} />
+              <p>{post.description}</p>
             </ArticleDescription>
 
-            <NotesThumbnail sizes={post.frontmatter.image.childImageSharp.sizes} />
-            {post.frontmatter.imageCaption ? (
-              <ThumbnailCaption>{post.frontmatter.imageCaption}</ThumbnailCaption>
+            {
+              post.mainImage.asset ? (
+                <NotesThumbnail fluid={post.mainImage.asset.fluid} />
+              )
+              : ''
+            }
+            
+            {post.mainImageCaption ? (
+              <ThumbnailCaption>{post.mainImageCaption}</ThumbnailCaption>
             ) : ''}
-
-            <ArticleMainPost content={ post.html } />
+            
+            <ArticleMainPost content={post._rawContent} />
           </ArticleEntry>
         </PageMain>
 
@@ -134,21 +146,23 @@ export default BlogPostStandard
 
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        date(formatString: "Do MMMM, YYYY")
-        title
-        description
-        image {
-          childImageSharp{
-              sizes(maxWidth: 1100, maxHeight: 450) {
-                  ...GatsbyImageSharpSizes
-              }
+    post: sanityNote(id: {eq: $id }) {
+      id
+      title
+      metaTitle
+      metaDescription
+      metaTags
+      _rawContent
+      description
+      publishedAt(formatString: "Do MMMM, YYYY")
+      mainImage {
+        asset {
+          fluid(maxWidth: 250) {
+            ...GatsbySanityImageFluid
           }
         }
-        imageCaption
       }
+      mainImageCaption
     }
   }
 `

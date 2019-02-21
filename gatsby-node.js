@@ -31,12 +31,51 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
    }
 }
 
-// createRedirect({ fromPath: '/tags', toPath: '/notes', isPermanent: true });
+async function createNowPage(graphql, actions, reporter) {
+  const { createPage, createRedirect, createPageDependency } = actions
 
-exports.createPages = ({ graphql, actions}) => {
-  const { createPage } = actions
-  const { createRedirect } = actions
+  const result = await graphql(`
+    {
+      allSanityNow(filter: { url: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            url {
+              current
+            }
+            title
+            _createdAt(formatString: "DD.MM.YYYY")
+            template_key {
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
 
+  if (result.errors) throw result.errors
+
+  const nowPages = (result.data.allSanityNow || {}).edges || []
+  nowPages.forEach((edge, index) => {
+    const { id, url = {}, publishedAt } = edge.node
+    const path = `/${url.current}`
+
+    reporter.info(`Creating Now page: ${path}`)
+
+    const templateKey = String(edge.node.template_key.title)
+    createPage({
+      path,
+      component: require.resolve(`./src/templates/${templateKey}.js`),
+      context: { id },
+    })
+
+    createPageDependency({ path, nodeId: id })
+  })
+}
+
+async function createNotePages(graphql, actions, reporter) {
+  const { createPage, createRedirect, createPageDependency } = actions
   createRedirect({
     fromPath: `/notes/tags`,
     isPermanent: true,
@@ -50,79 +89,100 @@ exports.createPages = ({ graphql, actions}) => {
     toPath: `/notes`,
   })
 
-  return new Promise( (resolve, reject) => {
-    graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                templateKey
-                tags
-                contentType
-              }
+  const result = await graphql(`
+    {
+      allSanityNote(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+            title
+            tags {
+              title
+            }
+            _createdAt(formatString: "DD.MM.YYYY")
+            slug {
+              current
+            }
+            template_key {
+              title
+            }
+            content_type {
+              title
             }
           }
         }
       }
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
-        const nodeId = node.id
-        const templatePath = String(node.frontmatter.templateKey) === 'index' || String(node.frontmatter.templateKey) === 'log' ? `src/pages/${String(node.frontmatter.templateKey)}.js`  : `src/templates/${String(node.frontmatter.templateKey)}.js`
-        const tagTemplate = path.resolve("src/templates/tags.js")
-        const logTemplate = path.resolve("src/templates/logs.js")
+    }
+  `)
 
-        createPage({
-          path: node.fields.slug,
-          component:path.resolve(templatePath),
-          context: {
-            slug: node.fields.slug,
-            id: nodeId
-          }
-        })
-        
-        // Tag pages:
-        let tags = []
-        if (node.frontmatter.tags) {
-          tags = tags.concat(node.frontmatter.tags)
-        }
-        tags = _.uniq(tags)
-        
-        tags.forEach(tag => {
-          createPage({
-            path: `/notes/tags/${_.kebabCase(tag)}/`,
-            component: tagTemplate,
-            context: {
-              tag,
-            },
-          })
-        })
+  if (result.errors) throw result.errors
 
-        // Log pages:
-        let logs = []
-        if (node.frontmatter.templateKey === 'log') {
-          logs = logs.concat(node.fields.slug)
-        }
-        
-        logs.forEach(log => {
-          createPage({
-            path: `/log/${_.kebabCase(log)}/`,
-            component: logTemplate,
-            context: {
-              log,
-              slug: node.fields.slug
-            },
-          })
-        })
+  const notes = (result.data.allSanityNote || {}).edges || []
+  notes.forEach((edge, index) => {
+    const { id, slug = {}, publishedAt } = edge.node
+    const path = `/notes/${slug.current}`
 
-      })
-      // console.log(JSON.stringify(result, null, 41))
+    reporter.info(`Creating Notes page: ${path}`)
 
-      resolve()
+    const templateKey = String(edge.node.template_key.title)
+    createPage({
+      path,
+      component: require.resolve(`./src/templates/${templateKey}.js`),
+      context: { id },
     })
+
+    createPageDependency({ path, nodeId: id })
   })
+}
+
+async function createLogPages(graphql, actions, reporter) {
+  const { createPage, createRedirect, createPageDependency } = actions
+
+  const result = await graphql(`
+    {
+      allSanityLog(filter: { url: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            url {
+              current
+            }
+            title
+            publishedAt(formatString: "MMM YYYY")
+            template_key {
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const logs = (result.data.allSanityLog || {}).edges || []
+  logs.forEach((edge, index) => {
+    const { id, url = {}, publishedAt } = edge.node
+    const path = `/log/${url.current}`
+
+    reporter.info(`Creating Log page: ${path}`)
+
+    const templateKey = String(edge.node.template_key.title)
+    createPage({
+      path,
+      component: require.resolve(`./src/templates/${templateKey}.js`),
+      context: { id },
+    })
+
+    createPageDependency({ path, nodeId: id })
+  })
+}
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  await createNotePages(graphql, actions, reporter)
+  await createNowPage(graphql, actions, reporter)
+  await createLogPages(graphql, actions, reporter)
 }

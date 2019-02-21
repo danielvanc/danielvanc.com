@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import BaseBlockContent from '@sanity/block-content-to-react'
+// import HTMLContent, { Content } from '../../Shared/Content'
 
 const MastStandFirst = styled.div`
   padding: 0 1em 1em 1.5em;
@@ -33,9 +35,23 @@ const MastStandFirst = styled.div`
   }
 `
 
-const StandFirst = (props) => (
+const serializers = {
+  types: {
+    block(props) {
+      switch (props.node.style) {
+        case 'text':
+          return <p>"{props.children}"</p>
+
+        default:
+          return <p>"{props.children}"</p>
+      }
+    }
+  }
+}
+
+const StandFirst = ({pageSubTitle}) => (
     <MastStandFirst>
-      <p>"{props.pageSubTitle}"</p>
+      <BaseBlockContent blocks={pageSubTitle} serializers={serializers} />
     </MastStandFirst>
 )
 

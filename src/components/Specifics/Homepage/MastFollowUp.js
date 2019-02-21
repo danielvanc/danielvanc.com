@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import BaseBlockContent from '@sanity/block-content-to-react'
+
 
 const MastFollowUp = styled.div`
   padding: 0 1em 1em 1.5em;
@@ -48,8 +50,24 @@ const MastFollowUp = styled.div`
 
 `
 
+const serializers = {
+  types: {
+    block(props) {
+      switch (props.node.style) {
+        case 'text':
+          return <p>{props.children}</p>
+
+        default:
+          return <p>{props.children}</p>
+      }
+    }
+  }
+}
+
 const FollowUp = (props) => (
-    <MastFollowUp dangerouslySetInnerHTML={{__html: props.pageFollowUp }} />
+    <MastFollowUp>
+      <BaseBlockContent blocks={props.pageFollowUp} serializers={serializers} />
+    </MastFollowUp>
 )
 
 export default FollowUp;

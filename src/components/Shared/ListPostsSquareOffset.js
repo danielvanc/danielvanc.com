@@ -110,21 +110,22 @@ const NoPosts = styled.p`
 const ListPostsSquare = (props) => {
 
   const foundPosts = () => {
-    let filteredArray = [...props.notes].splice(1, 1);
+    
     return (
       <>
-        {filteredArray.map(({ node: note }) => (
+        {props.notes.slice(1).map( ({ node: note }, i) => (
+          
           <Note key={note.id}>
             <NoteImage>
               <Media query="(min-width: 768px)">
-                <Link to={note.fields.slug} className="img-link">
-                  <BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} />
+                <Link to={`/notes/${note.slug.current}`} className="img-link">
+                  <BlogThumb fluid={note.mainImage.asset.fluid} />
                 </Link>
               </Media>
               <header>
-                <NoteHeading><Link to={note.fields.slug}>{note.frontmatter.title}</Link></NoteHeading>
+                <NoteHeading><Link to={`/notes/${note.slug.current}`}>{note.title}</Link></NoteHeading>
               </header>
-              <p>{note.frontmatter.date}</p>
+              <p>{note.publishedAt}</p>
             </NoteImage>
           </Note>
         ))}

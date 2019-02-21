@@ -130,20 +130,25 @@ const LatestBlogPost = (props) => {
           <React.Fragment key={note.id}>
             <BlogContent>
               <BlogContentTitle>
-                <Link to={note.fields.slug}>{note.frontmatter.title}</Link>
+                <Link to={`/notes/${note.slug.current}`}>{note.title}</Link>
               </BlogContentTitle>
               <div className="wrap">
-                <p dangerouslySetInnerHTML={{ __html: note.frontmatter.description }} />
+                <p>{note.description}</p>
               </div>
               <PostButton
-                link={note.fields.slug}
+                link={`/notes/${note.slug.current}`}
                 title="Read"
                 blog
               />
             </BlogContent>
             <Media query="(min-width: 768px)">
               <BlogImage>
-                <BlogThumb sizes={note.frontmatter.image.childImageSharp.sizes} />
+                {
+                  note.mainImage.asset ? (
+                    <BlogThumb fluid={note.mainImage.asset.fluid} />
+                  )
+                    : ''
+                }
               </BlogImage>
             </Media>
           </React.Fragment>

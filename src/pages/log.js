@@ -57,28 +57,30 @@ const ContentTitle = styled.h2`
 
 const LogPage = ({data}, props) => {
   const page = "sub"
+  const {edges: allData } = data.allLogs
+  const {edges: latestData } = data.latest
   return (
     <>
       <TitleAndMetas
-        metaTitle="Update Log for danielvanc.com"
-        metaDescription="All the latest updates and additions to danielvanc.com ordered by latest date"
-        metaKeywords="log, changelog, updates, additions, releases"
+        metaTitle={latestData.metaTitle}
+        metaDescription={latestData.metaDescription}
+        metaKeywords={latestData.metaKeywords}
       />
       <Layout pageLayout={page}>
         <SubMast
           title="What's new?"
-          description="Documenting new features, enhancements and bug fixes."
+          textContent="Documenting new features, enhancements and bug fixes."
         />
 
         <PageContainer>
           <ListLogDates>
-            <ListDates latestPost="false" location={props.location} />
+            <ListDates data={allData} latestPost="false" />
           </ListLogDates>
           <PageMain>
-            {data.allMarkdownRemark.edges.map(({node}) => (
+            {latestData.map(({node}) => (
               <React.Fragment key={node.id}>
-                <ContentTitle>{node.frontmatter.title}</ContentTitle>
-                <HTMLContent content={ node.html } />
+                <ContentTitle>{node.title}</ContentTitle>
+                <HTMLContent content={ node._rawBody } />
               </React.Fragment>
             ))}
           </PageMain>
@@ -101,26 +103,42 @@ export default LogPage
 
 export const query = graphql `
   query {
-    allMarkdownRemark(
-      limit:1,
-      sort: { fields:[frontmatter___date], order: DESC },
-      filter: { frontmatter: { templateKey: { eq: "logs" } }})
-    {
-      totalCount
-      edges{
-        node {
+    latest:allSanityLog(
+      limit: 1
+      sort: { fields:[publishedAt], order:DESC }
+    ) {
+      edges {
+        node{
           id
-          html
-          frontmatter {
-            title
-            date(formatString: "DD, MMMM, YYYY")
+          title
+          template_key {
+            id
           }
-          fields {
-            slug
-          }
-          excerpt
+          publishedAt(formatString: "Do MMMM, YYYY")
+          description
+          _rawBody
+          metaTitle
+          metaDescription
+          metaTags
         }
       }
     }
-  }
+  allLogs:allSanityLog (
+      sort: { fields:[publishedAt], order:DESC }
+    ) {
+      edges {
+        node{
+          id
+          title
+          url {
+            current
+          }
+          template_key {
+            id
+          }
+          publishedAt(formatString: "MMM YYYY")
+        }
+      }
+    }
+  } 
 `

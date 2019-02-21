@@ -58,7 +58,7 @@ const BlogImage = styled.div`
 
 const NowPage = ({data}) => {
   const page = "sub"
-  const post = data.markdownRemark
+  const post = data.sanityNow
   return (
     <>
       <TitleAndMetas  
@@ -68,16 +68,20 @@ const NowPage = ({data}) => {
       />
       <Layout pageLayout={page}>
         <SubMast 
-          title={post.frontmatter.title} 
-          description={post.frontmatter.subtitle}
+          title={post.title} 
+          description={post._rawSubTitle}
         />
         <PageMain>
           <PageArticle>
-            <PageContent content={ post.html }/>
+            <PageContent content={ post._rawBody }/>
             <Media query="(min-width: 1024px)">
               <BlogImage>
-                <BlogThumb sizes={post.frontmatter.image.childImageSharp.sizes} />
-                {/* <img src="https://placeimg.com/755/2100/nature" alt=""/> */}
+                {
+                  post.mainImage ? (
+                    <BlogThumb fluid={post.mainImage.asset.fluid} />
+                  )
+                    : ''
+                }
               </BlogImage>
             </Media>
           </PageArticle>
@@ -95,24 +99,29 @@ NowPage.propTypes = {
 export default NowPage
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(
-      fields: { slug: { eq: $slug }  }
-    ) {
-      id
-      html
-      frontmatter {
+    query($id: String!) {
+      sanityNow(id: {eq: $id }) {
+        id
+        url {
+          _type
+          current
+        }
         title
-        templateKey
-        subtitle
-        image {
-          childImageSharp{
-              sizes(maxWidth: 950) {
-                  ...GatsbyImageSharpSizes
-              }
+        _rawSubTitle
+        metaTitle
+        metaDescription
+        metaTags
+        _rawBody
+        mainImage {
+          asset {
+            fluid(maxWidth: 950) {
+              ...GatsbySanityImageFluid
+            }
           }
         }
       }
-    }
+    
+
+
   }
 `
