@@ -19,10 +19,25 @@ const BlogButton = styled(ALink) `
   padding: 0.750em 2em;
   text-transform: uppercase;
 
-  &:hover {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+
+  &:hover,
+  &:focus,
+  &:active {
     border: 1px solid var(--color-borders)!important;
     color: #979797!important;
     transition: all 0.5s;
+
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
 `
 
