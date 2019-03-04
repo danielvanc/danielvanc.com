@@ -181,16 +181,18 @@ const SiteNav = styled.ul`
     &:hover,
     &:focus,
     &:active {
-      -webkit-animation-name: pg;
-      animation-name: pg;
-      -webkit-animation-duration: 0.6s;
-      animation-duration: 0.6s;
-      -webkit-animation-timing-function: linear;
-      animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      -webkit-animation-direction: alternate;
-      animation-direction: alternate;
+      @media (hover: hover) {
+        -webkit-animation-name: pg;
+        animation-name: pg;
+        -webkit-animation-duration: 0.6s;
+        animation-duration: 0.6s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+      }
     }
     &:before {
       background: transparent;
