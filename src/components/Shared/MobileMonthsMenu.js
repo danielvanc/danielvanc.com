@@ -3,7 +3,9 @@ import { Location, navigate } from '@reach/router';
 import styled from 'styled-components'
 
 const MobileList = styled.select`
-  -webkit-appearance: listbox;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
   @media screen and (min-width: 64em) {
     display: none;
   }
