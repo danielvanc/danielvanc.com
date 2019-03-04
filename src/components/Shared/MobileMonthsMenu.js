@@ -3,9 +3,6 @@ import { Location, navigate } from '@reach/router';
 import styled from 'styled-components'
 
 const MobileList = styled.select`
-  /* -webkit-appearance: menulist;
-  -moz-appearance: menulist;
-  appearance: menulist; */
   @media screen and (min-width: 64em) {
     display: none;
   }
@@ -31,8 +28,8 @@ class MobileMenu extends React.Component {
             id="select-one"
           >
             {this.props.data.map(({ node: log }) => (
-              <option key={log.id} value={log.url.current}>{log.publishedAt}</option>
-            ))}
+              <option key={log.id} value={`/log/${log.url.current}`}> { log.publishedAt }</option>
+          ))}
           </MobileList>
         )}
       </Location>
