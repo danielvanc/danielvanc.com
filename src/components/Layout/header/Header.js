@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import logo from '../../../images/logo.png'
+import logo from '../../../images/dvanc_logo.png'
 import '../general.css'
 // import '../fonts.css'
 
@@ -108,21 +108,94 @@ const SiteNav = styled.ul`
     color: var(--color-white);
   }
   a {
-    border-bottom: 0!important;
     color: var(--color-white);
+    margin: 0.313em 0.5em;
+    padding-bottom:0.3em;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+
+    
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 51%;
+      right: 51%;
+      bottom: 0;
+      background: #6dd5ed;
+      height: 4px;
+      -webkit-transition-property: left, right;
+      transition-property: left, right;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+
     &:hover {
+      border-bottom: 0!important;
       color: var(--color-mint);
     }
     &.active {
-      background: white;
-      color: #333!important;
-      padding: 0.313em 0.5em;
+      color: var(--color-mint);
+      
       &:hover {
-        color: #333;
+        outline: none;
       }
+    }
+    &.active:before,
+    &:hover:before, 
+    &:focus:before, 
+    &:active:before {
+      left: 0;
+      right: 0;
     }
   }
   a:hover { color: var(--color-mint)}
+
+  @-webkit-keyframes pg {
+    to {
+      -webkit-transform: scale(1.6);
+      transform: scale(1.6);
+    }
+  }
+  @keyframes pg {
+    to {
+      -webkit-transform: scale(1.6);
+      transform: scale(1.6);
+    }
+  }
+
+  li.logo a {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    &:hover,
+    &:focus,
+    &:active {
+      -webkit-animation-name: pg;
+      animation-name: pg;
+      -webkit-animation-duration: 0.6s;
+      animation-duration: 0.6s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+    }
+    &:before {
+      background: transparent;
+    }
+  }
 `
 
 const isPartiallyActive = ( {isPartiallyCurrent} ) => {
@@ -138,7 +211,7 @@ const Header = (props) => {
     <MainHeader>
       <nav>
         <SiteNav>
-          <li><Link to="/"><img src={logo} alt="Logo of danielvanc.com" height="40" width="40" title="Go to homepage" /></Link></li>
+          <li className="logo"><Link to="/"><img src={logo} alt="Logo of danielvanc.com" height="40" width="40" title="Go to homepage" /></Link></li>
           {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
           <li><Link to="/now" getProps={isPartiallyActive}{...props} title="Find out what I'm focusing on now">Now</Link></li>
           <li><Link to="/notes" getProps={isPartiallyActive}{...props} title="Find out what I've written lately">Notes</Link></li>
