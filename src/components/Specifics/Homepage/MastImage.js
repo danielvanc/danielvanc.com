@@ -103,6 +103,7 @@ const MastImage3 = styled(MastImageItem)`
   `
 const MastImage4 = styled(MastImageItem)`
   background-image: url(${props => props.url});
+  background-position: center top;
   grid-column: 2 / -1;
   grid-row: 1 / 2;
   @media screen and (min-width: 48em) {
@@ -179,15 +180,13 @@ export default () => (
       <MastImage>
         <div className="MastImageContainer">
           <MastImage1 url={data.M_1.childImageSharp.fluid.src} />
-          <MastImage2 url={data.M_2.childImageSharp.fluid.src} />
           <Media query="(min-width: 768px)">
+            <MastImage2 url={data.M_2.childImageSharp.fluid.src} /> 
             <MastImage3 url={data.M_3.childImageSharp.fluid.src} />
           </Media>
           <MastImage4 url={data.M_4.childImageSharp.fluid.src} />
           <Media query="(min-width: 768px)">
             <MastImage5 url={data.M_5.childImageSharp.fluid.src} />
-          </Media>
-          <Media query="(min-width: 768px)">
             <MastImage6 url={data.M_6.childImageSharp.fluid.src} />
           </Media>
         </div>
