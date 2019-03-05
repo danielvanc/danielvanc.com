@@ -30,7 +30,7 @@ const MastFollowUp = styled.div`
       border-top: 1px solid var(--color-borders);
       border-bottom: 1px solid var(--color-borders);
       margin-bottom: 1em;
-      padding: 1em;
+      padding: 1em 0;
       @media screen and (min-width: 48em) {
         border-top:0;
         border-bottom:0;
