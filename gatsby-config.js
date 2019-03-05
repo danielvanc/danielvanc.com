@@ -35,13 +35,13 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-plugin-offline',
-    // 'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        "ssr": true
-      }
-    },
+    'gatsby-plugin-styled-components',
+    // {
+    //   resolve: 'gatsby-plugin-styled-components',
+    //   options: {
+    //     "pure": true
+    //   }
+    // },
     'gatsby-transformer-sharp',
     'react-media',
     'gatsby-plugin-sharp', {

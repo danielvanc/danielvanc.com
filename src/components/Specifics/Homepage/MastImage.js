@@ -179,9 +179,7 @@ export default () => (
       <MastImage>
         <div className="MastImageContainer">
           <MastImage1 url={data.M_1.childImageSharp.fluid.src} />
-          <Media query="(min-width: 768px)">
-            <MastImage2 url={data.M_2.childImageSharp.fluid.src} />
-          </Media>
+          <MastImage2 url={data.M_2.childImageSharp.fluid.src} />
           <Media query="(min-width: 768px)">
             <MastImage3 url={data.M_3.childImageSharp.fluid.src} />
           </Media>
