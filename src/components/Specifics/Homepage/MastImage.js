@@ -103,7 +103,6 @@ const MastImage3 = styled(MastImageItem)`
   `
 const MastImage4 = styled(MastImageItem)`
   background-image: url(${props => props.url});
-  background-position: center top;
   grid-column: 2 / -1;
   grid-row: 1 / 2;
   @media screen and (min-width: 48em) {
