@@ -11,6 +11,10 @@ const NotesLatest = styled.div`
     font-weight: 200!important;
     letter-spacing: 0.2em;
     margin-bottom: 0.938em;
+    padding-top: 1.250em;
+    @media screen and (min-width: 48em) {
+      padding-top: 0;
+    }
     @media screen and (min-width: 64em) {
       margin-bottom: 0;
     }
