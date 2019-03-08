@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 // import GitHubButton from 'react-github-button';s
-import GitHubButton from '../../Shared/GitHubButtons';
+// import GitHubButton from '../../Shared/GitHubButtons';
+import GitHubButton from 'react-github-btn';
 
 
 const SiteFooter = styled.footer`
