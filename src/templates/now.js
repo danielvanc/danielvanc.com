@@ -70,6 +70,7 @@ const NowPage = ({data}) => {
         <SubMast 
           title={post.title} 
           description={post._rawSubTitle}
+          layout="standard"
         />
         <PageMain>
           <PageArticle>
@@ -99,29 +100,26 @@ NowPage.propTypes = {
 export default NowPage
 
 export const query = graphql`
-    query($id: String!) {
-      sanityNow(id: {eq: $id }) {
-        id
-        url {
-          _type
-          current
-        }
-        title
-        _rawSubTitle
-        metaTitle
-        metaDescription
-        metaTags
-        _rawBody
-        mainImage {
-          asset {
-            fluid(maxWidth: 950) {
-              ...GatsbySanityImageFluid
-            }
+  query($id: String!) {
+    sanityNow(id: {eq: $id }) {
+      id
+      url {
+        _type
+        current
+      }
+      title
+      _rawSubTitle
+      metaTitle
+      metaDescription
+      metaTags
+      _rawBody
+      mainImage {
+        asset {
+          fluid(maxWidth: 950) {
+            ...GatsbySanityImageFluid
           }
         }
       }
-    
-
-
+    }
   }
 `

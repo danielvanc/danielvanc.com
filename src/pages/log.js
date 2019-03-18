@@ -70,6 +70,7 @@ const LogPage = ({data}, props) => {
         <SubMast
           title="What's new?"
           textContent="Documenting new features, enhancements and bug fixes."
+          layout="standard"
         />
 
         <PageContainer>
