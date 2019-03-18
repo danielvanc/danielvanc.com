@@ -26,37 +26,46 @@ const SubHeading = styled.div`
     }
   }
   &.centered {
-    grid-column: 5 / 12;
+    grid-column: 5 / 14;
     grid-row: 1 / 2;
     padding: 0 1.5em;
     align-self: center;
-    max-width: 680px;
     margin: 0 auto;
-    @media screen and (min-width: 33.750em) { /* 540px */
+    @media screen and (min-width: 48em) { /* 540px */
       display: flex;
       justify-content: space-around;
+      max-width: 680px;
     }
+    /* @media screen and (min-width: 48em) {
+      grid-column: 5 / 13;
+    } */
     @media screen and (min-width: 75em) {
       grid-column: 6 / 13;
       padding: 1.875em 0;
     }
 
     h1 {
-      @media screen and (min-width: 33.750em) { /* 540px */
+      font-size: var(--font-size-large);
+      @media screen and (min-width: 48em) { /* 540px */
         font-size: var(--font-size-xx-large);
         max-width: 260px;
         line-height: 0.9;
         text-transform: uppercase;
         padding-right:0.25em;
-        width: 400px;
         text-align: right;
+        width: 400px;
       }
       @media screen and (min-width: 75em) {
         font-size: var(--font-size-xxx-large);
       }
     }
     p {
-      font-size: 0.75em;
+      color: var(--color-light-grey);
+      font-size: 1em;
+      @media screen and (min-width: 48em) { 
+        color: #fff;
+        font-size: 0.75em;
+      }
       @media screen and (min-width: 75em) { 
         max-width: 400px;
         font-size: var(--font-size);
