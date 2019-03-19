@@ -16,7 +16,7 @@ const PageMain = styled.main`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2;
-    padding-bottom: 15em;
+    /* padding-bottom: 15em; */
   }
   @media screen and (min-width: 93em) {
     grid-column: 3 / 15;

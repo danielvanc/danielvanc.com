@@ -33,7 +33,7 @@ const MainHeader = styled.header`
   .home & {
     @media screen and (min-width: 64em) { grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr); }
   }
-
+  .center-squared &,
   .sub &,
   .notes & {
     @media screen and (min-width: 48em) {
