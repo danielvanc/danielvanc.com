@@ -13,6 +13,7 @@ import contentType from './contentTypes'
 import homePage from './HomePage'
 import notes from './note'
 import now from './now'
+import uses from './Uses'
 import log from './Log'
 import author from './author'
 
@@ -27,6 +28,7 @@ export default createSchema({
     // in the studio.
     homePage,
     now,
+    uses,
     notes,
     log,
     author,

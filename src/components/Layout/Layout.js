@@ -8,11 +8,17 @@ import Footer from './footer'
 const PageContainer = styled.div`
   background: var(--color-grey) no-repeat;
   background-size: cover;
+
+  .contentContainer {
+    @media screen and (min-width: 48em) {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+    }
+  }
+
   &.home .contentContainer {
     @media screen and (min-width: 48em) {
-      display: grid;
       grid-template-columns: repeat(4, 1fr);
-      /* grid-column-gap: 25px; */
     }
     @media screen and (min-width: 64em) {
       grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr);
@@ -25,8 +31,6 @@ const PageContainer = styled.div`
   }
   &.sub .contentContainer {
     @media screen and (min-width: 48em) {
-      display: grid;
-      grid-template-columns: repeat(16, 1fr);
       grid-template-rows: minmax(100px, 200px);
       grid-column-gap: 25px;
     }
@@ -37,10 +41,15 @@ const PageContainer = styled.div`
   &.notes .contentContainer {
     padding: 0 1.5em;
     @media screen and (min-width: 48em) {
-      display: grid;
-      grid-template-columns: repeat(16, 1fr);
       grid-column-gap: 25px;
       padding: 0;
+    }
+  }
+  &.center-squared .contentContainer {
+    /* max-width: 85%; */
+    @media screen and (min-width: 48em) {
+      margin: 0 auto;
+      max-width: 1800px;
     }
   }
 `

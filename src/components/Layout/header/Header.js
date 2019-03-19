@@ -217,7 +217,7 @@ const Header = (props) => {
           {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
           <li><Link to="/now" getProps={isPartiallyActive}{...props} title="Find out what I'm focusing on now">Now</Link></li>
           <li><Link to="/notes" getProps={isPartiallyActive}{...props} title="Find out what I've written lately">Notes</Link></li>
-          <li><Link to="/log" getProps={isPartiallyActive}{...props} title="Checkout what has been updated on the site">Log</Link></li>
+          <li><Link to="/uses" getProps={isPartiallyActive}{...props} title="Check out the gear I use on a daily basis">Uses</Link></li>
         </SiteNav>
       </nav>
     </MainHeader>

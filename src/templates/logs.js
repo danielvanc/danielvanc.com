@@ -71,6 +71,7 @@ export default ( { data }, props) => {
         <SubMast
           title="Log"
           textContent="New features, additions and ammends on the site."
+          layout="standard"
         />
         <PageContainer>
             <ListLogDates>
