@@ -252,7 +252,7 @@ const Footer = () => (
         </ul>
       </OpenSource>
       <Updated>
-        <p>Site last updated on: 5 / 03 / 2019</p>
+        <p>Site last updated on: 19 / 03 / 2019</p>
       </Updated>
       <FootNotes>
         <p>Designed and built using <a href="https://dvanc.co/skh" title="Sketch">Sketch</a>, <a href="https://dvanc.co/gby" title="Gatsby">Gatsby</a> and <a href="http://dvanc.co/san" title="Sanity">Sanity</a>.</p>
