@@ -28,7 +28,7 @@ const SubHeading = styled.div`
   &.centered {
     grid-column: 5 / 14;
     grid-row: 1 / 2;
-    padding: 0 1.5em;
+    padding: 2.8em 1.5em 0 1.5em;
     align-self: center;
     margin: 0 auto;
     @media screen and (min-width: 48em) { /* 540px */
