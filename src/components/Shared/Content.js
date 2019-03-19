@@ -2,6 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import BaseBlockContent from '@sanity/block-content-to-react'
+import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "@sanity/client";
+
+const client = sanityClient({
+  projectId: "dlox5499", // you can find this in sanity.json
+  dataset: "production", // or the name you chose in step 1
+  useCdn: true // `false` if you want to ensure fresh data
+});
+
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
+}
 
 const PostBody = styled.div`
   ul,
@@ -50,7 +62,10 @@ const serializers = {
         default:
           return <p>{props.children}</p>
       }
-    }
+    },
+    image: ({node: { asset }}) => (
+      <img src={ urlFor(asset) } alt=""/>
+    )
   }
 }
 

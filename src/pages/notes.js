@@ -23,7 +23,11 @@ const NotesIndexPage = ( {data}) => {
           metaKeywords="Notes, Blog, Blogging, Tech, Web, Life, Writing, News, Posts"
       />
       <Layout pageLayout={page}>
-        <SubMast title="Notes" textContent="The Web, Technology, Life and Site related updates." />
+        <SubMast 
+          title="Notes" 
+          textContent="The Web, Technology, Life and Site related updates." 
+          layout="standard"
+        />
         <LatestBlock note={notesLatest} />
         {/* <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={false} /> */}
         <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} isTags={false} />

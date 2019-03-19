@@ -201,7 +201,6 @@ const Updated = styled.div`
     grid-column: 11 / 15;
   }
 `
-
 const Footer = () => (
   <>
     <SiteFooter>
