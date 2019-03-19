@@ -41,7 +41,7 @@ const SubHeading = styled.div`
     } */
     @media screen and (min-width: 75em) {
       grid-column: 6 / 13;
-      padding: 1.875em 0;
+      padding: 5.625em 0 1.875em 0;
     }
 
     h1 {
