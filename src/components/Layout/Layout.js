@@ -31,11 +31,11 @@ const PageContainer = styled.div`
   }
   &.sub .contentContainer {
     @media screen and (min-width: 48em) {
-      grid-template-rows: minmax(100px, 200px);
+      grid-template-rows: minmax(100px, max-content);
       grid-column-gap: 25px;
     }
     @media screen and (min-width: 64em) {
-      grid-template-rows: minmax(200px, 300px);
+      grid-template-rows: minmax(200px, max-content);
     }
   }
   &.notes .contentContainer {

@@ -12,6 +12,7 @@ import templateKey from './templateKeys'
 import contentType from './contentTypes'
 import homePage from './HomePage'
 import notes from './note'
+import colophon from './colophon'
 import now from './now'
 import uses from './Uses'
 import log from './Log'
@@ -31,6 +32,7 @@ export default createSchema({
     uses,
     notes,
     log,
+    colophon,
     author,
     category,
     templateKey,
