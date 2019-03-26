@@ -157,7 +157,7 @@ export const pageQuery = graphql`
       publishedAt(formatString: "Do MMMM, YYYY")
       mainImage {
         asset {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 600) {
             ...GatsbySanityImageFluid
           }
         }
