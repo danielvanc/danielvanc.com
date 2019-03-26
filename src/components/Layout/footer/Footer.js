@@ -54,26 +54,26 @@ const FootNotes = styled.div`
     padding-right:0;
   }
 `
-const Copyright = styled.div`  
-  text-align: center;
-  @media screen and (min-width: 48em) {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-    padding-left: 2.500em;
-    text-align: left;
-  }
-  @media screen and (min-width: 64em) {
-    grid-column: 2 / 6;
-    /* grid-row: 10 / 11; */
-    grid-row: 2 / 3;
-    padding-bottom: 2.500em;
-    padding-left: 0;
-  }
-  @media screen and (min-width: 75em) {
-    grid-column: 3 / 6;
-    grid-row: 2 / 3;
-  }
-`
+// const Copyright = styled.div`  
+//   text-align: center;
+//   @media screen and (min-width: 48em) {
+//     grid-column: 1 / 2;
+//     grid-row: 3 / 4;
+//     padding-left: 2.500em;
+//     text-align: left;
+//   }
+//   @media screen and (min-width: 64em) {
+//     grid-column: 2 / 6;
+//     /* grid-row: 10 / 11; */
+//     grid-row: 2 / 3;
+//     padding-bottom: 2.500em;
+//     padding-left: 0;
+//   }
+//   @media screen and (min-width: 75em) {
+//     grid-column: 3 / 6;
+//     grid-row: 2 / 3;
+//   }
+// `
 const Socials = styled.div`  
   margin:0 0 15px 18px;
   padding-bottom: 15px;

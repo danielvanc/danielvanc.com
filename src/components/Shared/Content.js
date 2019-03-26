@@ -36,6 +36,10 @@ const PostBody = styled.div`
   h3,
   h4,
   h5 { font-weight: 800 }
+  img {
+    /* width: 100%; */
+    max-width: 100%;
+  }
 `
 // const BlockContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
 
