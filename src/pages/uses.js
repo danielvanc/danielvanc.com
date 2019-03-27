@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Meta from '../components/Layout/TitleAndMetas'
 import Layout from '../components/Layout'

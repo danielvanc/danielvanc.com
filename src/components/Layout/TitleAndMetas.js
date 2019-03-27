@@ -14,6 +14,7 @@ const HeadScripts = (props) => {
         { name: `keywords`, content: metaKeywords },
       ]}
     >
+        <html lang="en" />
       {/* link={[
         { rel: 'shortcut icon', type: 'image/png', href: `${FavIcon}` },
         { rel: 'icon', type: 'image/png', href: `${FavIcon}` }
