@@ -206,31 +206,31 @@ const Footer = () => (
       <Socials>
         <ul>
           <li>
-            <a href="https://dvanc.co/tw">
+            <a href="https://dvanc.co/tw" aria-label="Follow me on Twitter">
               <span className="fab fa-twitter"></span>
               <span className="text">Follow me on Twitter</span>
             </a>
           </li>
           <li>
-            <a href="https://dvanc.co/inst">
+            <a href="https://dvanc.co/inst" aria-label="Browse my Instagram pics">
               <span className="fab fa-instagram"></span>
               <span className="text">Browse my Instagram pics</span>
             </a>
           </li>
           <li>
-            <a href="https://dvanc.co/gh">
+            <a href="https://dvanc.co/gh" aria-label="Star my GitHub projects">
               <span className="fab fa-github"></span>
               <span className="text">Star my GitHub projects</span>
             </a>
           </li>
           <li>
-            <a href="https://dvanc.co/cp">
+            <a href="https://dvanc.co/cp" aria-label="Fave my CodePens">
             <span className="fab fa-codepen"></span>
             <span className="text">Fave my Pens</span>
             </a>
           </li>
           <li>
-            <a href="https://dvanc.co/in">
+            <a href="https://dvanc.co/in" aria-label="Join my LinkedIn network">
               <span className="fab fa-linkedin-in"></span>
               <span className="text">Join my LinkedIn network</span>
             </a>
