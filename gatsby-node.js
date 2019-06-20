@@ -32,7 +32,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 async function createNowPage(graphql, actions, reporter) {
-  const { createPage, createRedirect, createPageDependency } = actions
+  const { createPage } = actions
 
   const result = await graphql(`
     {
@@ -69,13 +69,11 @@ async function createNowPage(graphql, actions, reporter) {
       component: require.resolve(`./src/templates/${templateKey}.js`),
       context: { id },
     })
-
-    createPageDependency({ path, nodeId: id })
   })
 }
 
 async function createNotePages(graphql, actions, reporter) {
-  const { createPage, createRedirect, createPageDependency } = actions
+  const { createPage, createRedirect } = actions
   createRedirect({
     fromPath: `/notes/tags`,
     isPermanent: true,
@@ -133,13 +131,11 @@ async function createNotePages(graphql, actions, reporter) {
       component: require.resolve(`./src/templates/${templateKey}.js`),
       context: { id },
     })
-
-    createPageDependency({ path, nodeId: id })
   })
 }
 
 async function createLogPages(graphql, actions, reporter) {
-  const { createPage, createRedirect, createPageDependency } = actions
+  const { createPage } = actions
 
   const result = await graphql(`
     {
@@ -177,7 +173,6 @@ async function createLogPages(graphql, actions, reporter) {
       context: { id },
     })
 
-    createPageDependency({ path, nodeId: id })
   })
 }
 
