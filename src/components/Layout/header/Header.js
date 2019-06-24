@@ -214,10 +214,10 @@ const Header = (props) => {
       <nav>
         <SiteNav>
           <li className="logo"><Link to="/"><img src={logo} alt="Logo of danielvanc.com" height="40" width="40" title="Go to homepage" /></Link></li>
+          <li><Link to="/about" getProps={isPartiallyActive}{...props} title="More information about Daniel">About</Link></li>
           {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
-          <li><Link to="/now" getProps={isPartiallyActive}{...props} title="Find out what I'm focusing on now">Now</Link></li>
           <li><Link to="/notes" getProps={isPartiallyActive}{...props} title="Find out what I've written lately">Notes</Link></li>
-          <li><Link to="/uses" getProps={isPartiallyActive}{...props} title="Check out the gear I use on a daily basis">Uses</Link></li>
+          <li><Link to="/now" getProps={isPartiallyActive}{...props} title="Find out what I'm focusing on now">Now</Link></li>
         </SiteNav>
       </nav>
     </MainHeader>
