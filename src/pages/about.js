@@ -8,7 +8,7 @@ import ImageThumb from 'gatsby-image'
 
 const ArticleText = styled(HTMLContent)`
 `
-const thumbNail = styled.div`
+const ThumbNail = styled.div`
   height: 100px;
   width: 100px;
 `
@@ -29,21 +29,21 @@ const AboutPage = ({ data }) => {
       </header>
       <main>
         <ArticleText content={pageData._rawProfessionIntro} />
-        <thumbNail>
+        <ThumbNail>
           {
             pageData.mainImage ? (
               <ImageThumb fluid={pageData.mainImage.asset.fluid} />
             ) : ''
           }
-        </thumbNail>
+        </ThumbNail>
         <ArticleText content={pageData._rawBody} />
-        <thumbNail>
+        <ThumbNail>
           {
             pageData.backupImage ? (
               <ImageThumb fluid={pageData.backupImage.asset.fluid} />
             ) : ''
           }
-        </thumbNail>
+        </ThumbNail>
       </main>
     </Layout>
   )
