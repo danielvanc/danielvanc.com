@@ -82,7 +82,10 @@ const SiteNav = styled.ul`
     font-family: var(--font-family-subheadings);
     float: right;
     margin-top: 7px;
-    padding-left: 2em;
+    padding-left: .8em;
+    @media screen and (min-width: 375px) {
+      padding-left: 2em;
+    }
     @media screen and (min-width: 37.500em) {
       margin-top: 0;
     }

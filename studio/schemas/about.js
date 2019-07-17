@@ -10,38 +10,16 @@ export default {
       to: { type: 'author' }
     },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'titleContent',
-      to: { type: 'titleContent' }
-    },
-    {
       name: 'professionIntro',
       title: 'Profession Intro',
       type: 'blockContent',
       to: { type: 'blockContent' }
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
-    },
-    {
       name: 'body',
-      title: 'Body',
+      title: 'Personal life background',
       type: 'blockContent',
       to: { type: 'blockContent' }
-    },
-    {
-      name: 'backupImage',
-      title: 'Backup image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
     },
     {
       name: 'publishedAt',

@@ -52,6 +52,11 @@ const PageContainer = styled.div`
       max-width: 1800px;
     }
   }
+  &.sub.about .contentContainer {
+    @media screen and (min-width: 48em) {
+      grid-column-gap: 5px;
+    }
+  }
 `
 const Layout = (props) => {
   const layout = props.pageLayout

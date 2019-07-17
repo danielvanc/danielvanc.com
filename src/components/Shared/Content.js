@@ -79,7 +79,7 @@ export const Content = ({ content, className }) => (
 
 const HTMLContent = ({ content, className }) => (
   <PostBody className={className}>
-    <BaseBlockContent blocks={content} serializers={serializers } />
+    <BaseBlockContent blocks={content} serializers={serializers} />
   </PostBody>
 )
 
