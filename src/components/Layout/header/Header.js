@@ -1,234 +1,277 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import logo from '../../../images/dvanc_logo.png'
-import '../general.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'gatsby';
+import styled from 'styled-components';
+import logo from '../../../images/dvanc_logo.png';
+import '../general.css';
 // import '../fonts.css'
 
 const MainHeader = styled.header`
-  height: 120px;
-  /* width: 84%; */
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  
-  display:flex;
-  
-  @media screen and (min-width: 37.500em) {
-    margin: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
-    width:50%;
-  }
+    height: 120px;
+    /* width: 84%; */
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 
-  @media screen and (min-width: 48em) {
-    height: auto;
-    display: grid;
-    grid-gap: 25px;
-    grid-template-rows: 120px;
-    width: 100%;
-  }
-  @media screen and (min-width: 90em) { grid-template-rows: 190px;}
+    display: flex;
 
-  .home & {
-    @media screen and (min-width: 64em) { grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr); }
-  }
-  .center-squared &,
-  .sub &,
-  .notes & {
-    @media screen and (min-width: 48em) {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr) ;
-      width:100%;
-      nav {
-        grid-column: 2 / 4;
-        align-self: end;
-      }
+    @media screen and (min-width: 37.5em) {
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        width: 50%;
     }
-    grid-template-rows: 60px;
-    @media screen and (min-width: 90em) { grid-template-rows: 100px;}
-  }
-  
-  &.center-nav {
-    @media screen and (min-width: 48em) {
-      grid-column: 1 / -1;
-      margin: 0 auto;
-      width: 50%;
-    }
-  }
 
-  nav { 
-    display: flex; 
-    width:100%;
-  }
-`
+    @media screen and (min-width: 48em) {
+        height: auto;
+        display: grid;
+        grid-gap: 25px;
+        grid-template-rows: 120px;
+        width: 100%;
+    }
+    @media screen and (min-width: 90em) {
+        grid-template-rows: 190px;
+    }
+
+    .home & {
+        @media screen and (min-width: 64em) {
+            grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr);
+        }
+    }
+    .center-squared &,
+    .sub &,
+    .notes & {
+        @media screen and (min-width: 48em) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+            nav {
+                grid-column: 2 / 4;
+                align-self: end;
+            }
+        }
+        grid-template-rows: 60px;
+        @media screen and (min-width: 90em) {
+            grid-template-rows: 100px;
+        }
+    }
+
+    &.center-nav {
+        @media screen and (min-width: 48em) {
+            grid-column: 1 / -1;
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+
+    nav {
+        display: flex;
+        width: 100%;
+    }
+`;
 const SiteNav = styled.ul`
-  align-items: center;
-  list-style:none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  justify-content: space-evenly;
-  align-self: center;
-  display:inline;
-  
-  @media screen and (min-width: 37.500em) {
-    display:flex;
-    margin: 0 auto;
-    max-width: 500px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
     padding: 0;
-  }
-  li {
-    font-family: var(--font-family-subheadings);
-    float: right;
-    margin-top: 7px;
-    padding-left: 2em;
-    @media screen and (min-width: 37.500em) {
-      margin-top: 0;
-    }
-    &:first-of-type {
-      float: left;
-      padding-left: 0;
-      margin-top: 0;
-      @media screen and (min-width: 37.500em) {
-        float:none;
-      }
-    }
-    @media screen and (min-width: 37.500em) {
-      float:none;
-      padding-left: auto;
-    }
-    @media screen and (min-width: 75em) {
-      font-size: var(--font-size-nav-large);
-    }
-  }
-  a:link,
-  a:visited {
-    border-bottom: 0!important;
-    color: var(--color-white);
-  }
-  a {
-    color: var(--color-white);
-    margin: 0.313em 0.5em;
-    padding-bottom:0.3em;
+    width: 100%;
+    justify-content: space-evenly;
+    align-self: center;
+    display: inline;
 
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    overflow: hidden;
+    @media screen and (min-width: 37.5em) {
+        display: flex;
+        margin: 0 auto;
+        max-width: 500px;
+        padding: 0;
+    }
+    li {
+        font-family: var(--font-family-subheadings);
+        display: inline-flex;
+        margin-top: 7px;
+        padding-left: 0.8em;
+        @media screen and (min-width: 375px) {
+            padding-left: 2em;
+        }
+        @media screen and (min-width: 37.5em) {
+            margin-top: 0;
+        }
+        &:first-of-type {
+            float: left;
+            padding-left: 0;
+            margin-top: 0;
+            @media screen and (min-width: 37.5em) {
+                float: none;
+            }
+        }
+        @media screen and (min-width: 37.5em) {
+            float: none;
+            padding-left: auto;
+        }
+        @media screen and (min-width: 75em) {
+            font-size: var(--font-size-nav-large);
+        }
+    }
+    a:link,
+    a:visited {
+        border-bottom: 0 !important;
+        color: var(--color-white);
+    }
+    a {
+        color: var(--color-white);
+        margin: 0.313em 0.5em;
+        padding-bottom: 0.3em;
 
-    
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: 51%;
-      right: 51%;
-      bottom: 0;
-      background: #6dd5ed;
-      height: 4px;
-      -webkit-transition-property: left, right;
-      transition-property: left, right;
-      -webkit-transition-duration: 0.3s;
-      transition-duration: 0.3s;
-      -webkit-transition-timing-function: ease-out;
-      transition-timing-function: ease-out;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 51%;
+            right: 51%;
+            bottom: 0;
+            background: #6dd5ed;
+            height: 4px;
+            -webkit-transition-property: left, right;
+            transition-property: left, right;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+        &:hover {
+            border-bottom: 0 !important;
+            color: var(--color-mint);
+        }
+        &.active {
+            color: var(--color-mint);
+            font-weight: 800;
+
+            &:hover {
+                outline: none;
+            }
+        }
+        &.active:before,
+        &:hover:before,
+        &:focus:before,
+        &:active:before {
+            left: 0;
+            right: 0;
+        }
+    }
+    a:hover {
+        color: var(--color-mint);
     }
 
-    &:hover {
-      border-bottom: 0!important;
-      color: var(--color-mint);
+    @-webkit-keyframes pg {
+        to {
+            -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+        }
     }
-    &.active {
-      color: var(--color-mint);
-      
-      &:hover {
-        outline: none;
-      }
+    @keyframes pg {
+        to {
+            -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+        }
     }
-    &.active:before,
-    &:hover:before, 
-    &:focus:before, 
-    &:active:before {
-      left: 0;
-      right: 0;
-    }
-  }
-  a:hover { color: var(--color-mint)}
 
-  @-webkit-keyframes pg {
-    to {
-      -webkit-transform: scale(1.6);
-      transform: scale(1.6);
+    li.logo a {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        &:hover,
+        &:focus,
+        &:active {
+            @media (hover: hover) {
+                -webkit-animation-name: pg;
+                animation-name: pg;
+                -webkit-animation-duration: 0.6s;
+                animation-duration: 0.6s;
+                -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+            }
+        }
+        &:before {
+            background: transparent;
+        }
     }
-  }
-  @keyframes pg {
-    to {
-      -webkit-transform: scale(1.6);
-      transform: scale(1.6);
-    }
-  }
+`;
 
-  li.logo a {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    &:hover,
-    &:focus,
-    &:active {
-      @media (hover: hover) {
-        -webkit-animation-name: pg;
-        animation-name: pg;
-        -webkit-animation-duration: 0.6s;
-        animation-duration: 0.6s;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
-        animation-direction: alternate;
-      }
-    }
-    &:before {
-      background: transparent;
-    }
-  }
-`
+const isPartiallyActive = ({isPartiallyCurrent}) =>
+    isPartiallyCurrent ? {className: 'active'} : null;
 
-const isPartiallyActive = ( {isPartiallyCurrent} ) => {
-  return isPartiallyCurrent ? {className:'active'} : null;
-}
+const isCurrent = ({isCurrent}) => (isCurrent ? {className: 'active'} : null);
 
-const isCurrent = ( {isCurrent}) => {
-  return isCurrent ? {className:'active'} : null;
-}
-
-const Header = (props) => {
-  return (
+const Header = props => (
     <MainHeader>
-      <nav>
-        <SiteNav>
-          <li className="logo"><Link to="/"><img src={logo} alt="Logo of danielvanc.com" height="40" width="40" title="Go to homepage" /></Link></li>
-          {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
-          <li><Link to="/now" getProps={isPartiallyActive}{...props} title="Find out what I'm focusing on now">Now</Link></li>
-          <li><Link to="/notes" getProps={isPartiallyActive}{...props} title="Find out what I've written lately">Notes</Link></li>
-          <li><Link to="/uses" getProps={isPartiallyActive}{...props} title="Check out the gear I use on a daily basis">Uses</Link></li>
-        </SiteNav>
-      </nav>
+        <nav>
+            <SiteNav>
+                <li className="logo">
+                    <Link to="/">
+                        <img
+                            src={logo}
+                            alt="Logo of danielvanc.com"
+                            height="40"
+                            width="40"
+                            title="Go to homepage"
+                        />
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        to="/about"
+                        getProps={isPartiallyActive}
+                        {...props}
+                        title="More information about Daniel"
+                    >
+                        About
+                    </Link>
+                </li>
+                {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
+                <li>
+                    <Link
+                        to="/notes"
+                        getProps={isPartiallyActive}
+                        {...props}
+                        title="Find out what I've written lately"
+                    >
+                        Notes
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        to="/now"
+                        getProps={isPartiallyActive}
+                        {...props}
+                        title="Find out what I'm focusing on now"
+                    >
+                        Now
+                    </Link>
+                </li>
+            </SiteNav>
+        </nav>
     </MainHeader>
-  )
-}
+);
 
 isPartiallyActive.PropTypes = {
-  isPartiallyActive: PropTypes.bool,
-}
+    isPartiallyActive: PropTypes.bool,
+};
 isCurrent.PropTypes = {
-  isCurrent: PropTypes.bool,
-}
+    isCurrent: PropTypes.bool,
+};
 
-export default Header
+export default Header;
