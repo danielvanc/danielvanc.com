@@ -16,8 +16,7 @@ export default {
         {
             name: 'resume_intro',
             title: 'Resume Introduction',
-            type: 'shortBlockContent',
-            to: {type: 'shortBlockContent'},
+            type: 'string',
         },
         {
             name: 'side_text',
@@ -99,9 +98,7 @@ export default {
         },
         prepare(selection) {
             const {author} = selection;
-            return Object.assign({}, selection, {
-                title: 'About' && `Resume Index page`,
-            });
+            return { ...selection, title: 'About' && `Resume Index page`,};
         },
     },
 };

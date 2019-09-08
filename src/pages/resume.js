@@ -3,32 +3,64 @@ import {graphql} from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
 import TitleAndMetas from '../components/Layout/TitleAndMetas';
-import TitleAndSubTitle from '../components/shared/TitleAndSubTitle';
-import ImageDescription from '../components/shared/ImageDescription';
-import ProfileLinks from '../components/shared/ProfileLinks';
-import WorkExperience from '../components/shared/WorkExperience';
-import Expertise from '../components/shared/Expertise';
-import Skills from '../components/shared/Skills';
-import ShortPost from '../components/shared/ShortPost';
+import ImageTitleAndDescription from '../components/Shared/ImageTitleAndDescription';
+import WorkExperience from '../components/Shared/WorkExperience';
+import Expertise from '../components/Shared/Expertise';
+import Skills from '../components/Shared/Skills';
+import ShortPost from '../components/Shared/ShortPost';
 
 const PageMain = styled.div`
-    background: #333;
-    display: grid;
-    grid-column: 2 / 16;
+    grid-column: 1 / 16;
+    margin: 0 auto;
+    max-width: var(--max-container-width);
+    @media screen and (min-width: 1280px) {
+        padding-left: 2%;
+    }
+    @media screen and (min-width: 1400px) {
+        padding-left: 0;
+    }
 `;
-const ResumeHeader = styled.div`
-    background: red;
-`;
-const Experience = styled(WorkExperience)`
-    background: blue;
-`;
-const ResumeMainContent = styled.div`
-    background: green;
+const ResumeBody = styled.main`
+    padding: 3em 2em 5em 2em;
+    position: relative;
+
+    @media screen and (min-width: 600px) and (max-width: 688px) {
+        padding: 7% 2em 5em 2em;
+    }
+    @media screen and (min-width: 689px) and (max-width: 767px) {
+        padding: 16% 2em 5em 2em;
+    }
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 35px;
+        padding: 1em 0 5em 0;
+    }
+    @media screen and (min-width: 1280px) {
+        grid-gap: 75px;
+        transform: none;
+        padding: 1em 0 5em 0;
+        width: auto;
+    }
 `;
 
 const Resume = ({data}) => {
     const page = 'sub';
-    const {metaTitle, metaTags, metaDescription} = data.sanityResume;
+    const {
+        metaTitle,
+        metaTags,
+        metaDescription,
+        image_main: imageMain,
+        resume_intro: resumeIntro,
+        side_text: sideText,
+        profession,
+        history,
+        experience,
+        personal_skills,
+        _rawAvailability,
+        _rawHobbies,
+    } = data.sanityResume;
     return (
         <Layout pageLayout={page}>
             <TitleAndMetas
@@ -37,18 +69,31 @@ const Resume = ({data}) => {
                 metaKeywords={metaTags}
             />
             <PageMain>
-                <ResumeHeader>
-                    <TitleAndSubTitle />
-                    <ImageDescription />
-                    <ProfileLinks />
-                </ResumeHeader>
-                <Experience />
-                <ResumeMainContent>
-                    <Expertise />
-                    <Skills />
-                    <ShortPost />
-                    <ShortPost />
-                </ResumeMainContent>
+                <ImageTitleAndDescription
+                    profileImage={imageMain}
+                    intro={resumeIntro}
+                    side_text={sideText}
+                    profession={profession}
+                />
+                <ResumeBody>
+                    <Expertise expertise={experience} />
+                    <Skills skills={personal_skills} />
+                    <ShortPost
+                        type="hobbies"
+                        title="Hobbies &amp; Interests"
+                        content={_rawHobbies}
+                        linkText="More about me"
+                        linkURL="/about"
+                    />
+                    <ShortPost
+                        type="avail"
+                        title="Availability"
+                        content={_rawAvailability}
+                        linkText="Up to now"
+                        linkURL="/now"
+                    />
+                    <WorkExperience history={history} />
+                </ResumeBody>
             </PageMain>
         </Layout>
     );
@@ -58,25 +103,28 @@ export default Resume;
 
 export const query = graphql`
     query ResumeQuery {
-        sanityResume(
-            profession: {}
-            image_main: {asset: {url: {}}}
-            metaTitle: {}
-            metaTags: {}
-            metaDescription: {}
-        ) {
+        sanityResume {
             metaTitle
             metaTags
             metaDescription
             image_main {
                 _key
                 _type
-            }
-            Availability {
-                sanityChildren {
-                    text
+                asset {
+                    id
+                    fluid {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
                 }
             }
+            _rawAvailability
+            _rawHobbies
             experience {
                 level
                 skill
@@ -88,11 +136,7 @@ export const query = graphql`
                 role
                 started
             }
-            resume_intro {
-                sanityChildren {
-                    text
-                }
-            }
+            resume_intro
             side_text
             profession
             personal_skills {
@@ -101,6 +145,15 @@ export const query = graphql`
                 skill_image {
                     asset {
                         id
+                        fluid {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            srcWebp
+                            srcSetWebp
+                            sizes
+                        }
                     }
                 }
             }

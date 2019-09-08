@@ -11,7 +11,7 @@ const PageMain = styled.main`
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: var(--max-container-width);
     padding: 0.7em 0 2em 0;
     position: relative;
     @media screen and (min-width: 400px) {
