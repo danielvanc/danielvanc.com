@@ -7,12 +7,16 @@ import '../general.css';
 // import '../fonts.css'
 
 const MainHeader = styled.header`
-    height: 120px;
+    height: 70px;
     /* width: 84%; */
     padding-left: 1.5em;
     padding-right: 1.5em;
-
+    margin-bottom: 10px;
     display: flex;
+
+    @media screen and (min-width: 600px) {
+        height: 120px;
+    }
 
     @media screen and (min-width: 37.5em) {
         margin: 0 auto;

@@ -81,7 +81,8 @@ const HTMLContent = ({content, className, isAbout = false}) => (
         {isAbout ? (
             <Links
                 items={[
-                    {link: '/now', title: 'Upto Now'},
+                    {link: '/resume', title: 'My Resume'},
+                    {link: '/now', title: 'Up-to Now'},
                     {link: '/uses', title: 'What I Use'},
                 ]}
             />

@@ -210,7 +210,7 @@ const Footer = () => (
                             href="https://dvanc.co/tw"
                             aria-label="Follow me on Twitter"
                         >
-                            <span className="fab fa-twitter"></span>
+                            <span className="fab fa-twitter" />
                             <span className="text">Follow me on Twitter</span>
                         </a>
                     </li>
@@ -219,7 +219,7 @@ const Footer = () => (
                             href="https://dvanc.co/inst"
                             aria-label="Browse my Instagram pics"
                         >
-                            <span className="fab fa-instagram"></span>
+                            <span className="fab fa-instagram" />
                             <span className="text">
                                 Browse my Instagram pics
                             </span>
@@ -230,7 +230,7 @@ const Footer = () => (
                             href="https://dvanc.co/gh"
                             aria-label="Star my GitHub projects"
                         >
-                            <span className="fab fa-github"></span>
+                            <span className="fab fa-github" />
                             <span className="text">
                                 Star my GitHub projects
                             </span>
@@ -241,7 +241,7 @@ const Footer = () => (
                             href="https://dvanc.co/cp"
                             aria-label="Fave my CodePens"
                         >
-                            <span className="fab fa-codepen"></span>
+                            <span className="fab fa-codepen" />
                             <span className="text">Fave my Pens</span>
                         </a>
                     </li>
@@ -250,7 +250,7 @@ const Footer = () => (
                             href="https://dvanc.co/in"
                             aria-label="Join my LinkedIn network"
                         >
-                            <span className="fab fa-linkedin-in"></span>
+                            <span className="fab fa-linkedin-in" />
                             <span className="text">
                                 Join my LinkedIn network
                             </span>
@@ -299,11 +299,11 @@ const Footer = () => (
                 </ul>
             </OpenSource>
             <Updated>
-                <p>Site last updated on: 14 / 08 / 2019</p>
+                <p>Site last updated on: 08 / 09 / 2019</p>
             </Updated>
             <FootNotes>
                 <p>
-                    &copy; 2009 Daniel Van Cuylenburg.{' '}
+                    &copy; 2019 Daniel Van Cuylenburg.{' '}
                     <Link to="/colophon">Colophon</Link>
                 </p>
             </FootNotes>
