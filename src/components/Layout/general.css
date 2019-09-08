@@ -7,6 +7,7 @@
   --color-grey: #2a2b2b;
   --color-page-background: #111111;
   --color-dark-grey: #1D1E1F;
+  --color-text-grey: #868787;
   --color-light-grey: #787878;
   --color-text-default: var(--color-white);
   --color-borders: #494949;
@@ -25,6 +26,7 @@
   --font-size-x-large: 3.375rem;
   --font-size-large: 2.25rem;
   --font-size-medium: 1.5rem;
+  --font-size-medium-alt: 1.25rem; /* 20px */
   --font-size: 1rem;
   --font-size-small: .667rem;
   --lineheight-text: 1.5;
@@ -34,6 +36,8 @@
   --font-size-nav: 1rem;
   --font-size-nav-large: 1.125rem;
   --link-hover: #9e9e9e;
+
+  --max-container-width: 1300px;
  
   /* --mq-large-mobile:37.5em;
   --mq-tablet:48em;
