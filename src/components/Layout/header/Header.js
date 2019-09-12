@@ -33,7 +33,7 @@ const MainHeader = styled.header`
         width: 100%;
     }
     @media screen and (min-width: 90em) {
-        grid-template-rows: 190px;
+        grid-template-rows: 120px;
     }
 
     .home & {

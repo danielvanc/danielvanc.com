@@ -5,13 +5,13 @@ const Experience = styled.section`
     grid-column: 1 / 4;
     grid-row: 1 / 5;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 48em) {
         padding: 55% 0 0 10%;
     }
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 64em) {
         padding: 65% 0 0 10%;
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         padding: 4em 0 0 0;
     }
     h2 {

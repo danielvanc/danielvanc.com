@@ -8,7 +8,7 @@ const ExpertiseWrap = styled.section`
 `;
 
 const ExpertiseInner = styled.div`
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         display: flex;
         padding: 1em 0 0 0;
     }
@@ -42,20 +42,26 @@ const moveHorizontally = x => keyframes`
 const SkillBar = styled.span`
     background: #515252;
     display: block;
-    height: 40px;
+    height: 30px;
     width: 100%;
     border-radius: 25px;
     flex: 15;
+    @media screen and (min-width: 64em) {
+        height: 40px;
+    }
     &:after {
         border-radius: 25px;
         background: white;
         display: block;
         content: '';
-        height: 40px;
+        height: 30px;
         width: 0;
         width: ${props => props.skill};
         animation-name: ${props => moveHorizontally(props.skill)};
         animation-duration: 4s;
+        @media screen and (min-width: 64em) {
+            height: 40px;
+        }
     }
 `;
 
@@ -66,7 +72,7 @@ const WriteUp = styled.p`
     font-size: 0.875rem;
     max-width: 60%;
     padding-bottom: 2em;
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         padding-bottom: 0;
         max-width: auto;
     }

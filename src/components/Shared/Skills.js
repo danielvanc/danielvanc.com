@@ -5,13 +5,13 @@ const SkillsSection = styled.section`
     grid-column: 4 / -1;
     grid-row: 2 / 3;
     padding: 3em 0;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 48em) {
         padding: 0;
     }
 `;
 
 const SkillsContainer = styled.div`
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         display: flex;
     }
     p {
@@ -42,7 +42,7 @@ const SkillsGrid = styled.ul`
         margin-left: auto;
         max-width: 100%;
     } */
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         margin-top: 0;
     }
     img {
@@ -51,7 +51,7 @@ const SkillsGrid = styled.ul`
         /* min-width: 50px; */
         /* flex: 1; */
         max-width: 100px;
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 80em) {
             max-width: 125px;
         }
     }
@@ -70,7 +70,7 @@ const SkillsGrid = styled.ul`
         img {
             margin-left: 1em;
         }
-        @media screen and (max-width: 1023px) {
+        @media screen and (max-width: 63.938em) {
             &:nth-child(even) {
                 img {
                     order: 1;
@@ -81,7 +81,7 @@ const SkillsGrid = styled.ul`
                 }
             }
         }
-        @media screen and (min-width: 600px) and (max-width: 767px) {
+        @media screen and (min-width: 37.5em) and (max-width: 47.938em) {
             width: 50%;
             &:nth-child(1) {
                 img {
@@ -114,7 +114,7 @@ const SkillsGrid = styled.ul`
             }
         }
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 64em) {
             width: 50%;
             &:nth-child(1) {
                 img {
@@ -132,7 +132,7 @@ const SkillsGrid = styled.ul`
                 }
             }
         }
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 80em) {
             flex: 5;
             width: auto;
             &:nth-child(2) {
