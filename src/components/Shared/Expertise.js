@@ -42,20 +42,26 @@ const moveHorizontally = x => keyframes`
 const SkillBar = styled.span`
     background: #515252;
     display: block;
-    height: 40px;
+    height: 30px;
     width: 100%;
     border-radius: 25px;
     flex: 15;
+    @media screen and (min-width: 64em) {
+        height: 40px;
+    }
     &:after {
         border-radius: 25px;
         background: white;
         display: block;
         content: '';
-        height: 40px;
+        height: 30px;
         width: 0;
         width: ${props => props.skill};
         animation-name: ${props => moveHorizontally(props.skill)};
         animation-duration: 4s;
+        @media screen and (min-width: 64em) {
+            height: 40px;
+        }
     }
 `;
 

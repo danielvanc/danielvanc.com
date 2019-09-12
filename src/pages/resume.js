@@ -24,7 +24,6 @@ const ResumeBody = styled.main`
     padding: 3em 2em 5em 2em;
     position: relative;
 
-    /* @media screen and (min-width: 600px) and (max-width: 688px) { */
     @media screen and (min-width: 37.5em) and (max-width: 43em) {
         padding: 7% 2em 5em 2em;
     }
