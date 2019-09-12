@@ -63,7 +63,7 @@ const ProfessionTag = styled.small`
     grid-row: 1 / 2;
     border: 1px solid var(--color-text-grey);
     font-size: var(--font-size);
-    width: 100%;
+    /* width: 100%; */
     @media screen and (min-width: 375px) {
         width: auto;
     }

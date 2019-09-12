@@ -8,7 +8,7 @@ const ExpertiseWrap = styled.section`
 `;
 
 const ExpertiseInner = styled.div`
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         display: flex;
         padding: 1em 0 0 0;
     }
@@ -66,7 +66,7 @@ const WriteUp = styled.p`
     font-size: 0.875rem;
     max-width: 60%;
     padding-bottom: 2em;
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         padding-bottom: 0;
         max-width: auto;
     }

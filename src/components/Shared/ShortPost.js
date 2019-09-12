@@ -7,7 +7,7 @@ const PostWrap = styled.section`
     grid-column: ${props => props.type};
     position: relative;
     padding-bottom: 1em;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 48em) {
         padding: 0;
     }
     p {
@@ -19,7 +19,7 @@ const PostWrap = styled.section`
         position: relative;
         top: auto;
         width: auto;
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 48em) {
             float: left;
         }
         a {

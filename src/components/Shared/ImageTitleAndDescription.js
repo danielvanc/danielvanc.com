@@ -4,7 +4,7 @@ import ProfileLinks from './ProfileLinks';
 import TitleAndSubtitle from './TitleAndSubTitle';
 
 const ResumeHeader = styled.div`
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         display: flex;
         flex: 2;
     }
@@ -13,14 +13,14 @@ const ResumeHeader = styled.div`
 const ImageText = styled.div`
     margin-top: 2em;
     overflow: hidden;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 37.5em) {
         margin-top: 5em;
         overflow: visible;
     }
-    @media screen and (min-width: 600px) and (max-width: 767px) {
+    @media screen and (min-width: 37.5em) and (max-width: 47.938em) {
         margin-top: 3em;
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         flex: 5;
         order: 2;
     }
@@ -31,7 +31,7 @@ const ImageText = styled.div`
         min-width: 130%;
         left: -25%;
         transform: translateX(5%);
-        @media screen and (min-width: 600px) {
+        @media screen and (min-width: 37.5em) {
             float: left;
             /* transform: translate(-50%, -20%);
             shape-outside: circle(53.11% at 1.33% 30.03%); */
@@ -42,18 +42,18 @@ const ImageText = styled.div`
             max-width: 100%;
             min-width: auto;
         }
-        @media screen and (min-width: 600px) and (max-width: 767px) {
+        @media screen and (min-width: 37.5em) and (max-width: 47.938em) {
             max-width: 76%;
         }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 48em) {
             shape-outside: circle(57.11% at 8.33% 40.03%);
             margin-bottom: -25%;
         }
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 64em) {
             shape-outside: circle(56.11% at 11.33% 43.03%);
             max-width: 70%;
         }
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 80em) {
             shape-outside: circle(53.11% at 44.33% 40.03%);
             margin: -5em 80px 0 0;
             max-width: 50%;
@@ -66,12 +66,12 @@ const ResumeIntroduction = styled.p`
     margin: 1em auto 0 auto;
     max-width: 90%;
     text-align: center;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 37.5em) {
         margin: 0 1.5em 0 0;
         max-width: 100%;
         text-align: left;
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         flex: 2;
         margin-right: 7em;
         order: 4;
@@ -82,12 +82,12 @@ const SideText = styled.p`
     margin: 1.5em auto;
     max-width: 90%;
     text-align: center;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 37.5em) {
         margin: 1.5em 2em 1.5em 0;
         max-width: 100%;
         text-align: left;
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         flex: 1;
         order: 1;
         align-self: flex-end;

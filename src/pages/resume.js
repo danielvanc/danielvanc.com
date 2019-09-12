@@ -13,10 +13,10 @@ const PageMain = styled.div`
     grid-column: 1 / 16;
     margin: 0 auto;
     max-width: var(--max-container-width);
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         padding-left: 2%;
     }
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 87.5em) {
         padding-left: 0;
     }
 `;
@@ -24,20 +24,21 @@ const ResumeBody = styled.main`
     padding: 3em 2em 5em 2em;
     position: relative;
 
-    @media screen and (min-width: 600px) and (max-width: 688px) {
+    /* @media screen and (min-width: 600px) and (max-width: 688px) { */
+    @media screen and (min-width: 37.5em) and (max-width: 43em) {
         padding: 7% 2em 5em 2em;
     }
-    @media screen and (min-width: 689px) and (max-width: 767px) {
+    @media screen and (min-width: 43.063em) and (max-width: 47.938em) {
         padding: 16% 2em 5em 2em;
     }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 48em) {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         grid-gap: 35px;
         padding: 1em 0 5em 0;
     }
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 80em) {
         grid-gap: 75px;
         transform: none;
         padding: 1em 0 5em 0;
