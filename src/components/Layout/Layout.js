@@ -8,6 +8,25 @@ import Footer from './footer';
 const PageContainer = styled.div`
     background: var(--color-grey) no-repeat;
     background-size: cover;
+    /* background-image: radial-gradient(
+        circle at center,
+        #32333f 0,
+        rgba(50, 51, 63, 0) 66.66%
+    ); */
+    background-image: radial-gradient(
+        circle at left top,
+        #5f5f5f,
+        rgba(50, 51, 63, 0) 12.66%
+    );
+    @media screen and (min-width: 48em) {
+        /* #52554f,  */
+        background-image: radial-gradient(
+            circle at top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 26.66%
+        );
+    }
+
     padding: 20px 0 0 0;
     .contentContainer {
         @media screen and (min-width: 48em) {

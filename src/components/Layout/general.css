@@ -94,6 +94,8 @@ body {
   font-weight: 300;
   font-size: 1rem;
   line-height: var(--lineheight-text);
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
