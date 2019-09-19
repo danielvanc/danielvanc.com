@@ -257,14 +257,20 @@ const Header = props => (
                     </Link>
                 </li>
                 <li>
-                    <Link
+                    {/* <Link
                         to="/now"
                         getProps={isPartiallyActive}
                         {...props}
                         title="Find out what I'm focusing on now"
                     >
                         Now
-                    </Link>
+                    </Link> */}
+                    <a
+                        href="https://danielvanc.dev"
+                        title="View all my projects"
+                    >
+                        Projects
+                    </a>
                 </li>
             </SiteNav>
         </nav>

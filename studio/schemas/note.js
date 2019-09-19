@@ -72,6 +72,16 @@ export default {
       type: 'datetime'
     },
     {
+      name: 'socialDescription',
+      title: 'Social Description',
+      type: 'string'
+    },
+    {
+      name: 'twitterImage',
+      title: 'Twitter image',
+      type: 'image'
+    },
+    {
       name: 'metaTitle',
       title: 'Meta Title',
       type: 'string'
