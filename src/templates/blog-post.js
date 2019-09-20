@@ -97,7 +97,8 @@ const BlogPostStandard = ({data}) => {
                 metaKeywords={post.metaTags}
                 postTitle={post.title}
                 postDescription={post.socialDescription}
-                postImage={post.twitterImage ? post.twitterImage.asset.url : "" }
+                postImage={post.twitterImage ? post.twitterImage.asset.url : ''}
+                ogImage={post.ogImage ? post.ogImage.asset.url : ''}
             />
             <Layout pageLayout={page}>
                 <PageMain>
@@ -163,6 +164,14 @@ export const pageQuery = graphql`
             }
             socialDescription
             twitterImage {
+                asset {
+                    url
+                    fixed {
+                        src
+                    }
+                }
+            }
+            ogImage {
                 asset {
                     url
                     fixed {
