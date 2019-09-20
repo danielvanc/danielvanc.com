@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import FavIcon from '../../../favicon.png';
+// import ogImage from './default-og-graphic.jpg';
 
 require('typeface-muli');
 
@@ -12,6 +13,7 @@ const HeadScripts = props => {
         postTitle,
         postDescription,
         postImage,
+        ogImage,
     } = props;
     return (
         <>
@@ -20,22 +22,26 @@ const HeadScripts = props => {
                 <meta name="description" content={metaDescription} />
                 <meta name="keywords" content={metaKeywords} />
 
-                
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:type" content="article" />
+                <meta property="og:description" content={metaDescription} />
+                <meta
+                    property="og:image"
+                    content={ogImage || 'og-card-default.jpg'}
+                />
+
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@danielvanc" />
                 <meta name="twitter:creator" content="@danielvanc" />
                 <meta name="twitter:title" content={postTitle} />
                 <meta name="twitter:description" content={postDescription} />
-                <meta name="twitter:image" content={postImage ? postImage : ""} />
-                 
-
-                 
-
-                
-                   
+                <meta
+                    name="twitter:image"
+                    content={postImage || 'og-card-default.jpg'}
+                />
 
                 <html lang="en" />
-                
+
                 <link
                     async
                     defer
