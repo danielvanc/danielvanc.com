@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import logo from '../../../images/dvanc_logo.png';
-import '../general.css';
-// import '../fonts.css'
 
 const MainHeader = styled.header`
     height: 70px;
@@ -91,6 +89,7 @@ const SiteNav = styled.ul`
     li {
         font-family: var(--font-family-subheadings);
         display: inline-flex;
+        font-size: 1rem;
         margin-top: 7px;
         padding-left: 0.8em;
         @media screen and (min-width: 375px) {
