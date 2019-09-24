@@ -89,6 +89,7 @@ const SiteNav = styled.ul`
     li {
         font-family: var(--font-family-subheadings);
         display: inline-flex;
+        font-size: 1rem;
         margin-top: 7px;
         padding-left: 0.8em;
         @media screen and (min-width: 375px) {

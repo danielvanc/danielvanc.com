@@ -3,7 +3,7 @@
   "description": "danielvanc.com package file",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",

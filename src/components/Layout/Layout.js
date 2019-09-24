@@ -62,7 +62,7 @@ body {
   color: var(--color-text-default);
   font-family: var(--font-family-text);
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.188rem;
   line-height: var(--lineheight-text);
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;

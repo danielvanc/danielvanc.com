@@ -17,7 +17,7 @@ const BlogButton = styled(ALink)`
     color: white !important;
     font-family: var(--font-family-subheadings);
     margin-top: 1.875em;
-    padding: 0.5em 1em 0.7em 1em;
+    padding: 0.7em 1em 0.7em 1em;
     text-transform: uppercase;
 
     display: inline-block;
