@@ -72,15 +72,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-nprogress`,
-            options: {
-                // Setting a color is optional.
-                color: `#91c9b2`,
-                // Disable the loading spinner.
-                showSpinner: true,
-            },
-        },
-        {
             resolve: 'gatsby-plugin-webpack-bundle-analyzer',
             options: {
                 production: true,
