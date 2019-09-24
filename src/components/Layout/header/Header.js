@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import logo from '../../../images/dvanc_logo.png';
-import '../general.css';
-// import '../fonts.css'
 
 const MainHeader = styled.header`
     height: 70px;
