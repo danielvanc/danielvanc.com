@@ -9,7 +9,7 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title:
-            'Home of Daniel Van Cuylenburg - Guitarist | Web Designer | Front-end Developer',
+            'Home of Daniel Van Cuylenburg - Guitarist | Front-end Developer',
     },
     plugins: [
         'gatsby-plugin-styled-components',
@@ -38,12 +38,6 @@ module.exports = {
         'gatsby-transformer-remark',
         'gatsby-plugin-offline',
         'gatsby-plugin-styled-components',
-        // {
-        //   resolve: 'gatsby-plugin-styled-components',
-        //   options: {
-        //     "pure": true
-        //   }
-        // },
         'gatsby-transformer-sharp',
         'react-media',
         'gatsby-plugin-sharp',
@@ -71,14 +65,14 @@ module.exports = {
                 overlayDrafts: true,
             },
         },
-        {
-            resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-            options: {
-                production: true,
-                disable: !process.env.ANALYZE_BUNDLE_SIZE,
-                generateStatsFile: true,
-                analyzerMode: 'static',
-            },
-        },
+        // {
+        //     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+        //     options: {
+        //         production: true,
+        //         disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        //         generateStatsFile: true,
+        //         analyzerMode: 'static',
+        //     },
+        // },
     ],
 };
