@@ -42,6 +42,7 @@ const WorkPlace = styled.dl`
         display: block;
         margin: 0 0 15px 0;
         padding: 0 0 20px;
+        font-size: var(--font-size);
         &:last-of-type {
             border-bottom: 0;
             margin-bottom: 0;
