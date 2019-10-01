@@ -63,6 +63,7 @@ const ImageText = styled.div`
 `;
 
 const ResumeIntroduction = styled.p`
+    font-size: var(--font-size);
     margin: 1em auto 0 auto;
     max-width: 90%;
     text-align: center;
@@ -79,6 +80,7 @@ const ResumeIntroduction = styled.p`
 `;
 
 const SideText = styled.p`
+    font-size: var(--font-size);
     margin: 1.5em auto;
     max-width: 90%;
     text-align: center;
