@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-// import styled from 'styled-components'
 import TitleAndMetas from '../components/Layout/TitleAndMetas';
 import Layout from '../components/Layout';
 import SubMast from '../components/Shared/SubMast';
-import LatestBlock from '../components/Specifics/Notes/LatestBlock';
-// import ListPosts from '../components/Shared/ListPostsSquareOffset'
+import ListNotes from '../components/Shared/ListNotes';
 // import AllCategories from '../components/Shared/ListCategories'
-import PreviousPosts from '../components/Shared/PreviousPosts';
 
 const NotesIndexPage = ({data}) => {
     const page = 'sub';
-    const {edges: notesLatest} = data.latest;
-    const notesPrevious = data.allNotes;
+    const {allNotes} = data;
     // const {group: getTags } = data.allTags
     return (
         <>
@@ -26,28 +22,24 @@ const NotesIndexPage = ({data}) => {
                 <SubMast
                     title="Notes"
                     textContent="The Web, Technology, Life and Site related updates."
-                    layout="standard"
+                    layout="standard-centered"
                 />
-                <LatestBlock note={notesLatest} />
-                {/* <PreviousPosts notes={notesPrevious.edges} tot={notesPrevious.totalCount} tags={getTags} isTags={false} /> */}
-                <PreviousPosts
-                    notes={notesPrevious.edges}
-                    tot={notesPrevious.totalCount}
+                <ListNotes
+                    notes={allNotes.edges}
+                    tot={allNotes.totalCount}
                     isTags={false}
                 />
-                {/* <AllCategories tags={getTags} />
-          <ListPosts notes={notesPrevious} total={totalCount} />
-        </PreviousPosts> */}
+                {/* <AllCategories tags={getTags} /> */}
             </Layout>
         </>
     );
 };
 
 NotesIndexPage.propTypes = {
-    page: PropTypes.string,
     data: PropTypes.shape({
-        allMarkdownRemake: PropTypes.shape({
+        allNotes: PropTypes.shape({
             edges: PropTypes.array,
+            totalCount: PropTypes.number,
         }),
     }),
 };
@@ -55,33 +47,6 @@ export default NotesIndexPage;
 
 export const query = graphql`
     query {
-        latest: allSanityNote(
-            limit: 1
-            sort: {fields: [publishedAt], order: DESC}
-            filter: {slug: {current: {ne: null}}}
-        ) {
-            totalCount
-            edges {
-                node {
-                    id
-                    title
-                    _createdAt(formatString: "DD.MM.YYYY")
-                    description
-                    slug {
-                        _type
-                        current
-                    }
-                    mainImage {
-                        asset {
-                            fluid(maxHeight: 450) {
-                                ...GatsbySanityImageFluid
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         allNotes: allSanityNote(
             sort: {fields: [publishedAt], order: DESC}
             filter: {slug: {current: {ne: null}}}

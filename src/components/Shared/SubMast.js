@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import BaseBlockContent from '@sanity/block-content-to-react';
-import {Content} from '../Shared/Content';
+import {Content} from './Content';
 
 const SubHeading = styled.div`
+    &.standard-centered,
     &.standard {
         grid-column: 3 / 15;
         grid-row: 1 / 2;
@@ -22,6 +23,24 @@ const SubHeading = styled.div`
         h1 {
             @media screen and (max-width: 75em) {
                 font-size: var(--font-size-large);
+            }
+        }
+        &-centered {
+            margin: 0 8%;
+            padding: 2em 0 3em 0;
+
+            @media screen and (min-width: 64em) {
+                padding: 4em 0;
+            }
+            * {
+                @media screen and (min-width: 48em) {
+                    margin: 0;
+                    text-align: center;
+                }
+            }
+            h1 {
+                max-width: 100%;
+                padding: 0;
             }
         }
     }

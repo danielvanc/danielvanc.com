@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import BlogThumb from 'gatsby-image';
@@ -6,16 +7,13 @@ import Media from 'react-media';
 import PostButton from '../../Shared/Buttons';
 
 const NotesLatest = styled.section`
-    background: var(--color-dark-grey);
-    padding: 0 1.5em 3em 1.5em;
-    @media screen and (min-width: 48em) {
-        padding: 0;
-    }
+    padding: 1.5em 0 0 0;
+
     @media screen and (min-width: 48em) {
         grid-column: 1 / -1;
         grid-row: 2 / 4;
-        display: grid;
-        grid-template-columns: repeat(18, 1fr);
+        margin: 0 auto;
+        max-width: 870px;
     }
 `;
 const NotesBlank = styled.div`
@@ -25,21 +23,16 @@ const NotesBlank = styled.div`
 `;
 const NotesLatestHeading = styled.h2`
     font-weight: 900;
-    grid-column: 2 / 17;
-    grid-row: 1 / 2;
-    padding: 1.875em 0 1em 0;
+    margin: 0;
+    padding: 0;
     position: relative;
     @media screen and (min-width: 48em) {
         font-size: var(--font-size-large);
-        padding: 1.875em 0;
     }
     @media screen and (min-width: 64em) {
-        padding: 0.938em 0;
         font-size: var(--font-size-x-large);
-        grid-column: 5 / 16;
     }
     @media screen and (min-width: 75em) {
-        grid-column: 6 / 15;
     }
     @media screen and (min-width: 90em) {
         font-size: var(--font-size-xx-large);
@@ -64,76 +57,39 @@ const LatestIcon = styled.span`
         right: -45px;
     }
 `;
-const NotesLatestContent = styled.div`
-    grid-column: 11 / 18;
-    grid-row: 2 / 3;
-    @media screen and (min-width: 48em) {
-        padding-bottom: 2.5em;
-    }
-    @media screen and (min-width: 64em) {
-        padding: 1.563em 0;
-        /* padding:4.688em 0; */
-    }
-    @media screen and (min-width: 75em) {
-        padding: 4.688em 0;
-    }
-    @media screen and (min-width: 90em) {
-        grid-column: 11 / 16;
-    }
-    p {
-        margin-bottom: 1.563em;
-        @media screen and (min-width: 64em) {
-            font-size: 1.125em;
-        }
-        @media screen and (min-width: 93.75em) {
-            font-size: var(--font-size-medium-alt);
-        }
-    }
-`;
+
 const BlogImage = styled.div`
-    grid-column: 1 / 10;
-    grid-row: 2 / 4;
-    align-self: end;
-    @media screen and (min-width: 48em) {
-        /* padding-bottom: 2.500em; */
-    }
-    @media screen and (min-width: 90em) {
-        grid-column: 2 / 10;
-    }
-    img {
-        /* width: 90% !important;
-        max-width: 90% !important; */
-        align-self: end;
-    }
+    /* background: var(--color-dark-grey); */
+    background: #4a4a4a;
 `;
 
-const LatestBlock = props => (
+const LatestBlock = ({note}) => (
     <>
         <NotesLatest>
-            {props.note.map(({node: n}) => (
-                <React.Fragment key={n.id}>
+            {note.map(({node: n}) => (
+                <BlogImage key={n.id}>
+                    <BlogThumb fluid={n.mainImage.asset.fluid} />
                     <NotesLatestHeading>
-                        <LatestIcon>Latest</LatestIcon>
+                        {/* <LatestIcon>Latest</LatestIcon> */}
                         <Link to={`/notes/${n.slug.current}`}>{n.title}</Link>
                     </NotesLatestHeading>
-                    <NotesLatestContent>
-                        <p>{n.description}</p>
-                        <PostButton
-                            link={`/notes/${n.slug.current}`}
-                            title="Read"
-                            blog
-                        />
-                    </NotesLatestContent>
-                    <Media query="(min-width: 768px)">
-                        <BlogImage>
-                            <BlogThumb fluid={n.mainImage.asset.fluid} />
-                        </BlogImage>
-                    </Media>
-                </React.Fragment>
+                    <PostButton
+                        link={`/notes/${n.slug.current}`}
+                        title="Read"
+                        blog
+                    />
+                </BlogImage>
             ))}
             <NotesBlank />
         </NotesLatest>
     </>
 );
 
+LatestBlock.propTypes = {
+    note: PropTypes.shape({
+        allMarkdownRemake: PropTypes.shape({
+            edges: PropTypes.array,
+        }),
+    }),
+};
 export default LatestBlock;
