@@ -90,7 +90,6 @@ const NoteImage = styled.div`}
         box-shadow: 10px 9px 10px -6px rgba(2, 2, 2, 0.56);
         transition: all 0.8s ease-in-out;
         &:hover {
-            box-shadow: none;
             transform: scale(1.2);
             transition: all 0.8s ease-in-out;
         }
