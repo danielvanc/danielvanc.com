@@ -299,7 +299,7 @@ const Footer = () => (
                 </ul>
             </OpenSource>
             <Updated>
-                <p>Site last updated on: 4 / 10 / 2019</p>
+                <p>Site last updated on: 7 / 10 / 2019</p>
             </Updated>
             <FootNotes>
                 <p>
