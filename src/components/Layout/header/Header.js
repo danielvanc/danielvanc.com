@@ -91,7 +91,7 @@ const SiteNav = styled.ul`
         display: inline-flex;
         font-size: 1rem;
         margin-top: 7px;
-        padding-left: 0.7em;
+        padding-left: 0.6em;
         @media screen and (min-width: 375px) {
             padding-left: 2em;
         }

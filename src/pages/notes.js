@@ -21,7 +21,7 @@ const NotesIndexPage = ({data}) => {
             <Layout pageLayout={page}>
                 <SubMast
                     title="Notes"
-                    textContent="The Web, Technology, Life and Site related updates."
+                    textContent=""
                     layout="standard-centered"
                 />
                 <ListNotes

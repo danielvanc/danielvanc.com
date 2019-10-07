@@ -27,13 +27,10 @@ const SubHeading = styled.div`
         }
         &-centered {
             margin: 0 8%;
-            padding: 2em 0 3em 0;
-
-            @media screen and (min-width: 64em) {
-                padding: 4em 0;
-            }
+            padding: 2em 0 1em 0;
             * {
                 @media screen and (min-width: 48em) {
+                    padding: 1em 0;
                     margin: 0;
                     text-align: center;
                 }
