@@ -67,7 +67,7 @@ const Note = styled.article`
 
 const NoteHeading = styled.h2`
     font-size: 1.125em;
-    font-weight: 400;
+    /* font-weight: 400; */
     font-size: var(--font-size-medium);
     @media screen and (min-width: 64em) {
         font-size: 1.313em;
