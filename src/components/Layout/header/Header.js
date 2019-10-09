@@ -25,6 +25,10 @@ const MainHeader = styled.header`
         padding-right: 0;
     }
 
+    .home & {
+        padding-left: 4em;
+    }
+
     .center-squared &,
     .sub &,
     .notes & {

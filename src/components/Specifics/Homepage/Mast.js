@@ -7,19 +7,10 @@ import MastStandFirst from './MastStandFirst';
 const MastContent = styled.div`
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    padding: 2.5em 0 3em 0;
-    @media screen and (min-width: 48em) {
-        align-self: center;
-        grid-row: 1 / 3;
-        align-self: end;
-        padding-bottom: 1em;
-    }
-    @media screen and (min-width: 64em) {
-        grid-row: 1 / 2;
-        padding-bottom: 1.875em;
-    }
+    padding: 3.5em 0 0.5em 90px;
     h1 {
-        max-width: 90%;
+        /* max-width: 90%; */
+        max-width: 30ch;
     }
     p {
         font-size: 1.25em;

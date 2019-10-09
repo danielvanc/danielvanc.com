@@ -15,7 +15,7 @@ const NoteTitle = styled.h2`
     position: relative;
     text-transform: uppercase;
     @media screen and (min-width: 48em) {
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-medium-alt);
     }
     &:after {
         @media screen and (min-width: 48em) {
@@ -23,7 +23,7 @@ const NoteTitle = styled.h2`
             content: '';
             position: absolute;
             right: 0;
-            left: 230px;
+            left: 190px;
             top: 52%;
         }
     }
@@ -32,6 +32,7 @@ const LatestNote = styled.aside`
     color: #fff;
     grid-column: 6 / -1;
     grid-row: 2 / 3;
+    max-width: 88%;
 `;
 const NoteContentTitle = styled.h3`
     padding-bottom: 0.5em;
@@ -50,7 +51,6 @@ const NoteContent = styled.div`
     p {
         font-size: 1rem;
         line-height: 1.7;
-        max-width: 90%;
     }
 `;
 

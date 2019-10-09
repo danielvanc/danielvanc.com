@@ -323,7 +323,7 @@ const PageContainer = styled.div`
     }
 
     &.home .contentContainer {
-        max-width: 1150px;
+        max-width: 1250px;
         margin: 0 auto;
         grid-template-columns: repeat(8, 1fr);
         grid-auto-rows: repeat(3, 1fr);

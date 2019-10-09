@@ -11,12 +11,12 @@ const MastMainBody = styled.main`
     }
     img {
         float: left;
-        margin: 90px 20px 20px -90px;
         max-width: 200px;
-        /* shape-outside: circle(46.5% at 104px 99px); */
-        shape-outside: circle(46.5% at 14px 189px);
+        margin: -20px 20px 20px 0px;
+        shape-outside: circle(43.76% at 128px 78px);
     }
     p {
+        padding-left: 90px;
         @media screen and (min-width: 64em) {
             font-size: 1.125rem;
         }
