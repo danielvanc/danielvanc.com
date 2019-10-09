@@ -11,34 +11,20 @@ const MainHeader = styled.header`
     padding-right: 1.5em;
     margin-bottom: 10px;
     display: flex;
+    max-width: 1150px;
 
     @media screen and (min-width: 600px) {
-        height: 120px;
+        /* height: 120px; */
+        padding-top: 3em;
+        padding-bottom: 1em;
     }
 
     @media screen and (min-width: 37.5em) {
         margin: 0 auto;
         padding-left: 0;
         padding-right: 0;
-        width: 50%;
     }
 
-    @media screen and (min-width: 48em) {
-        height: auto;
-        display: grid;
-        grid-gap: 25px;
-        grid-template-rows: 120px;
-        width: 100%;
-    }
-    @media screen and (min-width: 90em) {
-        grid-template-rows: 120px;
-    }
-
-    .home & {
-        @media screen and (min-width: 64em) {
-            grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr);
-        }
-    }
     .center-squared &,
     .sub &,
     .notes & {
@@ -68,6 +54,9 @@ const MainHeader = styled.header`
     nav {
         display: flex;
         width: 100%;
+        .home & {
+            width: auto;
+        }
     }
 `;
 const SiteNav = styled.ul`
@@ -85,6 +74,11 @@ const SiteNav = styled.ul`
         margin: 0 auto;
         max-width: 500px;
         padding: 0;
+    }
+    .home & {
+        @media screen and (min-width: 37.5em) {
+            margin: 0 auto;
+        }
     }
     li {
         font-family: var(--font-family-subheadings);
@@ -188,6 +182,7 @@ const SiteNav = styled.ul`
 
     li.logo a {
         display: inline-block;
+        margin: 0.313em 0.5em 0.313em 0;
         vertical-align: middle;
         -webkit-transform: perspective(1px) translateZ(0);
         transform: perspective(1px) translateZ(0);

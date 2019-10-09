@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import Mast from '../components/Specifics/Homepage/Mast';
 import TitleAndMetas from '../components/Layout/TitleAndMetas';
-import LatestPost from '../components/Specifics/Homepage/LatestPost';
+import LatestNote from '../components/Specifics/Homepage/LatestNote';
+import HomeMain from '../components/Specifics/Homepage/HomeMain';
 
 const IndexPage = ({data}) => {
     // const { edges: posts } = data.intro
@@ -17,7 +18,6 @@ const IndexPage = ({data}) => {
         _rawFollowUp,
         _rawBody,
     } = data.intro;
-    const page = 'home';
     const pageData = {};
 
     // posts.forEach(function ({ node: post }) {
@@ -39,14 +39,14 @@ const IndexPage = ({data}) => {
                 metaDescription={pageData.metaDescription}
                 metaKeywords={pageData.metaKeywords}
             />
-            <Layout pageLayout={page}>
+            <Layout pageLayout="home">
                 <Mast
                     pageTitle={pageData.pageTitle}
                     pageSubTitle={pageData.pageSubTitle}
-                    pageDescription={pageData.pageDescription}
                     pageFollowUp={pageData.pageFollowUp}
                 />
-                <LatestPost notes={notes} />
+                <HomeMain pageDescription={pageData.pageDescription} />
+                <LatestNote notes={notes} />
             </Layout>
         </>
     );
