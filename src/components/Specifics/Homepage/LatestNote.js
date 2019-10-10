@@ -6,33 +6,33 @@ import styled from 'styled-components';
 import PostButton from '../../Shared/Buttons';
 
 const NoteTitle = styled.h2`
-    /* border-bottom: 1px solid var(--color-borders); */
-    margin-bottom: 0.8em;
     align-self: center;
     font-family: var(--font-family-subheadings) !important;
     font-weight: 200;
+    margin-bottom: 0.2em;
     letter-spacing: 0.2em;
     position: relative;
     text-transform: uppercase;
     @media screen and (min-width: 48em) {
         font-size: var(--font-size-medium-alt);
+        margin-bottom: 0.8em;
     }
     &:after {
-        @media screen and (min-width: 48em) {
-            border-bottom: 1px solid var(--color-borders);
-            content: '';
-            position: absolute;
-            right: 0;
-            left: 190px;
-            top: 52%;
-        }
+        border-bottom: 1px solid var(--color-borders);
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 190px;
+        top: 52%;
     }
 `;
 const LatestNote = styled.aside`
     color: #fff;
     grid-column: 6 / -1;
     grid-row: 2 / 3;
-    max-width: 88%;
+    @media screen and (min-width: 48em) {
+        max-width: 88%;
+    }
 `;
 const NoteContentTitle = styled.h3`
     padding-bottom: 0.5em;

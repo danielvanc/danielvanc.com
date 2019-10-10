@@ -6,6 +6,7 @@ import HTMLContent from '../../Shared/Content';
 const MastMainBody = styled.main`
     grid-column: 1 / 6;
     grid-row: 2 / 3;
+    margin-bottom: 3em;
     @media screen and (min-width: 48em) {
         padding: 0;
     }
