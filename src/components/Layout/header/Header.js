@@ -19,6 +19,7 @@ const MainHeader = styled.header`
     }
 
     .home & {
+        padding-top: 2em;
         @media screen and (min-width: 48em) {
             padding-left: 1.5em;
         }
@@ -33,7 +34,7 @@ const MainHeader = styled.header`
             width: 100%;
             nav {
                 grid-column: 2 / 4;
-                align-self: end;
+                align-self: center;
             }
         }
         grid-template-rows: 60px;

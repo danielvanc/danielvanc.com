@@ -324,7 +324,7 @@ const PageContainer = styled.div`
         );
     }
     @media screen and (min-width: 48em) {
-        padding: 2em 0 0 0;
+        padding: 0em 0 0 0;
     }
     .contentContainer {
         @media screen and (min-width: 48em) {
