@@ -20,7 +20,7 @@ const MainHeader = styled.header`
 
     .home & {
         @media screen and (min-width: 48em) {
-            padding-left: 4em;
+            padding-left: 1.5em;
         }
     }
 

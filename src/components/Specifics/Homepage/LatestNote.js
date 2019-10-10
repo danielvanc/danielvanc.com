@@ -31,7 +31,7 @@ const LatestNote = styled.aside`
     grid-column: 6 / -1;
     grid-row: 2 / 3;
     @media screen and (min-width: 48em) {
-        max-width: 88%;
+        /* max-width: 88%; */
     }
 `;
 const NoteContentTitle = styled.h3`
@@ -51,6 +51,12 @@ const NoteContent = styled.div`
     p {
         font-size: 1rem;
         line-height: 1.7;
+        @media screen and (min-width: 48em) {
+            font-size: 0.789em;
+        }
+        @media screen and (min-width: 64em) {
+            font-size: 1rem;
+        }
     }
 `;
 
