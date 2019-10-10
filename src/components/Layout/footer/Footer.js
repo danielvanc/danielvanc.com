@@ -5,7 +5,6 @@ import GitHubButton from 'react-github-btn';
 
 const SiteFooter = styled.footer`
     background: var(--color-page-background);
-
     @media screen and (min-width: 48em) {
         padding: 3em 0;
         width: 100%;
@@ -18,25 +17,60 @@ const SiteFooter = styled.footer`
 
 const SiteFooterWrap = styled.div`
     margin: 0 auto;
-    max-width: 1080px;
-    display: flex;
-    flex-wrap: wrap;
+    max-width: 1150px;
+    padding: 0 1.5em;
+    @media screen and (min-width: 48em) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @media screen and (min-width: 76.25em) {
+        padding: 0;
+    }
 `;
 
-const FootNotes = styled.div`
-    flex-basis: 67%;
-    order: 1;
-    padding: 2em 0;
+const FootNotes = styled.ul`
+    list-style: none;
+    padding: 1em 0 2em 0;
     text-align: center;
     @media screen and (min-width: 48em) {
+        margin: 0 auto;
+        text-align: right;
+        padding: 2em 0;
+        flex-basis: 67%;
+        order: 1;
         padding: 0;
         text-align: left;
+    }
+    /* @media screen and (min-width: 64em) {
+        flex-basis: 50%;
+    } */
+    li {
+        @media screen and (min-width: 32.5em) {
+            display: inline;
+        }
+        @media screen and (min-width: 48em) {
+            display: block;
+        }
+        @media screen and (min-width: 64em) {
+        }
+        @media screen and (min-width: 53.125em) {
+            display: inline;
+        }
+        &:first-of-type {
+            padding-right: 5px;
+        }
     }
 `;
 
 const OpenSource = styled.div`
-    order: 2;
-    flex-basis: 33%;
+    padding-top: 2em;
+    margin: 0 auto;
+    max-width: 300px;
+    @media screen and (min-width: 48em) {
+        flex-basis: 33%;
+        order: 2;
+        padding-top: 0;
+    }
     ul {
         display: flex;
         list-style: none;
@@ -89,8 +123,9 @@ const Footer = () => (
                     </ul>
                 </OpenSource>
                 <FootNotes>
-                    <p>
-                        &copy; 2019 Daniel Van Cuylenburg | An
+                    <li>&copy; 2019 Daniel Van Cuylenburg.</li>
+                    <li>
+                        An
                         <a
                             href="https://github.com/danielvanc/danielvanc.com"
                             title="An Open Source Project"
@@ -98,8 +133,8 @@ const Footer = () => (
                             {' '}
                             Open Source
                         </a>{' '}
-                        project | <Link to="/colophon">Colophon</Link>
-                    </p>
+                        project. <Link to="/colophon">Colophon</Link>
+                    </li>
                 </FootNotes>
             </SiteFooterWrap>
         </SiteFooter>

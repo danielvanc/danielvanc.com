@@ -335,13 +335,13 @@ const PageContainer = styled.div`
 
     &.home .contentContainer {
         max-width: 1150px;
-        padding: 0 1.5em 1em 1.5em;
+        padding: 0 1.5em 3em 1.5em;
         @media screen and (min-width: 48em) {
             margin: 0 auto;
             grid-template-columns: repeat(8, 1fr);
             grid-auto-rows: repeat(3, 1fr);
             grid-gap: 25px;
-            /* padding: 0 1.5em 8em 1.5em; */
+            padding: 0 1.5em 1em 1.5em;
         }
         @media screen and (min-width: 64em) {
             grid-gap: 55px;
