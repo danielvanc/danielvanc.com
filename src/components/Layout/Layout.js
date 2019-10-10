@@ -97,35 +97,40 @@ a:hover {
   
   h1 a {line-height: 2.8;}
   h1 {
+    line-height: 140%;
     font-size: var(--font-size-medium);
+    /* font-size: calc(64px + -0.4vw); */
     max-width: 14em;
+
+    @media screen and (min-width: 27.5em) {
+      max-width: 17em;
+    }
+    @media screen and (min-width: 48em) {
+      font-size: 2.813em; /* 46px */
+      max-width: 14em;
+    }
+    @media screen and (min-width: 61.250em) { /* 980px */ 
+      font-size: var(--font-size-x-large);
+    }
+
+    @media screen and (min-width: 90em) { /* 1450px*/
+      /* font-size: var(--font-size-xx-large); */
+    }
   }
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.2rem; }
   h4 { font-size: 1.2rem; }
-  @media screen and (min-width: 27.5em) {
-    h1 {
-      max-width: 17em;
-    }
-  }
-  @media screen and (min-width: 48em) {
-    h1 {
-      max-width: 14em;
-    }
-  }
   
-  @media screen and (min-width: 64em) {
-    h1 { font-size: var(--font-size-large); }
-  }
+  
+  
+  
   @media screen and (min-width: 75em) {
-    h1 { font-size: var(--font-size-x-large); }
+    /* h1 { font-size: var(--font-size-x-large); } */
     h2 { font-size: var(--font-size-large); }
     h3 { font-size: var(--font-size-medium); }
     h4 { font-size: var(--font-size); }
   }
-  @media screen and (min-width: 90em) { /* 1450px*/
-    h1 { font-size: var(--font-size-xx-large); }
-  }
+  
 h2,
 h3 {
   line-height: calc(var(--lineheight-heading) * 1.2);
@@ -305,9 +310,10 @@ const PageContainer = styled.div`
         #5f5f5f,
         rgba(50, 51, 63, 0) 12.66%
     );
-    padding: 20px 0 0 0;
+    padding: 1em 0 0 0;
 
     @media screen and (min-width: 48em) {
+        padding: 2em 0 0 0;
         background-image: radial-gradient(
             circle at left top,
             #5f5f5f,
@@ -324,11 +330,14 @@ const PageContainer = styled.div`
 
     &.home .contentContainer {
         max-width: 1250px;
-        margin: 0 auto;
-        grid-template-columns: repeat(8, 1fr);
-        grid-auto-rows: repeat(3, 1fr);
-        grid-gap: 55px;
-        padding-bottom: 8em;
+        padding: 0 1.5em 4em 1.5em;
+        @media screen and (min-width: 48em) {
+            margin: 0 auto;
+            grid-template-columns: repeat(8, 1fr);
+            grid-auto-rows: repeat(3, 1fr);
+            grid-gap: 55px;
+            padding: 0 0 8em 0;
+        }
     }
     &.sub .contentContainer {
         @media screen and (min-width: 48em) {

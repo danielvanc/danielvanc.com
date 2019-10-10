@@ -26,7 +26,9 @@ const MainHeader = styled.header`
     }
 
     .home & {
-        padding-left: 4em;
+        @media screen and (min-width: 48em) {
+            padding-left: 4em;
+        }
     }
 
     .center-squared &,
@@ -68,7 +70,6 @@ const SiteNav = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%;
     justify-content: space-evenly;
     align-self: center;
     display: inline;

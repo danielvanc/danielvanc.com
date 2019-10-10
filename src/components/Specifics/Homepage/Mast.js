@@ -5,18 +5,32 @@ import MastStandFirst from './MastStandFirst';
 // import MastFollowUp from './MastFollowUp';
 
 const MastContent = styled.div`
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    padding: 3.5em 0 0.5em 90px;
+    padding: 0 0 0.9em 0;
+    @media screen and (min-width: 48em) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        padding: 3.5em 0 0.5em 90px;
+    }
     h1 {
-        /* max-width: 90%; */
-        max-width: 30ch;
+        /* msax-width: 30ch; */
+        max-width: none;
+        @media screen and (min-width: 35.625em) {
+            /* 570px */
+        }
+        @media screen and (min-width: 48em) {
+            max-width: 30ch;
+        }
     }
     p {
-        font-size: 1.25em;
+        font-size: 0.842em;
         font-weight: 200;
         line-height: 130%;
-        max-width: 62%;
+        padding-bottom: 1em;
+        max-width: 90%;
+        @media screen and (min-width: 48em) {
+            font-size: 1.25em;
+            max-width: 62%;
+        }
     }
     @media screen and (min-width: 64em) {
         p {

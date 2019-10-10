@@ -10,13 +10,30 @@ const MastMainBody = styled.main`
         padding: 0;
     }
     img {
-        float: left;
-        max-width: 200px;
-        margin: -20px 20px 20px 0px;
-        shape-outside: circle(43.76% at 128px 78px);
+        display: none;
+        /* max-width: 100px;
+        margin: 10px 20px 20px 0;
+        shape-outside: circle(47.96% at 54px 53px); */
+        @media screen and (min-width: 23.438em) {
+            display: block;
+            float: left;
+            max-width: 250px;
+            margin: 0 20px 25px 0;
+            shape-outside: circle(47.96% at 0px 120px);
+            transform: translateX(-55%);
+        }
+        @media screen and (min-width: 48em) {
+            display: block;
+            max-width: 200px;
+            margin: -20px 20px 20px 0px;
+            shape-outside: circle(43.76% at 128px 78px);
+        }
     }
     p {
-        padding-left: 90px;
+        font-size: 0.789em;
+        @media screen and (min-width: 48em) {
+            padding-left: 90px;
+        }
         @media screen and (min-width: 64em) {
             font-size: 1.125rem;
         }
