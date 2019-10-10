@@ -13,16 +13,9 @@ const MainHeader = styled.header`
     display: flex;
     max-width: 1150px;
 
-    @media screen and (min-width: 600px) {
-        /* height: 120px; */
-        padding-top: 3em;
-        padding-bottom: 1em;
-    }
-
-    @media screen and (min-width: 37.5em) {
+    @media screen and (min-width: 37em) {
         margin: 0 auto;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 1em 1.5em;
     }
 
     .home & {

@@ -105,6 +105,10 @@ a:hover {
     @media screen and (min-width: 27.5em) {
       max-width: 17em;
     }
+
+    @media screen and (min-width: 37em) {
+      font-size: 1.684em;
+    }
     @media screen and (min-width: 48em) {
       font-size: 2.813em; /* 46px */
       max-width: 14em;
@@ -312,15 +316,16 @@ const PageContainer = styled.div`
     );
     padding: 1em 0 0 0;
 
-    @media screen and (min-width: 48em) {
-        padding: 2em 0 0 0;
+    @media screen and (min-width: 37em) {
         background-image: radial-gradient(
             circle at left top,
             #5f5f5f,
             rgba(50, 51, 63, 0) 26.66%
         );
     }
-
+    @media screen and (min-width: 48em) {
+        padding: 2em 0 0 0;
+    }
     .contentContainer {
         @media screen and (min-width: 48em) {
             display: grid;

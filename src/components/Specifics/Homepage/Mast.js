@@ -14,11 +14,14 @@ const MastContent = styled.div`
     h1 {
         /* msax-width: 30ch; */
         max-width: none;
+
+        font-size: 5vmin !important;
         @media screen and (min-width: 35.625em) {
             /* 570px */
+            font-size: 4vmax !important;
         }
         @media screen and (min-width: 48em) {
-            max-width: 30ch;
+            max-width: 35ch;
         }
     }
     p {
