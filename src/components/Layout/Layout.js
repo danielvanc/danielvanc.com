@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --font-weight: 300;
     --font-weight-headings: 900;
     --font-size-xxx-large: 5.063rem; 
-    --font-size-xx-large: 3.813em; 
+    --font-size-xx-large: 3.438em; 
     --font-size-x-large: 3.375rem;
     --font-size-large: 2.25rem;
     --font-size-medium: 1.5rem;
@@ -97,35 +97,44 @@ a:hover {
   
   h1 a {line-height: 2.8;}
   h1 {
+    line-height: 125%;
     font-size: var(--font-size-medium);
+    /* font-size: calc(64px + -0.4vw); */
     max-width: 14em;
+
+    @media screen and (min-width: 27.5em) {
+      max-width: 17em;
+    }
+
+    @media screen and (min-width: 37em) {
+      font-size: 1.684em;
+    }
+    @media screen and (min-width: 48em) {
+      font-size: 2.813em; /* 46px */
+      max-width: 14em;
+    }
+    @media screen and (min-width: 61.250em) { /* 980px */ 
+      font-size: var(--font-size-x-large);
+    }
+
+    @media screen and (min-width: 90em) { /* 1450px*/
+      /* font-size: var(--font-size-xx-large); */
+    }
   }
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.2rem; }
   h4 { font-size: 1.2rem; }
-  @media screen and (min-width: 27.5em) {
-    h1 {
-      max-width: 17em;
-    }
-  }
-  @media screen and (min-width: 48em) {
-    h1 {
-      max-width: 14em;
-    }
-  }
   
-  @media screen and (min-width: 64em) {
-    h1 { font-size: var(--font-size-large); }
-  }
+  
+  
+  
   @media screen and (min-width: 75em) {
-    h1 { font-size: var(--font-size-x-large); }
+    /* h1 { font-size: var(--font-size-x-large); } */
     h2 { font-size: var(--font-size-large); }
     h3 { font-size: var(--font-size-medium); }
     h4 { font-size: var(--font-size); }
   }
-  @media screen and (min-width: 90em) { /* 1450px*/
-    h1 { font-size: var(--font-size-xx-large); }
-  }
+  
 h2,
 h3 {
   line-height: calc(var(--lineheight-heading) * 1.2);
@@ -300,26 +309,33 @@ template {
 const PageContainer = styled.div`
     background: var(--color-grey) no-repeat;
     background-size: cover;
-    /* background-image: radial-gradient(
-        circle at center,
-        #32333f 0,
-        rgba(50, 51, 63, 0) 66.66%
-    ); */
     background-image: radial-gradient(
-        circle at left top,
+        circle at center top,
         #5f5f5f,
-        rgba(50, 51, 63, 0) 12.66%
+        rgba(50, 51, 63, 0) 26.66%
     );
+    padding: 1em 0 0 0;
+
     @media screen and (min-width: 48em) {
-        /* #52554f,  */
-        background-image: radial-gradient(
-            circle at top,
-            #5f5f5f,
-            rgba(50, 51, 63, 0) 26.66%
-        );
+        padding: 0em 0 0 0;
     }
 
-    padding: 20px 0 0 0;
+    &.home {
+        background-image: radial-gradient(
+            circle at left top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 32.66%
+        );
+        padding: 1em 0 0 0;
+    }
+    &.notes {
+        background-image: #5f5f5f
+            radial-gradient(
+                circle at center top,
+                rgb(95, 95, 95),
+                rgba(50, 51, 63, 0) 26.66%
+            );
+    }
     .contentContainer {
         @media screen and (min-width: 48em) {
             display: grid;
@@ -328,26 +344,18 @@ const PageContainer = styled.div`
     }
 
     &.home .contentContainer {
+        max-width: 1150px;
+        padding: 0 1.5em 3em 1.5em;
         @media screen and (min-width: 48em) {
-            grid-template-columns: repeat(4, 1fr);
+            margin: 0 auto;
+            grid-template-columns: repeat(8, 1fr);
+            grid-auto-rows: repeat(3, 1fr);
+            grid-gap: 25px;
+            padding: 0 1.5em 1em 1.5em;
         }
         @media screen and (min-width: 64em) {
-            grid-template-columns: minmax(200px, 6fr) repeat(8, 1fr);
-            grid-template-rows:
-                repeat(3, minmax(min-content, max-content)) minmax(
-                    min-content,
-                    300px
-                )
-                1fr min-content;
-            grid-column-gap: 25px;
-        }
-        @media screen and (min-width: 90em) {
-            grid-template-rows:
-                repeat(3, minmax(min-content, max-content)) minmax(
-                    min-content,
-                    300px
-                )
-                1fr min-content;
+            grid-gap: 55px;
+            padding: 0 1.5em 2em 1.5em;
         }
     }
     &.sub .contentContainer {
@@ -367,7 +375,6 @@ const PageContainer = styled.div`
         }
     }
     &.center-squared .contentContainer {
-        /* max-width: 85%; */
         @media screen and (min-width: 48em) {
             margin: 0 auto;
             max-width: 1800px;

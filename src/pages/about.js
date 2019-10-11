@@ -22,9 +22,10 @@ const PageMain = styled.main`
         padding: 6em 0 2em 0;
     }
     @media screen and (min-width: 768px) {
-        grid-column: 2 / 15;
+        grid-column: 3 / 15;
     }
     @media screen and (min-width: 1024px) {
+        grid-column: 2 / 16;
         padding: 6em 0 10em 0;
     }
     @media screen and (min-width: 1320px) {
@@ -66,7 +67,8 @@ const ProfessionalText = styled(HTMLContent)`
             float: left;
             display: block;
             height: 100%;
-            width: 75%;
+
+            width: 55%;
             margin: auto;
             overflow: auto;
             left: auto;
@@ -88,6 +90,7 @@ const ProfessionalText = styled(HTMLContent)`
         @media screen and (min-width: 1024px) {
             margin: 100px 40px 0 -55%;
             shape-outside: circle(57.8% at -57.71% 59.7%);
+            width: 75%;
         }
         @media screen and (min-width: 1160px) {
             shape-outside: circle(59.81% at -62.21% 58.95%);
@@ -158,11 +161,15 @@ const PersonalLife = styled(HTMLContent)`
     }
     @media screen and (min-width: 1024px) {
         column-count: 3;
-        column-gap: 30px;
+        column-gap: 0;
+        margin-right: 0;
+        margin-left: 0;
     }
     @media screen and (min-width: 1200px) {
         column-count: 3;
         column-gap: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
     }
     @media screen and (min-width: 1320px) {
         column-count: 4;

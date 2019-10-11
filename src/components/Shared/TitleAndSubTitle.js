@@ -21,7 +21,10 @@ const TitleWrap = styled.div`
         margin: 3em 0 0 36%;
     }
     @media screen and (min-width: 1280px) {
-        margin: 4em 0 0 49%;
+        margin: 0 0 0 49%;
+    }
+    @media screen and (min-width: 1440px) {
+        margin: 2em 0 0 49%;
     }
 `;
 const SimpleContent = styled.h1`

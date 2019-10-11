@@ -17,9 +17,12 @@ const RefLinks = styled.ul`
         padding-left: 0;
         position: absolute;
         left: 0;
-        top: 272px;
+        top: 243px;
         float: none;
         width: auto;
+    }
+    @media screen and (min-width: 1220px) {
+      top: 272px;
     }
     li {
         display: inline-block;
