@@ -13,6 +13,7 @@ const NoteTitle = styled.h2`
     letter-spacing: 0.2em;
     position: relative;
     text-transform: uppercase;
+    font-size: var(--font-size);
     @media screen and (min-width: 48em) {
         font-size: var(--font-size-medium-alt);
         margin-bottom: 0.8em;
@@ -22,8 +23,11 @@ const NoteTitle = styled.h2`
         content: '';
         position: absolute;
         right: 0;
-        left: 190px;
+        left: 150px;
         top: 52%;
+        @media screen and (min-width: 48em) {
+            left: 190px;
+        }
     }
 `;
 const LatestNote = styled.aside`
