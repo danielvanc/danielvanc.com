@@ -34,11 +34,14 @@ const MastMainBody = styled.main`
     }
     p {
         font-size: 0.789em;
+        @media screen and (min-width: 23.438em) {
+            font-size: 1.05rem;
+        }
         @media screen and (min-width: 64em) {
-            font-size: 1.125rem;
+            /* font-size: 1.125rem; */
         }
         @media screen and (min-width: 48em) {
-            font-size: 1.188rem;
+            /* font-size: 1.188rem; */
         }
         @media screen and (min-width: 90em) {
             font-size: 1.313rem;

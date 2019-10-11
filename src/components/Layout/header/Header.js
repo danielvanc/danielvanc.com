@@ -19,7 +19,6 @@ const MainHeader = styled.header`
     }
 
     .home & {
-        padding-top: 2em;
         @media screen and (min-width: 48em) {
             padding-left: 1.5em;
         }
@@ -86,7 +85,7 @@ const SiteNav = styled.ul`
         margin-top: 7px;
         padding-left: 0.6em;
         @media screen and (min-width: 375px) {
-            padding-left: 2em;
+            padding-left: 1.9em;
         }
         @media screen and (min-width: 37.5em) {
             margin-top: 0;

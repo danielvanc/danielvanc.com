@@ -48,7 +48,7 @@ const MastContent = styled.div`
         font-weight: 200;
         line-height: 130%;
         padding-bottom: 1em;
-        @media screen and (min-width: 22.5em) {
+        @media screen and (min-width: 23.438em) {
             display: block;
         }
         @media screen and (min-width: 48em) {

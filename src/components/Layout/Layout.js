@@ -312,11 +312,23 @@ const PageContainer = styled.div`
     background-image: radial-gradient(
         circle at center top,
         #5f5f5f,
-        rgba(50, 51, 63, 0) 26.66%
+        rgba(50, 51, 63, 0) 6.66%
     );
     padding: 1em 0 0 0;
 
+    @media screen and (min-width: 30.625em) {
+        background-image: radial-gradient(
+            circle at left top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 8.66%
+        );
+    }
     @media screen and (min-width: 48em) {
+        background-image: radial-gradient(
+            circle at left top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 26.66%
+        );
         padding: 0em 0 0 0;
     }
 
@@ -326,15 +338,44 @@ const PageContainer = styled.div`
             #5f5f5f,
             rgba(50, 51, 63, 0) 32.66%
         );
-        padding: 1em 0 0 0;
     }
-    &.notes {
-        background-image: #5f5f5f
-            radial-gradient(
-                circle at center top,
-                rgb(95, 95, 95),
+
+    &.sub {
+        background-image: radial-gradient(
+            circle at left top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 22.66%
+        );
+    }
+
+    &.about {
+        background-image: radial-gradient(
+            circle at center top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 8.66%
+        );
+        @media screen and (min-width: 37.5em) {
+            background-image: radial-gradient(
+                circle at left top,
+                #5f5f5f,
                 rgba(50, 51, 63, 0) 26.66%
             );
+        }
+    }
+
+    &.notes {
+        background-image: radial-gradient(
+            circle at left top,
+            #5f5f5f,
+            rgba(50, 51, 63, 0) 8.66%
+        );
+        @media screen and (min-width: 37.5em) {
+            background-image: radial-gradient(
+                circle at left top,
+                #5f5f5f,
+                rgba(50, 51, 63, 0) 26.66%
+            );
+        }
     }
     .contentContainer {
         @media screen and (min-width: 48em) {
