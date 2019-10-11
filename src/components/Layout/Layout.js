@@ -97,7 +97,7 @@ a:hover {
   
   h1 a {line-height: 2.8;}
   h1 {
-    line-height: 140%;
+    line-height: 125%;
     font-size: var(--font-size-medium);
     /* font-size: calc(64px + -0.4vw); */
     max-width: 14em;
@@ -310,21 +310,31 @@ const PageContainer = styled.div`
     background: var(--color-grey) no-repeat;
     background-size: cover;
     background-image: radial-gradient(
-        circle at left top,
+        circle at center top,
         #5f5f5f,
-        rgba(50, 51, 63, 0) 12.66%
+        rgba(50, 51, 63, 0) 26.66%
     );
     padding: 1em 0 0 0;
 
-    @media screen and (min-width: 37em) {
+    @media screen and (min-width: 48em) {
+        padding: 0em 0 0 0;
+    }
+
+    &.home {
         background-image: radial-gradient(
             circle at left top,
             #5f5f5f,
-            rgba(50, 51, 63, 0) 26.66%
+            rgba(50, 51, 63, 0) 32.66%
         );
+        padding: 1em 0 0 0;
     }
-    @media screen and (min-width: 48em) {
-        padding: 0em 0 0 0;
+    &.notes {
+        background-image: #5f5f5f
+            radial-gradient(
+                circle at center top,
+                rgb(95, 95, 95),
+                rgba(50, 51, 63, 0) 26.66%
+            );
     }
     .contentContainer {
         @media screen and (min-width: 48em) {
@@ -365,7 +375,6 @@ const PageContainer = styled.div`
         }
     }
     &.center-squared .contentContainer {
-        /* max-width: 85%; */
         @media screen and (min-width: 48em) {
             margin: 0 auto;
             max-width: 1800px;

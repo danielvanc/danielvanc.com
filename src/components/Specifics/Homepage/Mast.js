@@ -12,7 +12,7 @@ const MastContent = styled.div`
         /* padding: 3.5em 0 0.5em 0; */
     }
     @media screen and (min-width: 64em) {
-        padding: 3.5em 0 0.5em 0;
+        padding: 3em 0 0.5em 0;
     }
     h1 {
         /* msax-width: 30ch; */
@@ -43,19 +43,13 @@ const MastContent = styled.div`
         }
     }
     p {
-        /* display: none; */
-        font-size: 0.842em;
-        /* font-size: 1em; */
+        display: none;
         font-size: 0.842em;
         font-weight: 200;
         line-height: 130%;
         padding-bottom: 1em;
-        max-width: 180px;
-        /* @media screen and (min-width: 22.5em) {
+        @media screen and (min-width: 22.5em) {
             display: block;
-        } */
-        @media screen and (min-width: 23.438em) {
-            max-width: 90%;
         }
         @media screen and (min-width: 48em) {
             font-size: 1em;
@@ -63,7 +57,6 @@ const MastContent = styled.div`
         }
         @media screen and (min-width: 64em) {
             font-size: 1.25em;
-            max-width: 64%;
         }
     }
     @media screen and (min-width: 64em) {
