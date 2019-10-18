@@ -14,6 +14,8 @@ const PageMain = styled.main`
         font-size: 1em;
         grid-column: 2 / 16;
         padding: 6em 0;
+        margin: 0 auto;
+        max-width: 1150px;
     }
 
     @media screen and (min-width: 90em) {
@@ -39,6 +41,10 @@ const ArticleHeading = styled.h1`
     }
     @media screen and (min-width: 93em) {
         max-width: 60rem;
+    }
+    @media screen and (min-width: 90em) {
+        /* 1450px*/
+        font-size: var(--font-size-xx-large);
     }
 `;
 const ArticleFooter = styled.footer`
