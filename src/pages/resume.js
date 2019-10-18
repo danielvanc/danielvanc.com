@@ -46,7 +46,7 @@ const ResumeBody = styled.main`
 `;
 
 const Resume = ({data}) => {
-    const page = 'sub';
+    const page = 'resume';
     const {
         metaTitle,
         metaTags,
