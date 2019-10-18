@@ -354,6 +354,9 @@ const PageContainer = styled.div`
     }
 
     &.about {
+        .contentContainer {
+            max-width: none;
+        }
         background-image: radial-gradient(
             circle at center top,
             #5f5f5f,
