@@ -346,6 +346,11 @@ const PageContainer = styled.div`
             #5f5f5f,
             rgba(50, 51, 63, 0) 22.66%
         );
+
+        .contentContainer {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
     }
 
     &.about {
