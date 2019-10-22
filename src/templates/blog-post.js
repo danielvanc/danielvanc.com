@@ -34,22 +34,21 @@ const ArticleEntry = styled.article`
     }
 `;
 const ArticleHeading = styled.h1`
-    /* max-width: 45rem; */
     max-width: auto;
     margin-bottom: 0.625em;
-    font-size: 8vw;
+    font-size: 7vm;
+    font-size: 7vmin;
     @media screen and (min-width: 48em) {
-        font-size: 5vw;
+        font-size: 5.8vm;
+        font-size: 5.8vmin;
         margin-bottom: 0;
     }
-    @media screen and (min-width: 93em) {
-        /* max-width: 60rem; */
-    }
     @media screen and (min-width: 90em) {
-        font-size: 4vw;
-        /* 1450px*/
-        /* font-size: var(--font-size-xx-large); */
-        /* font-size: 2.7em; */
+        font-size: 4.3vm;
+        font-size: 4vmax;
+    }
+    @media screen and (min-width: 93em) {
+        font-size: 2.836em;
     }
 `;
 const ArticleFooter = styled.footer`
