@@ -34,17 +34,22 @@ const ArticleEntry = styled.article`
     }
 `;
 const ArticleHeading = styled.h1`
-    max-width: 45rem;
+    /* max-width: 45rem; */
+    max-width: auto;
     margin-bottom: 0.625em;
+    font-size: 8vw;
     @media screen and (min-width: 48em) {
+        font-size: 5vw;
         margin-bottom: 0;
     }
     @media screen and (min-width: 93em) {
-        max-width: 60rem;
+        /* max-width: 60rem; */
     }
     @media screen and (min-width: 90em) {
+        font-size: 4vw;
         /* 1450px*/
-        font-size: var(--font-size-xx-large);
+        /* font-size: var(--font-size-xx-large); */
+        /* font-size: 2.7em; */
     }
 `;
 const ArticleFooter = styled.footer`
