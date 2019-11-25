@@ -83,8 +83,11 @@ const SiteNav = styled.ul`
         display: inline-flex;
         font-size: 1rem;
         margin-top: 7px;
-        padding-left: 0.6em;
+        padding-left: 0.3em;
         @media screen and (min-width: 375px) {
+            padding-left: 1.45em;
+        }
+        @media screen and (min-width: 25em) {
             padding-left: 1.9em;
         }
         @media screen and (min-width: 37.5em) {
@@ -249,14 +252,14 @@ const Header = props => (
                     </Link>
                 </li>
                 <li>
-                    <Link
-                        to="/now"
+                    {/* <Link
+                        to="/"
                         getProps={isPartiallyActive}
                         {...props}
                         title="Find out what I'm focusing on now"
-                    >
-                        Now
-                    </Link>
+                    > */}
+                    <a href="https://danielvanc.dev">Projects</a>
+                    {/* </Link> */}
                 </li>
             </SiteNav>
         </nav>
