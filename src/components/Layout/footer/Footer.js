@@ -131,7 +131,7 @@ const Footer = () => (
                             title="A Open Source Project"
                         >
                             {' '}
-                            Open Source
+                            Open Source :)
                         </a>{' '}
                         project. 
                         <Link to="/colophon">Colophon</Link>
