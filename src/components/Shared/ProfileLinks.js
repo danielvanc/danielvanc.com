@@ -38,7 +38,10 @@ const Links = styled.ul`
         }
         a:link,
         a:visited,
-        a:active { color: white}
+        a:active {
+          border-bottom: 0;
+          color: white;
+        }
     }
     .fab {
         display: inline-block;
