@@ -125,7 +125,7 @@ const Footer = () => (
                 <FootNotes>
                     <li>&copy; 2019 Daniel Van Cuylenburg.</li>
                     <li>
-                        An
+                        A
                         <a
                             href="https://github.com/danielvanc/danielvanc.com"
                             title="A Open Source Project"
