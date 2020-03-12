@@ -125,7 +125,7 @@ const Footer = () => (
                 <FootNotes>
                     <li>&copy; 2019 Daniel Van Cuylenburg.</li>
                     <li>
-                        An
+                        {/* An
                         <a
                             href="https://github.com/danielvanc/danielvanc.com"
                             title="An Open Source Project"
@@ -133,7 +133,8 @@ const Footer = () => (
                             {' '}
                             Open Source
                         </a>{' '}
-                        project. <Link to="/colophon">Colophon</Link>
+                        project.  */}
+                        <Link to="/colophon">Colophon</Link>
                     </li>
                 </FootNotes>
             </SiteFooterWrap>
