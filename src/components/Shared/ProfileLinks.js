@@ -36,6 +36,9 @@ const Links = styled.ul`
                 display: none;
             }
         }
+        a:link,
+        a:visited,
+        a:active { color: white}
     }
     .fab {
         display: inline-block;
