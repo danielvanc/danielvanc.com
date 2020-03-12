@@ -36,11 +36,9 @@ const Links = styled.ul`
                 display: none;
             }
         }
-        a:link,
-        a:visited,
-        a:active {
-          border-bottom: 0;
-          color: white;
+        a {
+            border-bottom: 0;
+            color: white;
         }
     }
     .fab {
@@ -75,10 +73,6 @@ const Links = styled.ul`
         @media screen and (min-width: 1280px) {
             margin: 0;
         }
-    }
-    a {
-        border-bottom: 0;
-        color: white;
     }
 `;
 
