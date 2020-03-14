@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'gatsby';
+import {Link, useStaticQuery, graphql} from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BlogThumb from 'gatsby-image';
@@ -112,20 +112,47 @@ const NoPosts = styled.p`
     }
 `;
 
-const ListNotes = ({notes, tot}) => {
+const ListNotes = ({ notes, tot }) => {
+    
+  const defaultImageData = useStaticQuery(graphql`
+    query ImageQuery {
+      allFile(filter: {extension: {eq: "jpg"}, name: {eq: "default"}}) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid(maxHeight: 450) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const defaultImage = defaultImageData.allFile.edges[0].node.childImageSharp;
+
+  console.log(defaultImage.fluid);
+  
     const foundPosts = () => (
         <>
             {notes.map(({node: note}, i) => (
                 <Note key={note.id}>
                     <NoteImage>
-                        <Media query="(min-width: 768px)">
-                            <Link
-                                to={`/notes/${note.slug.current}`}
-                                className="img-link"
-                            >
-                                <BlogThumb fluid={note.mainImage.asset.fluid} />
-                            </Link>
-                        </Media>
+                        {/* {note.mainImage && ( */}
+                            <Media query="(min-width: 768px)">
+                                <Link
+                                    to={`/notes/${note.slug.current}`}
+                                    className="img-link"
+                                >
+                                    <BlogThumb
+                                        fluid={note.mainImage ? 
+                                                (note.mainImage.asset.fluid): defaultImage.fluid}
+                                    />
+                                </Link>
+                            </Media>
+                        {/* )} */}
                         <header>
                             <NoteHeading>
                                 <Link to={`/notes/${note.slug.current}`}>

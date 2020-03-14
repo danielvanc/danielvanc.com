@@ -123,12 +123,10 @@ const BlogPostStandard = ({data}) => {
                             <p>{post.description}</p>
                         </ArticleDescription>
 
-                        {post.mainImage.asset ? (
+                        {post.mainImage && (
                             <NotesThumbnail
                                 fluid={post.mainImage.asset.fluid}
                             />
-                        ) : (
-                            ''
                         )}
 
                         {post.mainImageCaption ? (
