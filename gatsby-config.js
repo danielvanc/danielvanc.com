@@ -8,13 +8,71 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title:
-            'Home of Daniel Van Cuylenburg - Guitarist | Front-end Developer',
+        title: 'Home of Daniel Van Cuylenburg - Guitarist | Front-end Developer',
+        description: "Website of Daniel Van Cuylenburg",
+        siteUrl: "https://www.danielvanc.com"
     },
     plugins: [
         'gatsby-plugin-styled-components',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-meta-redirect',
+      {
+        resolve: 'gatsby-plugin-feed',
+        options: {
+          query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+          feeds: [
+            {
+              serialize: ({ query: { allNotes } }) => {
+                return allNotes.edges.map(({ node: note }) => {
+                  return {
+                    title: note.title,
+                    description: note.description,
+                    siteUrl: `/notes/${note.slug.current}`,
+                    date: note.publishedAt
+                  }
+                })
+              },
+
+              query: `
+              {
+                 
+                allNotes: allSanityNote(
+                    sort: {fields: [publishedAt], order: DESC}
+                    filter: {slug: {current: {ne: null}}}
+                ) {
+                    totalCount
+                    edges {
+                        node {
+                            id
+                            title
+                            publishedAt
+                            description
+                            slug {
+                                current
+                            }
+                        }
+                    }
+                }
+                  
+                
+              }`,
+              output: "/rss.xml",
+              title: "Latest notes from Daniel Van Cuylenburg"
+            }
+          ]
+        }
+      },
         {
             resolve: `gatsby-source-filesystem`,
             options: {

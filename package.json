@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.41",
     "gatsby-image": "^2.2.43",
+    "gatsby-plugin-feed": "^2.3.29",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^3.0.40",
