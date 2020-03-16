@@ -46,7 +46,6 @@ module.exports = {
 
               query: `
               {
-                 
                 allNotes: allSanityNote(
                     sort: {fields: [publishedAt], order: DESC}
                     filter: {slug: {current: {ne: null}}}
