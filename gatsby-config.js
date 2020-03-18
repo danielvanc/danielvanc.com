@@ -38,7 +38,7 @@ module.exports = {
                     title: note.title,
                     description: note.description,
                     siteUrl: `/notes/${note.slug.current}`,
-                    guid: `https://www.danielvanc.com/${note.slug.current}`,
+                    guid: `https://www.danielvanc.com/notes/${note.slug.current}`,
                     date: note.publishedAt
                   }
                 })
