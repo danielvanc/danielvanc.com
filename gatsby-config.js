@@ -10,7 +10,7 @@ module.exports = {
     siteMetadata: {
         title: 'Home of Daniel Van Cuylenburg - Guitarist | Front-end Developer',
         description: "Website of Daniel Van Cuylenburg",
-        siteUrl: "https://www.danielvanc.com"
+        siteUrl: "https://www.danielvanc.com/"
     },
     plugins: [
         'gatsby-plugin-styled-components',
@@ -26,7 +26,6 @@ module.exports = {
                 title
                 description
                 siteUrl
-                site_url: siteUrl
               }
             }
           }
@@ -39,6 +38,7 @@ module.exports = {
                     title: note.title,
                     description: note.description,
                     siteUrl: `/notes/${note.slug.current}`,
+                    guid: `https://www.danielvanc.com/${note.slug.current}`,
                     date: note.publishedAt
                   }
                 })
