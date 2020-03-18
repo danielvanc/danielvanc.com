@@ -37,7 +37,8 @@ module.exports = {
                   return {
                     title: note.title,
                     description: note.description,
-                    siteUrl: `/notes/${note.slug.current}`,
+                    url: `https://www.danielvanc.com/notes/${note.slug.current}`,
+                    link: `https://www.danielvanc.com/notes/${note.slug.current}`,
                     guid: `https://www.danielvanc.com/notes/${note.slug.current}`,
                     date: note.publishedAt
                   }
@@ -56,6 +57,7 @@ module.exports = {
                             title
                             publishedAt
                             description
+                            _rawContent
                             slug {
                                 current
                             }
