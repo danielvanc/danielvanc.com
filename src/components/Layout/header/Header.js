@@ -241,7 +241,7 @@ const Header = props => (
                     </Link>
                 </li>
                 {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
-                <li>
+                {/* <li>
                     <Link
                         to="/notes"
                         getProps={isPartiallyActive}
@@ -250,7 +250,7 @@ const Header = props => (
                     >
                         Notes
                     </Link>
-                </li>
+                </li> */}
                 <li>
                     {/* <Link
                         to="/"
