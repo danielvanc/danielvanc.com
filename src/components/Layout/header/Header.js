@@ -240,7 +240,6 @@ const Header = props => (
                         About
                     </Link>
                 </li>
-                {/* <li><Link to="/" getProps={isCurrent}{...props}>Home</Link></li> */}
                 <li>
                     <Link
                         to="/notes"
@@ -252,14 +251,7 @@ const Header = props => (
                     </Link>
                 </li>
                 <li>
-                    {/* <Link
-                        to="/"
-                        getProps={isPartiallyActive}
-                        {...props}
-                        title="Find out what I'm focusing on now"
-                    > */}
                     <a href="https://danielvanc.dev">Projects</a>
-                    {/* </Link> */}
                 </li>
             </SiteNav>
         </nav>
