@@ -250,9 +250,9 @@ const Header = props => (
                         Notes
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <a href="https://danielvanc.dev">Projects</a>
-                </li>
+                </li> */}
             </SiteNav>
         </nav>
     </MainHeader>
