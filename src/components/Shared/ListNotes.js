@@ -112,7 +112,28 @@ const NoPosts = styled.p`
     }
 `;
 
-const ListNotes = ({ notes, tot }) => {
+const PaginationList = styled.ul`
+  flex-basis: 100%;
+  text-align: center;
+  &:before {
+    content: "Page: "
+  }
+  li {
+    display: inline-block;
+    margin: 0 4px;
+  }
+  a.active {
+    background: var(--color-mint);
+    color: black;
+    border: 0;
+    text-decoration: none;
+    padding: 3px 9px;
+  }
+`
+
+const ListNotes = ({ notes, tot, pageContext }) => {
+  
+  const { numPages } = pageContext;
     
   const defaultImageData = useStaticQuery(graphql`
     query ImageQuery {
@@ -132,54 +153,66 @@ const ListNotes = ({ notes, tot }) => {
   `)
 
   const defaultImage = defaultImageData.allFile.edges[0].node.childImageSharp;
-
-  console.log(defaultImage.fluid);
   
-    const foundPosts = () => (
-        <>
-            {notes.map(({node: note}, i) => (
-                <Note key={note.id}>
-                    <NoteImage>
-                        {/* {note.mainImage && ( */}
-                            <Media query="(min-width: 768px)">
-                                <Link
-                                    to={`/notes/${note.slug.current}`}
-                                    className="img-link"
-                                >
-                                    <BlogThumb
-                                        fluid={note.mainImage ? 
-                                                (note.mainImage.asset.fluid): defaultImage.fluid}
-                                    />
-                                </Link>
-                            </Media>
-                        {/* )} */}
-                        <header>
-                            <NoteHeading>
-                                <Link to={`/notes/${note.slug.current}`}>
-                                    {note.title}
-                                </Link>
-                            </NoteHeading>
-                        </header>
-                        <p>{note.publishedAt}</p>
-                    </NoteImage>
-                </Note>
-            ))}
-        </>
-    );
+  const foundPosts = () => (
+      <>
+          {notes.map(({node: note}, i) => (
+              <Note key={note.id}>
+                  <NoteImage>
+                      {note.mainImage && (
+                          <Media query="(min-width: 768px)"> 
+                              <Link
+                                  to={`/notes/${note.slug.current}`}
+                                  className="img-link"
+                              >
+                                  <BlogThumb
+                                      fluid={note.mainImage ? 
+                                              (note.mainImage.asset.fluid): defaultImage.fluid}
+                                  />
+                              </Link>
+                          </Media>
+                      )}
+                      <header>
+                          <NoteHeading>
+                              <Link to={`/notes/${note.slug.current}`}>
+                                  {note.title}
+                              </Link>
+                          </NoteHeading>
+                      </header>
+                      <p>{note.publishedAt}</p>
+                  </NoteImage>
+              </Note>
+          ))}
+      
+          <PaginationList>
+            {
+              Array.from({ length: numPages }, (_, i) => (
+                <li key={`page-num${i + 1}`}>
+                  <Link
+                    to={`/notes/${i === 0 ? "" : i + 1}`}
+                    activeClassName="active"
+                  >{i + 1}</Link>
+                </li>
+              ))
+            }
+          </PaginationList>
+          
+      </>
+  );
 
-    const noPosts = () => (
-        <NoPosts>No other posts have been made, yet.</NoPosts>
-    );
+  const noPosts = () => (
+      <NoPosts>No other posts have been made, yet.</NoPosts>
+  );
 
-    return (
-        <>
-            <Notes>
-                <NotesLatestContainer>
-                    {tot >= 2 ? foundPosts() : noPosts()}
-                </NotesLatestContainer>
-            </Notes>
-        </>
-    );
+  return (
+      <>
+          <Notes>
+              <NotesLatestContainer>
+                  {tot >= 2 ? foundPosts() : noPosts()}
+              </NotesLatestContainer>
+          </Notes>
+      </>
+  );
 };
 
 export default ListNotes;

@@ -242,7 +242,7 @@ const Header = props => (
                 </li>
                 <li>
                     <Link
-                        to="/notes"
+                        to="/notes/"
                         getProps={isPartiallyActive}
                         {...props}
                         title="Find out what I've written lately"

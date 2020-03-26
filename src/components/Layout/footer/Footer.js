@@ -123,7 +123,7 @@ const Footer = () => (
                     </ul>
                 </OpenSource>
                 <FootNotes>
-                    <li>&copy; 2019 Daniel Van Cuylenburg.</li>
+                    <li>&copy; 2020 Daniel Van Cuylenburg.</li>
                     <li>
                         An
                         <a
