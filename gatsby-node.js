@@ -58,9 +58,6 @@ async function createNowPage(graphql, actions, reporter) {
   nowPages.forEach((edge, index) => {
     const { id, url = {}, publishedAt } = edge.node;
     const path = `/${url.current}`;
-
-    reporter.info(`Creating Now page: ${path}`);
-
     const templateKey = String(edge.node.template_key.title);
     createPage({
       path,
@@ -101,9 +98,6 @@ async function createLogPages(graphql, actions, reporter) {
   logs.forEach((edge, index) => {
     const { id, url = {}, publishedAt } = edge.node;
     const path = `/log/${url.current}`;
-
-    reporter.info(`Creating Log page: ${path}`);
-
     const templateKey = String(edge.node.template_key.title);
     createPage({
       path,
@@ -162,20 +156,6 @@ async function createNotePages(graphql, actions, reporter) {
   const postsPerPage = 6;
   const numPages = Math.ceil(notes.length / postsPerPage);
 
-  notes.forEach((edge, index) => {
-    const { id, slug = {}, publishedAt } = edge.node;
-    const path = `/notes/${slug.current}`;
-
-    reporter.info(`Creating Notes page: ${path}`);
-
-    const templateKey = String(edge.node.template_key.title);
-    createPage({
-      path,
-      component: require.resolve(`./src/templates/${templateKey}.js`),
-      context: { id },
-    });
-  });
-
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/notes/' : `/notes/${i + 1}`,
@@ -186,6 +166,17 @@ async function createNotePages(graphql, actions, reporter) {
         numPages,
         currentPage: i + 1,
       },
+    });
+  });
+
+  notes.forEach((edge, index) => {
+    const { id, slug = {}, publishedAt } = edge.node;
+    const notePath = `/notes/${slug.current}`;
+    const templateKey = String(edge.node.template_key.title);
+    createPage({
+      path: notePath,
+      component: require.resolve(`./src/templates/${templateKey}.js`),
+      context: { id },
     });
   });
 }

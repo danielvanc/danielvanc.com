@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import styled from 'styled-components';
 import BlogThumb from 'gatsby-image';
+import { DiscussionEmbed } from "disqus-react";
 import Layout from '../components/Layout';
 import TitleAndMetas from '../components/Layout/TitleAndMetas';
 import HTMLContent from '../components/Shared/Content';
@@ -24,10 +25,12 @@ const PageMain = styled.main`
     }
 `;
 const ArticleEntry = styled.article`
+    padding-bottom: 2em;
     @media screen and (min-width: 48em) {
         display: grid;
         grid-gap: 25px;
         grid-template-columns: repeat(8, 1fr);
+        padding-bottom: 4em;
     }
     header {
         grid-column: 2 / 8;
@@ -95,9 +98,17 @@ const ThumbnailCaption = styled.p`
 const NotesThumbnail = styled(BlogThumb)`
     grid-column: 1 / -1;
 `;
-const BlogPostStandard = ({data}) => {
-    const page = 'notes';
-    const post = data && data.post;
+
+
+const BlogPostStandard = ({ data }) => {
+  const page = 'notes';
+  const post = data && data.post;
+      
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUSS_NAME,
+    config: { identifier: post.slug.current  }
+  }
+
 
     return (
         <>
@@ -139,6 +150,7 @@ const BlogPostStandard = ({data}) => {
 
                         <ArticleMainPost content={post._rawContent} />
                     </ArticleEntry>
+                    <DiscussionEmbed {...disqusConfig} />
                 </PageMain>
             </Layout>
         </>
@@ -163,6 +175,9 @@ export const pageQuery = graphql`
             _rawContent
             description
             publishedAt(formatString: "Do MMMM, YYYY")
+            slug {
+              current
+            }
             mainImage {
                 asset {
                     fluid(maxWidth: 600) {
