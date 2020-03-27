@@ -162,6 +162,20 @@ async function createNotePages(graphql, actions, reporter) {
   const postsPerPage = 6;
   const numPages = Math.ceil(notes.length / postsPerPage);
 
+  notes.forEach((edge, index) => {
+    const { id, slug = {}, publishedAt } = edge.node;
+    const path = `/notes/${slug.current}`;
+
+    reporter.info(`Creating Notes page: ${path}`);
+
+    const templateKey = String(edge.node.template_key.title);
+    createPage({
+      path,
+      component: require.resolve(`./src/templates/${templateKey}.js`),
+      context: { id },
+    });
+  });
+
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/notes/' : `/notes/${i + 1}`,
