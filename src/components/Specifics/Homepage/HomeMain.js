@@ -27,8 +27,11 @@ const MastMainBody = styled.main`
         @media screen and (min-width: 48em) {
             display: block;
             max-width: 200px;
-            margin: -20px 20px 20px 0px;
-            shape-outside: circle(43.76% at 31px 81px);
+            /* margin: -20px 20px 20px 0px; */
+            /* shape-outside: circle(43.76% at 31px 81px); */
+            margin: -12px 20px 30px 0px;
+            shape-outside: circle(44.5% at 30px 92px);
+            /* shape-outside: circle(45.70% at 31px 81px); */
             transform: translateX(-96px);
         }
     }
