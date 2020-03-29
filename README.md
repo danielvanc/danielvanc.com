@@ -2,9 +2,11 @@
 # Hey, welcome!
 This is the open source repo of [danielvanc.com](https://www.danielvanc.com/).
 
-This is where I write notes, add continuous updates, create and host future projects and more. The site is powered by [GatsbyJS](https://www.gatsbyjs.org) and [Sanity](https://www.sanity.io). More details can be found in the [Colophon](https://www.danielvanc.com/colophon).
+This is where I write notes, add continuous updates, create and host future projects and more. 
 
-## To set up a local copy
+The site is powered by [GatsbyJS](https://www.gatsbyjs.org) and [Sanity](https://www.sanity.io). More details can be found in the [Colophon](https://www.danielvanc.com/colophon).
+
+## Set up a local copy
 1. Fork (top right) or Clone: `git clone https://github.com/danielvanc/danielvanc.com.git`
 2. Run `yarn` on root of project to install dependencies
 3. Rename `.dev.example` to `.env`
@@ -13,9 +15,9 @@ This is where I write notes, add continuous updates, create and host future proj
 6. Run `cd studio && sanity start` to start the local sanity studio
 7. You should now be good to go 💥
 
-This project follows the [all-contributors](https://allcontributors.org/) specification. Contributions of any kind are welcome!
+Any questions / want to connect? Find me as [@danielvanc](https://twitter.com/danielvanc) on Twitter. 👍🏼
 
-Any questions / want to connect? Hit me up at [@danielvanc](https://twitter.com/danielvanc). 👍🏼
+This project follows the [all-contributors](https://allcontributors.org/) specification. Contributions of any kind are welcome!
 
 ## LICENSE
 [MIT](https://github.com/all-contributors/all-contributors)
