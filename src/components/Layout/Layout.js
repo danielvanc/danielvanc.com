@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, {createGlobalStyle} from 'styled-components';
 import Header from './header';
@@ -66,6 +66,9 @@ body {
   line-height: var(--lineheight-text);
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
+  &.body-fixed {
+    overflow: hidden;
+  }
 }
 
 
@@ -437,6 +440,11 @@ const PageContainer = styled.div`
 `;
 const Layout = ({pageLayout, children}) => {
     const layout = pageLayout;
+  
+    useEffect(() => {
+      document.querySelector("body").classList.remove("body-fixed");
+    }, []);
+  
     return (
         <PageContainer className={layout}>
             <GlobalStyles />

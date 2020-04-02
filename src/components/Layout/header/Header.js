@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import logo from '../../../images/dvanc_logo.png';
+import MenuButton from '../../Shared/MenuButton';
 
 const MainHeader = styled.header`
     height: 70px;
@@ -12,15 +13,20 @@ const MainHeader = styled.header`
     margin-bottom: 10px;
     display: flex;
     max-width: 1150px;
+    position: relative;
 
     @media screen and (min-width: 37em) {
         margin: 0 auto;
         padding: 1em 1.5em;
     }
 
+    @media screen and (min-width: 48em) {
+      max-width: 430px;
+    }
     .home & {
         @media screen and (min-width: 48em) {
             padding-left: 1.5em;
+            max-width: 1150px;
         }
     }
 
@@ -30,9 +36,9 @@ const MainHeader = styled.header`
         @media screen and (min-width: 48em) {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            width: 100%;
+            /* width: 100%; */
             nav {
-                grid-column: 2 / 4;
+                grid-column: 1 / 5;
                 align-self: center;
             }
         }
@@ -50,6 +56,17 @@ const MainHeader = styled.header`
         }
     }
 
+    button {
+      margin: 10px 0 0 0;
+      position: absolute;
+      right: 1.5em;
+      z-index: 2;
+      
+      @media screen and (min-width: 48em) { 
+        display: none;
+      }
+    }
+
     nav {
         display: flex;
         width: 100%;
@@ -57,7 +74,58 @@ const MainHeader = styled.header`
             width: auto;
         }
     }
+    nav.mobileMenu {
+      background: #333;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .logo {
+      border-bottom: 0;
+      float: left;
+      margin-top: 10px;
+      /* @media screen and (min-width: 46.865em) { */
+      @media screen and (min-width: 48em) {
+        margin: 8px auto 0 auto;
+      }
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      &:hover,
+      &:focus,
+      &:active {
+          @media (hover: hover) {
+              -webkit-animation-name: pg;
+              animation-name: pg;
+              -webkit-animation-duration: 0.6s;
+              animation-duration: 0.6s;
+              -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+              -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+              -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+          }
+      }
+      &:before {
+          background: transparent;
+      }
+      .home & {
+        @media screen and (min-width: 48em) {
+          margin-top: 13px;
+        }
+      }
+    }
+    
+    .mobileMenu .logo { display: none; }
+    
 `;
+
 const SiteNav = styled.ul`
     align-items: center;
     list-style: none;
@@ -65,23 +133,28 @@ const SiteNav = styled.ul`
     padding: 0;
     justify-content: space-evenly;
     align-self: center;
-    display: inline;
+    display: none;
 
-    @media screen and (min-width: 37.5em) {
+    @media screen and (min-width: 48em) {
         display: flex;
         margin: 0 auto;
         max-width: 500px;
         padding: 0;
     }
     .home & {
-        @media screen and (min-width: 37.5em) {
-            margin: 0 auto;
-        }
+      @media screen and (min-width: 37.5em) {
+        margin: 0 auto;
+      }
+    }
+    .mobileMenu & {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
     }
     li {
         font-family: var(--font-family-subheadings);
         display: inline-flex;
-        font-size: 1rem;
         margin-top: 7px;
         padding-left: 0.3em;
         @media screen and (min-width: 375px) {
@@ -91,15 +164,26 @@ const SiteNav = styled.ul`
             padding-left: 1.9em;
         }
         @media screen and (min-width: 37.5em) {
-            margin-top: 0;
+            margin-top: 0; 
         }
+        font-size: 1rem;
+
         &:first-of-type {
-            float: left;
-            padding-left: 0;
-            margin-top: 0;
-            @media screen and (min-width: 37.5em) {
-                float: none;
-            }
+          display: block;
+          @media screen and (min-width: 48em) {
+            display: none;
+          }
+        }
+
+        .mobileMenu & {
+          display: block;
+          font-size: 1.5rem;
+          @media screen and (min-width: 375px) {
+              padding-left: 0;
+          }
+          @media screen and (min-width: 25em) {
+              padding-left: 0;
+          }
         }
         @media screen and (min-width: 37.5em) {
             float: none;
@@ -114,6 +198,7 @@ const SiteNav = styled.ul`
         border-bottom: 0 !important;
         color: var(--color-white);
     }
+    
     a {
         color: var(--color-white);
         margin: 0.313em 0.5em;
@@ -126,6 +211,17 @@ const SiteNav = styled.ul`
         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
         position: relative;
         overflow: hidden;
+
+        .mobileMenu & {
+          display: block;
+        }
+
+        &.active span {
+          .mobileMenu & {
+            border-bottom: 4px solid #6dd5ed;
+            padding-bottom: 2px;
+          }
+        }
 
         &:before {
             content: '';
@@ -142,6 +238,9 @@ const SiteNav = styled.ul`
             transition-duration: 0.3s;
             -webkit-transition-timing-function: ease-out;
             transition-timing-function: ease-out;
+            .mobileMenu & {
+              background: transparent;
+            }
         }
 
         &:hover {
@@ -181,33 +280,6 @@ const SiteNav = styled.ul`
         }
     }
 
-    li.logo a {
-        display: inline-block;
-        margin: 0.313em 0.5em 0.313em 0;
-        vertical-align: middle;
-        -webkit-transform: perspective(1px) translateZ(0);
-        transform: perspective(1px) translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        &:hover,
-        &:focus,
-        &:active {
-            @media (hover: hover) {
-                -webkit-animation-name: pg;
-                animation-name: pg;
-                -webkit-animation-duration: 0.6s;
-                animation-duration: 0.6s;
-                -webkit-animation-timing-function: linear;
-                animation-timing-function: linear;
-                -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-                -webkit-animation-direction: alternate;
-                animation-direction: alternate;
-            }
-        }
-        &:before {
-            background: transparent;
-        }
-    }
 `;
 
 const isPartiallyActive = ({isPartiallyCurrent}) =>
@@ -215,48 +287,89 @@ const isPartiallyActive = ({isPartiallyCurrent}) =>
 
 const isCurrent = ({isCurrent}) => (isCurrent ? {className: 'active'} : null);
 
-const Header = props => (
+const Header = props => {
+
+  const menuOpen = (nav) => {
+    nav.classList.add("mobileMenu");
+    document.querySelector("body").classList.add("body-fixed");
+    document.querySelector("header button").classList.add("menu-open");
+  }
+  
+  const menuClose = (nav) => {
+    nav.classList.remove("mobileMenu");
+    document.querySelector("header button").classList.remove("menu-open");
+    document.querySelector("body").classList.remove("body-fixed");
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const navElement = document.querySelector("nav")
+    e.currentTarget.innerHTML = e.currentTarget.innerHTML === "Menu" ? "Close" : "Menu";
+    navElement.classList.contains("mobileMenu") ? menuClose(navElement) : menuOpen(navElement);
+  }
+
+  return (
     <MainHeader>
-        <nav>
-            <SiteNav>
-                <li className="logo">
-                    <Link to="/">
-                        <img
-                            src={logo}
-                            alt="Logo of danielvanc.com"
-                            height="40"
-                            width="40"
-                            title="Go to homepage"
-                        />
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/about"
-                        getProps={isPartiallyActive}
-                        {...props}
-                        title="More information about Daniel"
-                    >
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/notes/"
-                        getProps={isPartiallyActive}
-                        {...props}
-                        title="Find out what I've written lately"
-                    >
-                        Notes
-                    </Link>
-                </li>
-                <li>
-                    <a href="https://danielvanc.dev">Projects</a>
-                </li>
-            </SiteNav>
-        </nav>
+      <MenuButton handleClick={handleClick} />
+      <nav>
+        <Link to="/" className="logo">
+          <img
+            src={logo}
+            alt="Logo of danielvanc.com"
+            height="40"
+            width="40"
+            title="Go to homepage"
+          />
+        </Link>
+        <SiteNav>
+          <li>
+            <Link
+              to="/"
+              getProps={isCurrent}
+              {...props}
+              title="More information about Daniel"
+            >
+              <span>Home</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              getProps={isPartiallyActive}
+              {...props}
+              title="More information about Daniel"
+            >
+              <span>About</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/now/"
+              getProps={isPartiallyActive}
+              {...props}
+              title="What I'm up-to now for the current month"
+            >
+              <span>Now</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/notes/"
+              getProps={isPartiallyActive}
+              {...props}
+              title="Find out what I've written lately"
+            >
+              <span>Notes</span>
+            </Link>
+          </li>
+          <li>
+            <a href="https://danielvanc.dev"><span>Projects</span></a>
+          </li>
+        </SiteNav>
+      </nav>
     </MainHeader>
-);
+  )
+}
 
 isPartiallyActive.PropTypes = {
     isPartiallyActive: PropTypes.bool,
