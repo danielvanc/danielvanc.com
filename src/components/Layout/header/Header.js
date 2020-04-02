@@ -87,7 +87,7 @@ const MainHeader = styled.header`
     .logo {
       border-bottom: 0;
       float: left;
-      margin-top: 10px;
+      margin-top: 8px;
       /* @media screen and (min-width: 46.865em) { */
       @media screen and (min-width: 48em) {
         margin: 8px auto 0 auto;
