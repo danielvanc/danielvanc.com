@@ -85,17 +85,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "danielvanc-v1-manifest",
+        name: "danielvanc.com",
         short_name: "danielvanc",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
         icon: "favicon.png", // This path is relative to the root of the site.
+        cache_busting_mode: "none",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/*"],
+        },
       },
     },
     "gatsby-transformer-remark",
-    "gatsby-plugin-offline",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     "react-media",
@@ -124,14 +132,5 @@ module.exports = {
         overlayDrafts: true,
       },
     },
-    // {
-    //     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-    //     options: {
-    //         production: true,
-    //         disable: !process.env.ANALYZE_BUNDLE_SIZE,
-    //         generateStatsFile: true,
-    //         analyzerMode: 'static',
-    //     },
-    // },
   ],
 };
