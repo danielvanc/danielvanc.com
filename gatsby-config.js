@@ -92,7 +92,7 @@ module.exports = {
         theme_color: "#663399",
         display: "minimal-ui",
         icon: "favicon.png", // This path is relative to the root of the site.
-        cache_busting_mode: "none",
+        // cache_busting_mode: "none",
       },
     },
     {
