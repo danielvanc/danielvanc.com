@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "gatsby develop -H 0.0.0.0",
-    "start": "gatsby develop",
+    "start": "gatsby clean && gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
