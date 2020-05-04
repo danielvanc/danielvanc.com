@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/dashboard",
     "@sanity/desk-tool",
-    "dashboard-widget-document-list"
+    "dashboard-widget-document-list",
+    "dashboard-widget-gatsby"
   ],
   "parts": [
     {

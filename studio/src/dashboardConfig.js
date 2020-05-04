@@ -13,6 +13,16 @@ export default {
       layout: { width: "medium" },
     },
     {
+      name: "gatsby",
+      options: {
+        sites: [
+          {
+            siteUrl: "https://danielvanc-com-2663414577.gtsb.io/",
+          },
+        ],
+      },
+    },
+    {
       name: "project-users",
     },
     {

@@ -25,7 +25,8 @@
     "prop-types": "^15.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sanity-plugin-dashboard-widget-document-list": "^0.0.10"
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.10",
+    "sanity-plugin-dashboard-widget-gatsby": "^1.0.9"
   },
   "devDependencies": {},
   "repository": {
