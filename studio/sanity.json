@@ -15,7 +15,8 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "dashboard-widget-document-list",
-    "dashboard-widget-gatsby"
+    "dashboard-widget-gatsby",
+    "@sanity/studio-hints"
   ],
   "parts": [
     {
