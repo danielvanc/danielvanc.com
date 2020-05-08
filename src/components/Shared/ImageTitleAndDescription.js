@@ -33,11 +33,9 @@ const ImageText = styled.div`
         transform: translateX(5%);
         @media screen and (min-width: 37.5em) {
             float: left;
-            /* transform: translate(-50%, -20%);
-            shape-outside: circle(53.11% at 1.33% 30.03%); */
             transform: translate(-45%, -20%);
             left: auto;
-            shape-outside: circle(57.11% at 1.33% 30.03%);
+            shape-outside: circle(57.11% at 2.33% 28.03%);
             margin: auto;
             max-width: 100%;
             min-width: auto;
@@ -46,17 +44,17 @@ const ImageText = styled.div`
             max-width: 76%;
         }
         @media screen and (min-width: 48em) {
-            shape-outside: circle(57.11% at 8.33% 40.03%);
-            margin-bottom: -25%;
+            shape-outside: circle(59.2% at 8.33% 36.03%);
+            margin-bottom: -15%;
         }
         @media screen and (min-width: 64em) {
             shape-outside: circle(56.11% at 11.33% 43.03%);
             max-width: 70%;
         }
         @media screen and (min-width: 80em) {
-            shape-outside: circle(53.11% at 44.33% 40.03%);
-            margin: -5em 80px 0 0;
-            max-width: 50%;
+            shape-outside: circle(53.11% at 44.33% 45.03%);
+            margin: -2em 80px 0 0;
+            max-width: 49%;
             transform: none;
         }
     }

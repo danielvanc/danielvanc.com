@@ -14,7 +14,7 @@ const Links = styled.ul`
 
     @media screen and (min-width: 600px) {
         border-bottom: 0;
-        max-width: 100%;
+        max-width: 90%;
         margin: auto;
         padding: auto;
         text-align: left;
