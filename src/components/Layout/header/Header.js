@@ -337,16 +337,6 @@ const Header = (props) => {
           </li>
           <li>
             <Link
-              to="/about"
-              getProps={isPartiallyActive}
-              {...props}
-              title="More information about Daniel"
-            >
-              <span>About</span>
-            </Link>
-          </li>
-          <li>
-            <Link
               to="/now/"
               getProps={isPartiallyActive}
               {...props}
