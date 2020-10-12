@@ -55,6 +55,25 @@ const MastMainBody = styled.main`
 const HomeMainContent = (props) => (
   <MastMainBody>
     <HTMLContent content={props.pageDescription} />
+    <p>
+      Connect:{" "}
+      <a href="https://twitter.com/danielvanc" title="Twitter" rel="me">
+        Twitter
+      </a>
+      ,{" "}
+      <a
+        href="https://www.linkedin.com/in/danielvanc/?originalSubdomain=uk"
+        title="LinkedIn"
+        rel="me"
+      >
+        LinkedIn
+      </a>{" "}
+      and{" "}
+      <a href="https://www.github.com/danielvanc" title="GitHub" rel="me">
+        GitHub
+      </a>
+      .
+    </p>
   </MastMainBody>
 );
 
