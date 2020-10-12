@@ -315,7 +315,7 @@ const Header = (props) => {
     <MainHeader>
       <MenuButton handleClick={handleClick} />
       <nav>
-        <Link to="/" className="logo">
+        <Link to="/" className="logo h-card" rel="me">
           <img
             src={logo}
             alt="Logo of danielvanc.com"
