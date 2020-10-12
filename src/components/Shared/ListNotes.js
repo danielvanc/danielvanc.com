@@ -155,49 +155,49 @@ const ListNotes = ({ notes, tot, pageContext }) => {
   const defaultImage = defaultImageData.allFile.edges[0].node.childImageSharp;
   
   const foundPosts = () => (
-      <>
-          {notes.map(({node: note}, i) => (
-              <Note key={note.id}>
-                  <NoteImage>
-                      {note.mainImage && (
-                          <Media query="(min-width: 768px)"> 
-                              <Link
-                                  to={`/notes/${note.slug.current}`}
-                                  className="img-link"
-                              >
-                                  <BlogThumb
-                                      fluid={note.mainImage ? 
-                                              (note.mainImage.asset.fluid): defaultImage.fluid}
-                                  />
-                              </Link>
-                          </Media>
-                      )}
-                      <header>
-                          <NoteHeading>
-                              <Link to={`/notes/${note.slug.current}`}>
-                                  {note.title}
-                              </Link>
-                          </NoteHeading>
-                      </header>
-                      <p>{note.publishedAt}</p>
-                  </NoteImage>
-              </Note>
-          ))}
-      
-          <PaginationList>
-            {
-              Array.from({ length: numPages }, (_, i) => (
-                <li key={`page-num${i + 1}`}>
-                  <Link
-                    to={`/notes/${i === 0 ? "" : i + 1}`}
-                    activeClassName="active"
-                  >{i + 1}</Link>
-                </li>
-              ))
-            }
-          </PaginationList>
-          
-      </>
+    <>
+      {notes.map(({ node: note }, i) => (
+        <Note key={note.id} className="h-card">
+          <NoteImage>
+            {note.mainImage && (
+              <Media query="(min-width: 768px)">
+                <Link to={`/notes/${note.slug.current}`} className="img-link">
+                  <BlogThumb
+                    className="u-photo"
+                    fluid={
+                      note.mainImage
+                        ? note.mainImage.asset.fluid
+                        : defaultImage.fluid
+                    }
+                  />
+                </Link>
+              </Media>
+            )}
+            <header>
+              <NoteHeading className="p-name">
+                <Link to={`/notes/${note.slug.current}`}>{note.title}</Link>
+              </NoteHeading>
+            </header>
+            <p>
+              {note.publishedAt}
+            </p>
+          </NoteImage>
+        </Note>
+      ))}
+
+      <PaginationList>
+        {Array.from({ length: numPages }, (_, i) => (
+          <li key={`page-num${i + 1}`}>
+            <Link
+              to={`/notes/${i === 0 ? "" : i + 1}`}
+              activeClassName="active"
+            >
+              {i + 1}
+            </Link>
+          </li>
+        ))}
+      </PaginationList>
+    </>
   );
 
   const noPosts = () => (
