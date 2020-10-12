@@ -57,7 +57,12 @@ const HomeMainContent = (props) => (
     <HTMLContent content={props.pageDescription} />
     <p>
       Connect:{" "}
-      <a href="https://twitter.com/danielvanc" title="Twitter" rel="me">
+      <a
+        href="https://twitter.com/danielvanc"
+        title="Twitter"
+        rel="me"
+        className="p-note"
+      >
         Twitter
       </a>
       ,{" "}
@@ -69,7 +74,7 @@ const HomeMainContent = (props) => (
         LinkedIn
       </a>{" "}
       and{" "}
-      <a href="https://www.github.com/danielvanc" title="GitHub" rel="me"  gs>
+      <a href="https://www.github.com/danielvanc" title="GitHub" rel="me" gs>
         GitHub
       </a>
       .
