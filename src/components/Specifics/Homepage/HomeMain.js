@@ -62,14 +62,14 @@ const HomeMainContent = (props) => (
       </a>
       ,{" "}
       <a
-        href="https://www.linkedin.com/in/danielvanc/?originalSubdomain=uk"
+        href="https://www.linkedin.com/in/danielvanc"
         title="LinkedIn"
         rel="me"
       >
         LinkedIn
       </a>{" "}
       and{" "}
-      <a href="https://www.github.com/danielvanc" title="GitHub" rel="me">
+      <a href="https://www.github.com/danielvanc" title="GitHub" rel="me"  gs>
         GitHub
       </a>
       .
