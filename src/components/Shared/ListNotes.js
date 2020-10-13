@@ -44,25 +44,28 @@ const NotesLatestContainer = styled.div`
 `;
 
 const Note = styled.article`
+  @media screen and (min-width: 48em) {
+    flex-basis: 46%;
+    text-align: center;
+  }
+  padding: 0 0 1.5em 0;
+  @media screen and (min-width: 48em) {
+    padding: 0 0 3em 0;
+  }
+  header {
     @media screen and (min-width: 48em) {
-        flex-basis: 46%;
-        text-align: center;
+      background: var(--color-grey);
+      border-radius: 5px;
+      display: flex;
+      padding: 0.625em 0.938em 0.4em 0.938em;
+      position: relative;
+      margin: 0 auto;
+      max-width: 80%;
     }
-    padding: 0 0 1.5em 0;
-    @media screen and (min-width: 48em) {
-        padding: 0 0 3em 0;
-    }
-    header {
-        @media screen and (min-width: 48em) {
-            background: var(--color-grey);
-            border-radius: 5px;
-            display: flex;
-            padding: 0.625em 0.938em 0.4em 0.938em;
-            position: relative;
-            margin: 0 auto;
-            max-width: 80%;
-        }
-    }
+  }
+  .dt-published {
+    display: none;
+  }
 `;
 
 const NoteHeading = styled.h2`
@@ -157,7 +160,7 @@ const ListNotes = ({ notes, tot, pageContext }) => {
   const foundPosts = () => (
     <>
       {notes.map(({ node: note }, i) => (
-        <Note key={note.id} className="h-card">
+        <Note key={note.id} className="h-entry">
           <NoteImage>
             {note.mainImage && (
               <Media query="(min-width: 768px)">
@@ -174,12 +177,22 @@ const ListNotes = ({ notes, tot, pageContext }) => {
               </Media>
             )}
             <header>
-              <NoteHeading className="p-name">
-                <Link to={`/notes/${note.slug.current}`}>{note.title}</Link>
+              <NoteHeading className="e-content p-name">
+                <Link to={`/notes/${note.slug.current}`} className="u-url">
+                  {note.title}
+                </Link>
               </NoteHeading>
             </header>
             <p>
               {note.publishedAt}
+              <time
+                className="dt-published"
+                itemProp="datepublished"
+                dateTime={note._updatedAt}
+              >
+                {new Date(note._updatedAt).toISOString().replace("Z", "") +
+                  "+01:00"}
+              </time>
             </p>
           </NoteImage>
         </Note>

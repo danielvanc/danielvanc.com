@@ -48,33 +48,34 @@ NotesList.propTypes = {
 export default NotesList;
 
 export const NotesQuery = graphql`
-    query ListNotesQuery($skip: Int!, $limit: Int!) {
-        allNotes: allSanityNote(
-            sort: {fields: [publishedAt], order: DESC}
-            filter: {slug: {current: {ne: null}}}
-            skip: $skip
-            limit: $limit
-        ) {
-            totalCount
-            edges {
-                node {
-                    id
-                    title
-                    publishedAt(formatString: "Do MMMM, YYYY")
-                    description
-                    slug {
-                        _type
-                        current
-                    }
-                    mainImage {
-                        asset {
-                            fluid(maxHeight: 450) {
-                                ...GatsbySanityImageFluid
-                            }
-                        }
-                    }
-                }
+  query ListNotesQuery($skip: Int!, $limit: Int!) {
+    allNotes: allSanityNote(
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { slug: { current: { ne: null } } }
+      skip: $skip
+      limit: $limit
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          title
+          publishedAt(formatString: "Do MMMM, YYYY")
+          _updatedAt
+          description
+          slug {
+            _type
+            current
+          }
+          mainImage {
+            asset {
+              fluid(maxHeight: 450) {
+                ...GatsbySanityImageFluid
+              }
             }
+          }
         }
+      }
     }
+  }
 `;
