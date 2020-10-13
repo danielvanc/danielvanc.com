@@ -176,7 +176,10 @@ async function createNotePages(graphql, actions, reporter) {
     createPage({
       path: notePath,
       component: require.resolve(`./src/templates/${templateKey}.js`),
-      context: { id },
+      context: {
+        id,
+        permalink: `https://www.danielvanc.com${path}`,
+      },
     });
   });
 }

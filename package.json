@@ -31,6 +31,7 @@
     "gatsby-plugin-react-helmet": "^3.3.13",
     "gatsby-plugin-sharp": "^2.6.39",
     "gatsby-plugin-styled-components": "^3.3.13",
+    "gatsby-plugin-webmention": "^0.2.0",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-images": "^3.3.33",
     "gatsby-source-filesystem": "^2.3.33",

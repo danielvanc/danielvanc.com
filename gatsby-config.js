@@ -132,5 +132,20 @@ module.exports = {
         overlayDrafts: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: "www.danielvanc.com",
+        identity: {
+          github: "danielvanc",
+          twitter: "danielvanc", // no @
+        },
+        mentions: true,
+        pingbacks: true,
+        domain: "www.danielvanc.com",
+        token: "S4g_n_xnZOFUgpfTyV7oCA",
+        // token: process.env.WEBMENTIONS_TOKEN,
+      },
+    },
   ],
 };
