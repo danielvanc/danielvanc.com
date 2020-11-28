@@ -66,13 +66,13 @@ const NoteContent = styled.div`
 
 const LatestNotePost = props => (
     <>
-        <LatestNote className="h-feed hfeed">
+        <LatestNote>
             <NoteTitle>Latest Note</NoteTitle>
             {props.notes.map(({node: note}) => (
                 <React.Fragment key={note.id}>
-                    <NoteContent className="h-entry hentry">
-                        <NoteContentTitle className="p-name">
-                            <Link to={`/notes/${note.slug.current}`} className="u-url">
+                    <NoteContent>
+                        <NoteContentTitle>
+                            <Link to={`/notes/${note.slug.current}`}>
                                 {note.title}
                             </Link>
                         </NoteContentTitle>
