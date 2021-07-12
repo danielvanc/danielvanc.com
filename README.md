@@ -1,6 +1,8 @@
 # Daniel Van Cuylenburg's personal website 👨🏻‍💻
-# Hey, welcome!
-This is the open source repo of [danielvanc.com](https://www.danielvanc.com/).
+
+Hey! This is the open source repo of [danielvanc.com](https://www.danielvanc.com/).
+
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/danielvanc/danielvanc.com)
 
 This is where I write notes, add continuous updates, create and host future projects and more. 
 
