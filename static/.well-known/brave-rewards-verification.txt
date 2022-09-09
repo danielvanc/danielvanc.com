@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: danielvanc.com
-Token: 031f606b91f56b64b2c75a4b2d2792e43228aec5c01b90ecaf96f645076298ae
