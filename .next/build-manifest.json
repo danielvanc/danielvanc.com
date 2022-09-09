@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/notes": [
+    "/notes/reflecting-on-a-year-of-living-in-different-times": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/notes.js"
+      "static/chunks/pages/notes/reflecting-on-a-year-of-living-in-different-times.js"
     ]
   },
   "ampFirstPages": []

@@ -2,5 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/notes/reflecting-on-a-year-of-living-in-different-times": "pages/notes/reflecting-on-a-year-of-living-in-different-times.js"
 }
