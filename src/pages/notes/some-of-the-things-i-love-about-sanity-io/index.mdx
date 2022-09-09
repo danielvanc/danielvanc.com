@@ -1,0 +1,55 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import sanity from './sanity.png'
+import one from './1.png'
+import two from './2.png'
+
+export const meta = {
+  author: 'Daniel Van Cuylenburg',
+  date: '2019-09-18',
+  title: 'Some of the things I love about Sanity.io',
+  description:
+    'Way back late last year when I was deciding on which headless cms to choose for my newly re-built site (in React & GatsbyJS), I eventually filtered the list of available CMSs down to 3. Contentful, NetlifyCMS and new kid to the block, Sanity.io. Contentful seems to be a popular choice among many, and NetlifyCMS seemed logical as I use Netlifys hosting system. However, I wanted something that had different features than the rest.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Way back late last year when I was deciding on which headless cms to choose for my newly re-built site (in React & GatsbyJS), I eventually filtered the list of available CMSs down to 3. Contentful, NetlifyCMS and new kid to the block, Sanity.io. Contentful seems to be a popular choice among many, and NetlifyCMS seemed logical as I use Netlifys hosting system. However, I wanted something that had different features than the rest.
+
+<Image src={sanity} alt="" />
+
+## Collaboration and deep integration
+
+I was particuarly curious to delve in and learn Sanity after watching [this video](https://www.youtube.com/watch?v=2ceM_tSus_M). One of the very first things that had me [so excited](https://www.youtube.com/watch?v=FlRUmkqMIe8), was that you're able to not only compose posts in the CMS and see them update on the front-end as you type - in real time, but also publish from your local dev machine to production. And if you implement a hosting service, such as [Netlify](https://www.netlify.com/) and configure that correctly (it's very intuitive), you can have Netlify build and deploy from your github master branch (like I have), upon new commits, straight to production. This was, to me, a deal breaker. It means a seemless workflow.
+Sanity asynchronsily reflects your personal/team account dataset for both dev and (when hitting publish) production.
+This is HUGE. This means being able to have a local dev site running and your team being able to collaborate in real-time with content prior to going to production. So good.
+
+## User Interface
+
+My background in CMSs has been typically Wordpress, Expression Engine and CraftCMS (to name but a few). Their U.Is were, thet's say, average at best. They've gotten better, for sure, but in my mind, they've always struggled to keep with the demands of what users expect in their editing experience. Sanity shines in this department. It's minimal, clean and very functional out of the box. Need it to work as well on mobile as you expect on Desktop? Sanity has you covered VERY well there. The full screen mode for large textarea's are up there for minimalism with popular writing apps, like iAWriter.
+
+<Image src={one} alt="" />
+
+The way you can click + collapse panels along with subtle animations is a really nice experience (see the notes and content bars folded down to the side)
+
+<Image src={two} alt="" />
+
+## Content Structure
+
+I also really really liked how Datasets are set up. That is, the structure for each of your content types. Just plain and simple JSON files that sit within a studio folder, that sits in the root of your project. To add to this, they somehow really encourage you to structure your content properly. An important concept, that's so easy to get wrong on many of todays back-end systems.
+
+## Pages with Gatsby
+
+Of course, Sanity had to work well with GatsbyJS. That's a no brainer. And one of the things I really love, is how easy it makes auto-generating pages. For instance, I have Gatsby's CLI running side by side with Sanity's CLI. If for example I need a different title for my posts, I can re-click the 'generate' button and it updates with a new friendly url AND sets up the dynamic page on the fly - as a STATIC page. I can see this being done through my terminal window. All while having to do absolutely nothing. Superb!
+
+## Support
+
+As with any products you invest in, it's important that you're covered with adequate support before commiting to their software. The doc's looked great, but I wondered if that would be enough should I need instant help. Fortunately, Sanity has their own [Slack channel](https://slack.sanity.io/). The team are really go above and beyond to help you with any issues. I had a few teething problems when I first started using Sanity, so I called upon them. I was really impressed. Couldn't be more pleased with their efforts.
+
+After 6 months of use, I'm very happy to say that It's still a real pleasure to use Sanity. With the continual updates, it keeps gets better and better. And for anyone starting out, they've now made it so much simpler with [Sanity Create](https://www.sanity.io/create)
+
+I'm just skimming the water here without going into too much detail, and I've only touched on a few of the MANY features Sanity provides, so I highly encourage you to go check this system out if you're looking for a Headless CMS.
+
+Thank you [Sanity.io](https://www.sanity.io/)
+
+Any comments? Feel free to send me a [tweet](http://dvanc.co/tw).

@@ -1,0 +1,43 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import one from './1.png'
+
+export const meta = {
+  author: 'Daniel Van Cuylenburg',
+  date: '2020-05-29',
+  title: 'The evolving web and traditionalism.',
+  description:
+    "There's a bit of a divide between those that use JS Frameworks and those that don't. The latter I feel, largely comes down to a misunderstanding and / or lack of theory into 'modern development'. The key fundamental tools exist and exist for a reason, however, using the fundamentals in the way they've been used and intended, isn't necessarily how we should continue to build sites for our audiences. As a fairly recent convert to JS frameworks, here's some of my thoughts.",
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+There's a bit of a divide between those that use JS Frameworks and those that don't. The latter I feel, largely comes down to a misunderstanding and / or lack of theory into 'modern development'. The key fundamental tools exist and exist for a reason, however, using the fundamentals in the way they've been used and intended, isn't necessarily how we should continue to build sites for our audiences. As a fairly recent convert to JS frameworks, here's some of my thoughts.
+
+<Image src={one} alt="" />
+
+As a former “traditionalist”, that is, someone who has been using those fundamental tools for the vast majority of their careers without libraries or frameworks, I’m well aware of what you can achieve using those tools in isolation. Yes, they get the job done (sort of), it will all look nice and work as you might expect, but as people begin viewing websites on a whole new variety of devices, navigating in different environments, the ever increasing demand and higher expectations, fundamentals alone are not enough to solve these problems.
+
+## The dawn of the major players
+
+React, Vue, Angular. You’ve likely heard of them many times over so no introduction needed. When I delved into these libraries and frameworks, I quickly realised that, they all share a common goal of providing solutions to these modern development issues. Issues arisen because the fundamentals alone don’t solve them OR it requires a substantial amount of effort to achieve same results. It’s with that notion that makes you then realise how you’ve served sites to your audiences before and how costly it’s been for them.
+
+Yes, a big downside to these frameworks are that they rely heavily on JavaScript and if a user is browsing without JavaScript turned on then th.... scrap that. Aside from the fact these frameworks do have fallbacks, I just don’t believe that’s a valid argument in 2020 anymore. There are drawbacks to everything. You have to weigh out the pros and cons, and these new tools outweigh the cons by far, this I have learnt. A few of the pros are:
+
+### Lazy loading content
+
+Only downloading content as and when the page requires it. This is a massive factor in being able to directly control which parts of a page should be loaded first and loading everything else later. We are now also able to pre-cache pages before they've even navigated to them.
+
+### Web apps
+
+With tools like GatsbyJS, you can have your website behave like a native app on the web. A web app, has many advantages but one of those is providing access while offline. Mobile usage is rising and depending on the environment you're in, offline access will be a common occurrence. Making use of service workers , you can serve the user cached versions of a fully working site while you're in the remotist of areas.
+
+### Increased security and greater up-time
+
+With tools like GatsbyJS, NextJS, VuePress and a headless cms, you're no longer dependent on complicated server configuration hosting as you can serve your websites data endpoints and call them from your static front-end via api calls. These static pages can be hosted anywhere and because they're not dynamic, there's no server requests and chances of being intercepted.
+
+JavaScript has now been baked into browsers since 1995. Of your audience, what percentage actually goes to the trouble of turning off JavaScript? I know that's a bit naive to say, there are those on screen readers for instance and other accessibility concerns, but allot of these issues have already been considered and some [solutions provided](https://frontendmasters.com/courses/javascript-accessibility/). JavaScript has been used everywhere for years and when used correctly, truly enhances your browsing experience. Though I will say that, you should still choose your tools wisely based on your audience base.
+
+Trust me, I was a hard core traditionalist. Feel I still am a bit so I didn't jump straight into these frameworks without some long considerations. React was fully matured before I jumped on the bandwagon. But better late than never as they say. Don't get me wrong, I still love just using plain old CSS and JS for some things where it serves a purpose. However, since using React 2 years ago, it's really opened up my eyes to just what was wrong in development prior to now and looking forwards, the exciting possibilities these libraries/frameworks provide.
+
+If there's one significant advantage you can add to your developer tool belt that's going to massively improve the way you build and serve websites to your audiences, I encourage you to adopt one of the libraries/frameworks and start your journey to thinking deeper into what you're building.
