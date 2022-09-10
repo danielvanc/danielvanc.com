@@ -226,21 +226,20 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Daniel Van Cuylenburg - An Island living, Remix, NextJS and Tailwind
-          CSS specialist
+          Daniel Van Cuylenburg - A Remix, NextJS and Tailwind CSS specialist
         </title>
         <meta name="description" content="I’m Daniel" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Island living, Remix, NextJS and Tailwind CSS specialist.
+            Remix, NextJS, Tailwind CSS specialist. Guitarist.
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:text-teal-300 [&_a:hover]:text-teal-500">
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:text-teal-500 [&_a:hover]:text-teal-300">
             I&apos;m Daniel, a remote working, Front-end Web Developer on the
-            sunny Isle of Wight, U.K. <br />
-            I&apos;m a Senior Front-end Developer for digital creative agency,{' '}
-            <a href="https://www.amigopartnership.com/">Amigo Partnership</a>.
+            sunny Isle of Wight, U.K. <br />I work for{' '}
+            <a href="https://www.amigopartnership.com/">Amigo Partnership</a>, a
+            London based creative agency, as a Senior Front-end Dev.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

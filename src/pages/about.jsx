@@ -64,7 +64,7 @@ export default function About() {
               I&apos;m Dan Van Cuylenburg. I live on the Isle of Wight, working
               remotely as a React Developer.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 [&_p_a]:text-teal-300 [&_p_a:hover]:text-teal-500">
+            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 [&_p_a]:text-teal-500 [&_p_a:hover]:text-teal-300">
               <p>
                 I&apos;m a self taught, digital creative and life long learner.
                 Since 2000, I have gained valuable experience in web u.i design,
@@ -86,9 +86,7 @@ export default function About() {
                 </Link>
                 , of which, I have contributed and provided front-end expertise,
                 tooling, mentoring and delivering insightful, impactful
-                experiences. For a further overview of my professional career,
-                take a look at my resume for an outline of all my roles and key
-                skills.
+                experiences.
               </p>
               <p>
                 My personal site is an ongoing project that is simply somewhere
