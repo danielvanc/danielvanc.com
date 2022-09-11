@@ -17,9 +17,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-pink-500 dark:text-zinc-200 dark:hover:text-pink-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-pink-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -44,7 +44,7 @@ export default function About() {
         <title>About - Daniel Van Cuylenburg</title>
         <meta
           name="description"
-          content="I’m Daniel Van Cuylenburg. I live on the Isle of Wight, working remotely as a React Developer"
+          content="I'm Daniel Van Cuylenburg. I live on the Isle of Wight, working remotely as a React Developer"
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -64,7 +64,7 @@ export default function About() {
               I&apos;m Daniel Van Cuylenburg. I live on the Isle of Wight,
               working remotely as a React Developer.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 [&_p_a]:text-teal-500 [&_p_a:hover]:text-teal-300">
+            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 [&_p_a]:text-pink-500 [&_p_a:hover]:text-pink-400">
               <p>
                 I&apos;m a self taught, digital creative and life long learner.
                 Since 2000, I have gained valuable experience in web u.i design,

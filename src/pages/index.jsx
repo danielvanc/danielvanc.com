@@ -235,7 +235,7 @@ export default function Home({ articles }) {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Remix, NextJS and Tailwind CSS specialist.
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:text-teal-500 [&_a:hover]:text-teal-300">
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:font-bold [&_a]:text-pink-500 [&_a:hover]:text-pink-400">
             I&apos;m Daniel, a remote working, Front-end Web Developer on the
             sunny Isle of Wight, U.K. <br />I work for{' '}
             <a href="https://www.amigopartnership.com/">Amigo Partnership</a>, a
