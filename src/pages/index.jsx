@@ -239,7 +239,7 @@ export default function Home({ articles }) {
             I&apos;m Daniel, a remote working, Front-end Web Developer on the
             sunny Isle of Wight, U.K. <br />I work for{' '}
             <a href="https://www.amigopartnership.com/">Amigo Partnership</a>, a
-            London based creative agency, as a Senior Front-end Dev.
+            London based creative agency, as a Senior Dev.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

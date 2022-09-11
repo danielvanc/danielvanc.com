@@ -34,11 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
-    ],
-    "/notes/the-evolving-web-and-traditionalism": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/notes/the-evolving-web-and-traditionalism.js"
     ]
   },
   "ampFirstPages": []
