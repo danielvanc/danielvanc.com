@@ -16,7 +16,7 @@ import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image5 from '@/images/photos/image-5.png'
 import logoAmigo from '@/images/logos/logoAmigo.jpeg'
 import logoW365 from '@/images/logos/logoW365.jpeg'
 import logoInTouch from '@/images/logos/logoInTouch.jpeg'
@@ -226,14 +226,14 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Daniel Van Cuylenburg - A Remix, NextJS and Tailwind CSS specialist
+          Daniel Van Cuylenburg - Remix, NextJS and Tailwind CSS specialist
         </title>
         <meta name="description" content="I’m Daniel" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Remix, NextJS, Tailwind CSS specialist. Guitarist.
+            Remix, NextJS and Tailwind CSS specialist.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:text-teal-500 [&_a:hover]:text-teal-300">
             I&apos;m Daniel, a remote working, Front-end Web Developer on the

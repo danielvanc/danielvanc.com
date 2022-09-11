@@ -12,7 +12,7 @@ export default function Speaking() {
         <meta name="description" content="What I'm up-to now and focusing on" />
       </Head>
       <SimpleLayout
-        title="What I'm up-to now and focusing on"
+        title="What I'm up-to now and focusing on."
         intro="An insight into what my current focuses and aims are for the current period. I hope to keep this up-to date as much as possible."
       >
         <div className="space-y-20 text-white">

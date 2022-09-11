@@ -43,8 +43,8 @@ export default function ArticlesIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Writing on web and front-end dev, tech, and life ."
-        intro="All of my long-form thoughts, updated where necessary, collected in chronological order."
+        title="Musings about web and front-end dev, tech and life."
+        intro="All of my long-form thoughts, collected in chronological order."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
