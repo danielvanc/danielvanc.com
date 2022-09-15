@@ -7,6 +7,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
+  FrontendMastersIcon,
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
@@ -242,6 +243,11 @@ export default function Home({ articles }) {
             London based creative agency, as a Senior Dev.
           </p>
           <div className="mt-6 flex gap-6">
+            <SocialLink
+              href="https://frontendmasters.com/u/danielvanc/"
+              aria-label="Follow my learning progress on Frontend Masters"
+              icon={FrontendMastersIcon}
+            />
             <SocialLink
               href="https://twitter.com/danielvanc"
               aria-label="Follow on Twitter"

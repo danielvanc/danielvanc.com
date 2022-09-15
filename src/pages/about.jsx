@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import {
+  FrontendMastersIcon,
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
@@ -109,8 +110,16 @@ export default function About() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
+                href="https://frontendmasters.com/u/danielvanc/"
+                aria-label="Follow my learning progress on Frontend Masters"
+                icon={FrontendMastersIcon}
+              >
+                Follow my learning
+              </SocialLink>
+              <SocialLink
                 href="https://twitter.com/danielvanc"
                 icon={TwitterIcon}
+                className="mt-4"
               >
                 Follow on Twitter
               </SocialLink>
