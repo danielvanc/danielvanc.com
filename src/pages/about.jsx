@@ -76,22 +76,33 @@ export default function About() {
                 user centered, experiences that are tested and are accessible to
                 all.
               </p>
+              {/* <p className="mb-0 pb-0">
+                There are center values that I adere too:
+              </p> */}
+              <ul className="[&_li]:mr-2 [&_li]:inline-block">
+                <li>There are center values that I adere too:</li>
+                <li>Flexibility,</li>
+                <li>Meaningful,</li>
+                <li>Self development,</li>
+                <li>Loyalty,</li>
+                <li>Authenticity,</li>
+                <li>Ownership,</li>
+                <li>Trustworthy,</li>
+                <li>Reliable,</li>
+                <li>Productive,</li>
+                <li>Compassionate.</li>
+              </ul>
               <p>
                 I&apos;m currently a Senior Front-end Developer for an all
-                digital creative agency, Amigo Partnership. In the more recent
-                years, I&apos;ve worked for{' '}
-                <Link href="https://www.apacio.com/">Apacio</Link> and on the
-                digital team for the{' '}
-                <Link href="https://ellenmacarthurfoundation.org/">
-                  Ellen MacArthur Foundation
+                digital creative agency,{' '}
+                <Link href="https://amigopartnership.com">
+                  Amigo Partnership
                 </Link>
-                , of which, I have contributed and provided front-end expertise,
-                tooling, mentoring and delivering insightful, impactful
-                experiences.
+                , based in London, U.K.
               </p>
               <p>
-                My personal site is an ongoing project that is simply somewhere
-                for me to post my <Link href="/notes">thoughts</Link>,{' '}
+                My personal site is an ongoing project for me to post my{' '}
+                <Link href="/notes">thoughts</Link>,{' '}
                 <Link href="/projects">projects</Link> and experiments. Should
                 you wish, you can find out what I&apos;m{' '}
                 <Link href="/now">up-to now</Link> and see the{' '}
