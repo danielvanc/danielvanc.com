@@ -76,11 +76,8 @@ export default function About() {
                 user centered, experiences that are tested and are accessible to
                 all.
               </p>
-              {/* <p className="mb-0 pb-0">
-                There are center values that I adere too:
-              </p> */}
               <ul className="[&_li]:mr-2 [&_li]:inline-block">
-                <li>There are center values that I adere too:</li>
+                <li>There are certain values that I adere too:</li>
                 <li>Flexibility,</li>
                 <li>Meaningful,</li>
                 <li>Self development,</li>
