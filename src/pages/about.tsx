@@ -13,14 +13,29 @@ import {
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
-function SocialLink({ className, href, children, icon: Icon }) {
+function SocialLink({
+  className,
+  href,
+  children,
+  ariaLabel,
+  icon: Icon,
+}: {
+  href: string
+  ariaLabel: string
+  className?: string
+  children: React.ReactNode
+  icon: (props: any) => JSX.Element
+}) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-pink-500 dark:text-zinc-200 dark:hover:text-pink-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-pink-500" />
+        <Icon
+          ariaLabel={ariaLabel}
+          className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-pink-500"
+        />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -119,7 +134,7 @@ export default function About() {
             <ul role="list">
               <SocialLink
                 href="https://frontendmasters.com/u/danielvanc/"
-                aria-label="Follow my learning progress on Frontend Masters"
+                ariaLabel="Follow my learning progress on Frontend Masters"
                 icon={FrontendMastersIcon}
               >
                 Follow my learning
@@ -128,6 +143,7 @@ export default function About() {
                 href="https://twitter.com/danielvanc"
                 icon={TwitterIcon}
                 className="mt-4"
+                ariaLabel="Follow me on Twitter"
               >
                 Follow on Twitter
               </SocialLink>
@@ -135,6 +151,7 @@ export default function About() {
                 href="https://instagram.com/danielvanc"
                 icon={InstagramIcon}
                 className="mt-4"
+                ariaLabel="Follow me on Instagram"
               >
                 Follow on Instagram
               </SocialLink>
@@ -142,6 +159,7 @@ export default function About() {
                 href="https://github.com/danielvanc"
                 icon={GitHubIcon}
                 className="mt-4"
+                ariaLabel="Follow me on GitHub"
               >
                 Follow on GitHub
               </SocialLink>
@@ -149,6 +167,7 @@ export default function About() {
                 href="https://linkedin.com/in/danielvanc"
                 icon={LinkedInIcon}
                 className="mt-4"
+                ariaLabel="Follow me on LinkedIn"
               >
                 Follow on LinkedIn
               </SocialLink>
@@ -156,6 +175,7 @@ export default function About() {
                 href="mailto:email@danielvanc"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                ariaLabel="Send me an email"
               >
                 email@danielvanc.com
               </SocialLink>
