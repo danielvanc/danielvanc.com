@@ -33,7 +33,7 @@ function Item({
   )
 }
 
-export default function Speaking() {
+export default function Now() {
   return (
     <>
       <Head>
@@ -42,7 +42,7 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="What I'm up-to now and focusing on."
-        intro="This is inspired by Derek Sivers and nownownow.com. Last updated, 18th September, 2022."
+        intro="This page is inspired by nownownow.com. Last updated, 19th Sept, 2022."
       >
         <div className="space-y-20">
           <NowSection title="Work">
@@ -57,6 +57,7 @@ export default function Speaking() {
                 <li>- Developer Productivity</li>
                 <li>- Intro to Computer Science</li>
                 <li>- The Last Algorithms Course You&apos;ll need</li>
+                <li>- Complete Intro to Containers</li>
               </ul>
             </Item>
           </NowSection>
