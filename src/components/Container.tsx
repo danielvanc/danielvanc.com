@@ -1,9 +1,19 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
 
+interface ContainerProps {
+  className?: string
+  children: React.ReactNode
+  props?: { [key: string]: any }
+  Inner?: React.ElementType
+  Outer?: React.ElementType
+}
+
 const OuterContainer = forwardRef(function OuterContainer(
-  { className, children, ...props },
-  ref
+  { className, children, ...props }: ContainerProps,
+  ref: {
+    current: HTMLDivElement | null
+  }
 ) {
   return (
     <div ref={ref} className={clsx('sm:px-8', className)} {...props}>
@@ -13,8 +23,10 @@ const OuterContainer = forwardRef(function OuterContainer(
 })
 
 const InnerContainer = forwardRef(function InnerContainer(
-  { className, children, ...props },
-  ref
+  { className, children, ...props }: ContainerProps,
+  ref: {
+    current: HTMLDivElement | null
+  }
 ) {
   return (
     <div
@@ -28,8 +40,8 @@ const InnerContainer = forwardRef(function InnerContainer(
 })
 
 export const Container = forwardRef(function Container(
-  { children, ...props },
-  ref
+  { children, ...props }: ContainerProps,
+  ref: { current: HTMLDivElement | null }
 ) {
   return (
     <OuterContainer ref={ref} {...props}>
@@ -38,5 +50,8 @@ export const Container = forwardRef(function Container(
   )
 })
 
+// TODO: Fix TS errors
+// @ts-ignore
 Container.Outer = OuterContainer
+// @ts-ignore
 Container.Inner = InnerContainer

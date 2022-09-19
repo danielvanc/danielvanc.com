@@ -1,4 +1,4 @@
-import Image from 'next/future/image'
+import Image, { StaticImageData } from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -29,7 +29,14 @@ import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 
-function BriefcaseIcon(props) {
+interface Article {
+  slug: string
+  title: string
+  date: string
+  description: string
+}
+
+function BriefcaseIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -38,7 +45,7 @@ function BriefcaseIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      {...props}
+      className={className}
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
@@ -52,9 +59,14 @@ function BriefcaseIcon(props) {
   )
 }
 
-function ArrowDownIcon(props) {
+function ArrowDownIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
         strokeWidth="1.5"
@@ -65,7 +77,7 @@ function ArrowDownIcon(props) {
   )
 }
 
-function Article({ article }) {
+function Article({ key, article }: { key: string; article: Article }) {
   return (
     <Card as="article">
       <Card.Title href={`/notes/${article.slug}`}>{article.title}</Card.Title>
@@ -78,10 +90,19 @@ function Article({ article }) {
   )
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({
+  icon,
+  ...props
+}: {
+  href: string
+  'aria-label': string
+  icon: (props: any) => JSX.Element
+}) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      {/* TODO: Fix TS Error */}
+      {/* @ts-ignore */}
+      <icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
@@ -140,7 +161,24 @@ function Resume() {
       start: '2000',
       end: '2004',
     },
-  ]
+  ] as
+    | {
+        company: string
+        title: string
+        logo: StaticImageData
+        start: string
+        end: {
+          label: string
+          dateTime: number
+        }
+      }[]
+    | {
+        company: string
+        title: string
+        logo: StaticImageData
+        start: string
+        end: string
+      }[]
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
@@ -171,17 +209,11 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start} until ${role.end}`}
               >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
-                </time>{' '}
+                <time dateTime={role.start}>{role.start}</time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
+                <time dateTime={role.end}>{role.end.label ?? role.end}</time>
               </dd>
             </dl>
           </li>
@@ -226,7 +258,7 @@ function Photos() {
   )
 }
 
-export default function Home({ articles }) {
+export default function Home({ articles }: { articles: Article[] }) {
   return (
     <>
       <Head>
