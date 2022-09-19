@@ -94,15 +94,15 @@ export default function About() {
               <ul className="[&_li]:mr-2 [&_li]:inline-block">
                 <li>There are certain values that I adere too:</li>
                 <li>Flexibility,</li>
-                <li>Meaningful,</li>
-                <li>Self development,</li>
+                <li>Meaning,</li>
+                <li>Self improvement,</li>
                 <li>Loyalty,</li>
                 <li>Authenticity,</li>
                 <li>Ownership,</li>
-                <li>Trustworthy,</li>
-                <li>Reliable,</li>
-                <li>Productive,</li>
-                <li>Compassionate.</li>
+                <li>Trust,</li>
+                <li>Reliablility,</li>
+                <li>Productivity,</li>
+                <li>Compassion.</li>
               </ul>
               <p>
                 I&apos;m currently a Senior Front-end Developer for an all
