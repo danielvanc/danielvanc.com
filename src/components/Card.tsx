@@ -99,7 +99,7 @@ Card.Eyebrow = function CardEyebrow({
   ...props
 }: {
   as: React.ElementType
-  decorate: boolean
+  decorate?: boolean
   className?: string
   children: React.ReactNode
   dateTime?: string

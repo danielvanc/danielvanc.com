@@ -77,7 +77,7 @@ function ArrowDownIcon({ className }: { className?: string }) {
   )
 }
 
-function Article({ key, article }: { key: string; article: Article }) {
+function Article({ article }: { article: Article }) {
   return (
     <Card as="article">
       <Card.Title href={`/notes/${article.slug}`}>{article.title}</Card.Title>

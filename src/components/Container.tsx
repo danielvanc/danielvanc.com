@@ -5,11 +5,10 @@ interface ContainerProps {
   className?: string
   children: React.ReactNode
   props?: { [key: string]: any }
-  Inner?: React.ElementType
-  Outer?: React.ElementType
+  style?: React.CSSProperties
 }
 
-const OuterContainer = forwardRef(function OuterContainer(
+export const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props }: ContainerProps,
   ref: {
     current: HTMLDivElement | null
@@ -22,7 +21,7 @@ const OuterContainer = forwardRef(function OuterContainer(
   )
 })
 
-const InnerContainer = forwardRef(function InnerContainer(
+export const InnerContainer = forwardRef(function InnerContainer(
   { className, children, ...props }: ContainerProps,
   ref: {
     current: HTMLDivElement | null
@@ -49,9 +48,3 @@ export const Container = forwardRef(function Container(
     </OuterContainer>
   )
 })
-
-// TODO: Fix TS errors
-// @ts-ignore
-Container.Outer = OuterContainer
-// @ts-ignore
-Container.Inner = InnerContainer

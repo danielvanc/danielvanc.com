@@ -1,3 +1,4 @@
+import * as React from 'react'
 import glob from 'fast-glob'
 import * as path from 'path'
 
@@ -19,5 +20,7 @@ export async function getAllArticles() {
 
   let articles = await Promise.all(articleFilenames.map(importArticle))
 
-  return articles.sort((a, z) => new Date(z.date) - new Date(a.date))
+  return articles.sort(
+    (a, z) => (new Date(z.date) as any) - (new Date(a.date) as any)
+  )
 }
