@@ -3,17 +3,50 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { Card } from '@/components/Card'
 
 import logoBookworm from '@/images/logos/bkworm.svg'
+import logoPomodoro from '@/images/logos/pomodoro.svg'
+import logoGlide from '@/images/logos/glide.svg'
+import logoCalc from '@/images/logos/calc.svg'
 
 const projects = [
   {
     name: 'BKWorm',
     description:
-      'The app made for book lovers by book lovers. Built with Remix, Supabase, Tailwind and more.',
+      'A web app designed for book lovers by book lovers. Built with Remix, Supabase, Prisma, Tailwind and more.',
     link: {
       href: 'https://github.com/danielvanc/bookworm',
-      label: 'BKworm',
+      label: 'github',
     },
     logo: logoBookworm,
+  },
+  {
+    name: 'Glide',
+    description:
+      'Implemented my own VS Code theme after not being totally happy with any that are in the marketplace. Inspired by NightOwl theme.',
+    link: {
+      href: 'https://github.com/danielvanc/glide',
+      label: 'github',
+    },
+    logo: logoGlide,
+  },
+  {
+    name: 'Pomodoro',
+    description:
+      'A small timer I built as final project to complete the freeCodeCamp.org\'s "Frontend Libraries certificate". I endeavour to improve on this with the idea to turn it something more appealing.',
+    link: {
+      href: 'https://github.com/danielvanc/Pomodoro',
+      label: 'github',
+    },
+    logo: logoPomodoro,
+  },
+  {
+    name: 'Calc',
+    description:
+      'Just a small Gatsby and Redux project I made as a part of 1 of 5 projects required to gain the freeCodeCamp.org\'s "Frontend Libraries certificate" ',
+    link: {
+      href: 'https://github.com/danielvanc/Calculator',
+      label: 'github',
+    },
+    logo: logoCalc,
   },
 ]
 
