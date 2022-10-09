@@ -42,11 +42,11 @@ export default function Now() {
       </Head>
       <SimpleLayout
         title="What I'm up-to now and focusing on."
-        intro="This page is inspired by nownownow.com. Last updated, 19th Sept, 2022."
+        intro="This page is inspired by nownownow.com. Last updated, 9th Oct, 2022."
       >
         <div className="space-y-20">
           <NowSection title="Work">
-            <Item title="💻&nbsp;Side projects">
+            <Item title="💻 &nbsp; Side projects">
               I&apos;m working towards building an MVP of my Book app for book
               lovers.
             </Item>
@@ -64,14 +64,11 @@ export default function Now() {
           <NowSection title="Life">
             <Item title="🏝 Lots going on but a few notable things...">
               <ul>
+                <li>- Been working at Amigo Partnerhsip now for a year! 🥳</li>
+                <li>- Gigging with my band ThePact.</li>
                 <li>
-                  - Rcently purchased our house that we&apos;ve been living in
-                  for the past 3 years. Woop! 🥳
-                </li>
-                <li>- Gigging allot with my band ThePact.</li>
-                <li>
-                  - Our Sheltie returned from our Scotland trip baring medals
-                  for her first ever dog show!
+                  - Resuming practice after nearly a year, with my other band
+                  Gecko.
                 </li>
               </ul>
             </Item>
@@ -88,8 +85,10 @@ export default function Now() {
             </Item>
             <Item title="📺 Watching.">
               <ul>
-                <li>- Stranger Things: Season 5</li>
-                <li>- Bobs Burgers</li>
+                <li>- Stranger Things: Season 5 (Netflix)</li>
+                <li>- Dalhmer: Season 1 (Netflix)</li>
+                <li>- Blonde (Netflix)</li>
+                <li>- Bobs Burgers (Disney+)</li>
                 <li>- Kara and Nate (YouTubers)</li>
               </ul>
             </Item>
