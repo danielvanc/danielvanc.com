@@ -42,7 +42,7 @@ export default function Now() {
       </Head>
       <SimpleLayout
         title="What I'm up-to now and focusing on."
-        intro="This page is inspired by nownownow.com. Last updated, 9th Oct, 2022."
+        intro="This page is inspired by nownownow.com. Last updated, 30th Oct, 2022."
       >
         <div className="space-y-20">
           <NowSection title="Work">
@@ -54,9 +54,8 @@ export default function Now() {
               I&apos;m currently going through a few courses on Front-end
               Masters:
               <ul>
-                <li>- Developer Productivity</li>
+                <li>- JavaScript performance</li>
                 <li>- Intro to Computer Science</li>
-                <li>- The Last Algorithms Course You&apos;ll need</li>
                 <li>- Complete Intro to Containers</li>
               </ul>
             </Item>
@@ -85,16 +84,16 @@ export default function Now() {
             </Item>
             <Item title="📺 Watching.">
               <ul>
-                <li>- Stranger Things: Season 5 (Netflix)</li>
+                <li>- Ranganation (C4)</li>
                 <li>- Dalhmer: Season 1 (Netflix)</li>
-                <li>- Blonde (Netflix)</li>
+                <li>- Shantaram (Apple TV+)</li>
                 <li>- Bobs Burgers (Disney+)</li>
                 <li>- Kara and Nate (YouTubers)</li>
               </ul>
             </Item>
             <Item title="🎮 Playing">
               <ul>
-                <li>- GTA4 (xBox)</li>
+                <li>- NBA Arcade 2022 (Apple Arcade)</li>
                 <li>- Minecraft (iPadOS)</li>
                 <li>- Stardew Valley (iPadOS)</li>
               </ul>
