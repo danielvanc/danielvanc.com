@@ -116,18 +116,7 @@ export default function About() {
               <p>
                 My personal site is an ongoing project for me to post my{' '}
                 <Link href="/notes">thoughts</Link>,{' '}
-                <Link href="/projects">projects</Link> and experiments. Should
-                you wish, you can find out what I&apos;m{' '}
-                <Link href="/now">up-to now</Link> and see the{' '}
-                <Link href="/uses">tools</Link>, VS Code{' '}
-                <Link href="https://github.com/danielvanc/vscode-extensions">
-                  extensions
-                </Link>{' '}
-                and{' '}
-                <Link href="https://github.com/danielvanc/vscode-settings">
-                  settings
-                </Link>{' '}
-                I use on a daily basis.
+                <Link href="/projects">projects</Link> and experiments.
               </p>
             </div>
           </div>
