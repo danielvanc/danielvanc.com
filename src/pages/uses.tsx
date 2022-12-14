@@ -61,14 +61,14 @@ export default function Uses() {
               the money. Whilst it doesn&apos;t have the same clarity as the
               iMac display, it rocks iin just about everywhere else.
             </Tool>
-            <Tool title="IPad Air 3rd gen">
+            <Tool title="IPad Air 4th gen">
               Apart from being a news reader / gaming device, this is used as my
               second screen for emails / slack etc. With apples continuity
               feature, it works seemlessly with mouse and keyboard.
             </Tool>
-            <Tool title="Apple Magic Keyboard 2">
-              I have always been happy with Apples keyboards and not one to move
-              to clunky mechanicals. I like the quiet tap tapping.
+            <Tool title="Apple Magic Keyboard with Touch">
+              I have always been really happy with Apples keyboards and this one
+              is with touch id is awesome.
             </Tool>
             <Tool title="Apple Magic Trackpad 2">
               I dig using a trackpad and the gestures really help my day to day
