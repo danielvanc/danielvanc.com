@@ -5,6 +5,7 @@ import { Card } from '@/components/Card'
 import logoBookworm from '@/images/logos/bkworm.svg'
 import logoAlign from '@/images/logos/Align.svg'
 import logoGlide from '@/images/logos/glide.svg'
+import logoDash from '@/images/logos/pomodoro.svg'
 import logoBaseline from '@/images/logos/baseline.svg'
 
 const projects = [
@@ -37,6 +38,16 @@ const projects = [
       label: 'github',
     },
     logo: logoAlign,
+  },
+  {
+    name: 'HubDash',
+    description:
+      "Easy way to keep up with activity from the Github repo's you've starred.",
+    link: {
+      href: 'https://github.com/danielvanc/HubDash',
+      label: 'github',
+    },
+    logo: logoDash,
   },
   {
     name: 'Glide',
