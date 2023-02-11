@@ -3,13 +3,13 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { Card } from '@/components/Card'
 
 import logoBookworm from '@/images/logos/bkworm.svg'
-import logoPomodoro from '@/images/logos/pomodoro.svg'
+import logoAlign from '@/images/logos/Align.svg'
 import logoGlide from '@/images/logos/glide.svg'
-import logoCalc from '@/images/logos/calc.svg'
+import logoBaseline from '@/images/logos/baseline.svg'
 
 const projects = [
   {
-    name: 'BKWorm',
+    name: 'Bookworm',
     description:
       'A web app designed for book lovers by book lovers. Built with Remix, Supabase, Prisma, Tailwind and more.',
     link: {
@@ -17,6 +17,26 @@ const projects = [
       label: 'github',
     },
     logo: logoBookworm,
+  },
+  {
+    name: 'Baseline',
+    description:
+      'An all in one, easy to use, stats, news, and updates app for NBA fans.',
+    link: {
+      href: 'https://github.com/danielvanc/Baseline',
+      label: 'github',
+    },
+    logo: logoBaseline,
+  },
+  {
+    name: 'Align',
+    description:
+      'A simple to use, fully featured projects and tasks management tool for users and teams of Github." ',
+    link: {
+      href: 'https://github.com/danielvanc/Align',
+      label: 'github',
+    },
+    logo: logoAlign,
   },
   {
     name: 'Glide',
@@ -27,26 +47,6 @@ const projects = [
       label: 'github',
     },
     logo: logoGlide,
-  },
-  {
-    name: 'Pomodoro',
-    description:
-      'A small timer I built as final project to complete the freeCodeCamp.org\'s "Frontend Libraries certificate". I endeavour to improve on this with the idea to turn it something more appealing.',
-    link: {
-      href: 'https://github.com/danielvanc/Pomodoro',
-      label: 'github',
-    },
-    logo: logoPomodoro,
-  },
-  {
-    name: 'Calc',
-    description:
-      'Just a small Gatsby and Redux project I made as a part of 1 of 5 projects required to gain the freeCodeCamp.org\'s "Frontend Libraries certificate" ',
-    link: {
-      href: 'https://github.com/danielvanc/Calculator',
-      label: 'github',
-    },
-    logo: logoCalc,
   },
 ]
 
