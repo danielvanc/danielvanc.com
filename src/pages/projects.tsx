@@ -31,7 +31,7 @@ const projects = [
   {
     name: 'Align',
     description:
-      'A simple to use, fully featured projects and tasks management tool for users and teams of Github." ',
+      'A simple to use, fully featured projects and tasks management tool for users and teams of Github.',
     link: {
       href: 'https://github.com/danielvanc/Align',
       label: 'github',
@@ -41,7 +41,7 @@ const projects = [
   {
     name: 'Glide',
     description:
-      'Implemented my own VS Code theme after not being totally happy with any that are in the marketplace. Inspired by NightOwl theme.',
+      'My own VS Code theme. Inspired by the popular NightOwl theme.',
     link: {
       href: 'https://github.com/danielvanc/glide',
       label: 'github',
@@ -73,7 +73,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Projects"
-        intro="Below is where you'll find a non exhaustive, growing list of side projects I've worked on / working on in my spare time. Side projects provide me the opportunity to work on technologies I'm interested in and to learn from."
+        intro="A non exhaustive list of side projects I'm working on in my spare time."
       >
         <ul
           role="list"
