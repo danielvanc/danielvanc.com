@@ -79,7 +79,7 @@ export default function About() {
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               I&apos;m Daniel Van Cuylenburg. I live on the Isle of Wight,
-              working remotely as a React Developer.
+              working remotely as a React Engineer.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 [&_p_a]:text-pink-500 [&_p_a:hover]:text-pink-400">
               <p>
@@ -106,12 +106,8 @@ export default function About() {
                 <li>Compassion.</li>
               </ul>
               <p>
-                I&apos;m currently a Senior Front-end Developer for an all
-                digital creative agency,{' '}
-                <Link href="https://amigopartnership.com">
-                  Amigo Partnership
-                </Link>
-                , based in London, U.K.
+                I&apos;m currently a Senior Front-end Engineer for{' '}
+                <Link href="https://www.payvyne.com/">Vyne</Link>.
               </p>
               <p>
                 My personal site is an ongoing project for me to post my{' '}

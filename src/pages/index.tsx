@@ -19,6 +19,7 @@ import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.png'
 import logoAmigo from '@/images/logos/logoAmigo.jpeg'
+import logoVyne from '@/images/logos/logoVyne.jpeg'
 import logoW365 from '@/images/logos/logoW365.jpeg'
 import logoInTouch from '@/images/logos/logoInTouch.jpeg'
 import logoApacio from '@/images/logos/logoApacio.jpeg'
@@ -101,12 +102,22 @@ function SocialLink({ icon: Icon, ...props }) {
 function Resume() {
   let resume = [
     {
+      company: 'Vyne',
+      title: 'Senior Front-end Engineer',
+      logo: logoVyne,
+      start: '2023',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
+    },
+    {
       company: 'Amigo Partnership',
       title: 'Senior Front-end Developer',
       logo: logoAmigo,
       start: '2021',
       end: {
-        label: 'Present',
+        label: '2023',
         dateTime: new Date().getFullYear(),
       },
     },
@@ -211,7 +222,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="/cv/My_CV_2023.pdf"
+        href="/cv/My_CV_2023_UPDATED.pdf"
         variant="secondary"
         className="group mt-6 w-full"
       >
@@ -264,10 +275,15 @@ export default function Home({ articles }: { articles: Article[] }) {
             Remix, NextJS and Tailwind CSS specialist.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:font-bold [&_a]:text-pink-500 [&_a:hover]:text-pink-400">
-            I&apos;m Daniel, a remote working, Front-end Web Developer on the
-            sunny Isle of Wight, U.K. <br />I work for{' '}
-            <a href="https://www.amigopartnership.com/">Amigo Partnership</a>, a
-            London based creative agency, as a Senior Dev.
+            I&apos;m Daniel, a Senior Front-end Engineer for{' '}
+            <a href="https://www.payvyne.com/" target="_blank" rel="noreferrer">
+              Vyne
+            </a>{' '}
+            and Lead Guitarist for{' '}
+            <a href="http://www.thepact.band/" target="_blank" rel="noreferrer">
+              The Pact
+            </a>
+            .
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
