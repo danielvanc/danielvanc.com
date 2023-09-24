@@ -8,16 +8,15 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   FrontendMastersIcon,
-  TwitterIcon,
-  InstagramIcon,
+  XIcon,
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
+import image1 from '@/images/photos/image-1-new.jpg'
+import image5 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.png'
+import image4 from '@/images/photos/image-4-new.jpg'
+import image2 from '@/images/photos/image-5-new.jpg'
 import logoAmigo from '@/images/logos/logoAmigo.jpeg'
 import logoVyne from '@/images/logos/logoVyne.jpeg'
 import logoW365 from '@/images/logos/logoW365.jpeg'
@@ -265,50 +264,42 @@ export default function Home({ articles }: { articles: Article[] }) {
     <>
       <Head>
         <title>
-          Daniel Van Cuylenburg - Remix, NextJS and Tailwind CSS specialist
+          Daniel Van Cuylenburg - Senior Front-end Engineer and NextJS
+          specialist
         </title>
         <meta name="description" content="I’m Daniel" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Remix, NextJS and Tailwind CSS specialist.
+            Senior Front-end Engineer and NextJS specialist from the U.K
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:font-bold [&_a]:text-pink-500 [&_a:hover]:text-pink-400">
-            I&apos;m Daniel, a Senior Front-end Engineer for{' '}
+            I&apos;m Daniel, a Senior Front-end and React Engineer for{' '}
             <a href="https://www.payvyne.com/" target="_blank" rel="noreferrer">
               Vyne
-            </a>{' '}
-            and Lead Guitarist for{' '}
-            <a href="http://www.thepact.band/" target="_blank" rel="noreferrer">
-              The Pact
             </a>
             .
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="mt-6 flex items-center gap-6">
             <SocialLink
               href="https://frontendmasters.com/u/danielvanc/"
-              aria-label="Follow my learning progress on Frontend Masters"
+              aria-label="See what I'm learning on Frontend Masters"
               icon={FrontendMastersIcon}
             />
             <SocialLink
-              href="https://twitter.com/danielvanc"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com/danielvanc"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
+              href="https://x.com/danielvanc"
+              aria-label="Follow me on X"
+              icon={XIcon}
             />
             <SocialLink
               href="https://github.com/danielvanc"
-              aria-label="Follow on GitHub"
+              aria-label="Follow me on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/danielvanc"
-              aria-label="Follow on LinkedIn"
+              aria-label="Follow me on LinkedIn"
               icon={LinkedInIcon}
             />
           </div>

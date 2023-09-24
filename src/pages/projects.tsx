@@ -31,8 +31,7 @@ const projects = [
   },
   {
     name: 'Align',
-    description:
-      'A simple to use, fully featured projects and tasks management tool for users and teams of Github.',
+    description: 'A simple to use, work and personal tasks management tool.',
     link: {
       href: 'https://github.com/danielvanc/Align',
       label: 'github',

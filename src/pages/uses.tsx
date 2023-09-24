@@ -82,12 +82,6 @@ export default function Uses() {
               up with all the new settings, to help make my work flow, just that
               bit easier.
             </Tool>
-            <Tool title="Sizzy">
-              If you work in the front-end space, you need to use this. It
-              literally saves me hours of time when it comes to responsive
-              design, multi sessions, api browsing etc. A regular browser dev
-              tools just is not enough.
-            </Tool>
             <Tool title="Brave and Firefox">
               Not much to be said really. You get the best of security and a mix
               of the best JS run time and browser dev tools.
@@ -101,11 +95,6 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
-            <Tool title="Centered">
-              I have recently been getting into this and have now purchased a
-              yearly plan. Its really great for reminding you when to take
-              breaks and turns off any distractions.
-            </Tool>
             <Tool title="ToDo'ist">
               This is where all my todo&apos;s live. I plan my life in this
               thing. I integrate ToDo&apos;ist in centered.
@@ -121,10 +110,10 @@ export default function Uses() {
               of stepping on and off during breaks and meetings. Really helps
               gets those steps in
             </Tool>
-            <Tool title="Calm + Balence">
-              These two mindfulness apps are great to stay connected with
-              oneself. I use them daily and it really helps with staying focused
-              and energesied, especially during busy times.
+            <Tool title="Headspace">
+              Mindfullness is a great to stay connected with oneself. I use
+              Headspace daily and it really helps with staying focused and
+              energesied, especially during busy times.
             </Tool>
           </ToolsSection>
         </div>
