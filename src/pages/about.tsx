@@ -6,8 +6,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import {
   FrontendMastersIcon,
-  TwitterIcon,
-  InstagramIcon,
+  XIcon,
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
@@ -30,7 +29,7 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-pink-500 dark:text-zinc-200 dark:hover:text-pink-500"
+        className="group flex items-center text-sm font-medium text-zinc-800 transition hover:text-pink-500 dark:text-zinc-200 dark:hover:text-pink-500"
         target="_blank"
       >
         <Icon
@@ -126,20 +125,12 @@ export default function About() {
                 Follow my learning
               </SocialLink>
               <SocialLink
-                href="https://twitter.com/danielvanc"
-                icon={TwitterIcon}
-                className="mt-4"
-                ariaLabel="Follow me on Twitter"
+                href="https://x.com/danielvanc"
+                icon={XIcon}
+                className="mt-4 ml-[5px]"
+                ariaLabel="Follow me on X"
               >
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink
-                href="https://instagram.com/danielvanc"
-                icon={InstagramIcon}
-                className="mt-4"
-                ariaLabel="Follow me on Instagram"
-              >
-                Follow on Instagram
+                Follow me on X
               </SocialLink>
               <SocialLink
                 href="https://github.com/danielvanc"
@@ -147,7 +138,7 @@ export default function About() {
                 className="mt-4"
                 ariaLabel="Follow me on GitHub"
               >
-                Follow on GitHub
+                Follow me on GitHub
               </SocialLink>
               <SocialLink
                 href="https://linkedin.com/in/danielvanc"
@@ -155,7 +146,7 @@ export default function About() {
                 className="mt-4"
                 ariaLabel="Follow me on LinkedIn"
               >
-                Follow on LinkedIn
+                Follow me on LinkedIn
               </SocialLink>
               <SocialLink
                 href="mailto:email@danielvanc"
