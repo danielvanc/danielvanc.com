@@ -264,20 +264,19 @@ export default function Home({ articles }: { articles: Article[] }) {
     <>
       <Head>
         <title>
-          Daniel Van Cuylenburg - Senior Front-end Engineer and NextJS
-          specialist
+          Daniel Van Cuylenburg - Remix, NextJS and Tailwind CSS specialist
         </title>
         <meta name="description" content="I’m Daniel" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Senior Front-end Engineer and NextJS specialist from the U.K
+            Remix, NextJS and Tailwind CSS specialist
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 [&_a]:font-bold [&_a]:text-pink-500 [&_a:hover]:text-pink-400">
-            I&apos;m Daniel, a Senior Front-end and React Engineer for{' '}
+            Hey, I&apos;m Daniel, a Senior Front-end Engineer for{' '}
             <a href="https://www.payvyne.com/" target="_blank" rel="noreferrer">
-              Vyne
+              Vyne Technologies
             </a>
             .
           </p>
