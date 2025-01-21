@@ -221,7 +221,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="/cv/My_CV_2023_UPDATED.pdf"
+        href="/cv/My-CV_2025.pdf"
         variant="secondary"
         className="group mt-6 w-full"
       >
