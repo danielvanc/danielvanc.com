@@ -10,14 +10,14 @@ import logoBaseline from '@/images/logos/baseline.svg'
 
 const projects = [
   {
-    name: 'Bookworm',
+    name: 'Textbook',
     description:
-      'A web app designed for book lovers by book lovers. Built with Remix, Supabase, Prisma, Tailwind and more.',
+      'A simple but elegant, blog sharing platform. Built with NextJS 15, TailwindCSS v4, Prisma and more.',
     link: {
-      href: 'https://github.com/danielvanc/bookworm',
+      href: 'https://github.com/danielvanc/textbook',
       label: 'github',
     },
-    logo: logoBookworm,
+    logo: logoAlign,
   },
   {
     name: 'Baseline',
@@ -30,33 +30,14 @@ const projects = [
     logo: logoBaseline,
   },
   {
-    name: 'Align',
-    description: 'A simple to use, work and personal tasks management tool.',
-    link: {
-      href: 'https://github.com/danielvanc/Align',
-      label: 'github',
-    },
-    logo: logoAlign,
-  },
-  {
-    name: 'HubDash',
+    name: 'Bookworm',
     description:
-      "Easy way to keep up with activity from the Github repo's you've starred.",
+      'A web app designed for book lovers by book lovers. Built with Remix, Supabase, Prisma, Tailwind and more.',
     link: {
-      href: 'https://github.com/danielvanc/HubDash',
+      href: 'https://github.com/danielvanc/bookworm',
       label: 'github',
     },
-    logo: logoDash,
-  },
-  {
-    name: 'Glide',
-    description:
-      'My own VS Code theme. Inspired by the popular NightOwl theme.',
-    link: {
-      href: 'https://github.com/danielvanc/glide',
-      label: 'github',
-    },
-    logo: logoGlide,
+    logo: logoBookworm,
   },
 ]
 
